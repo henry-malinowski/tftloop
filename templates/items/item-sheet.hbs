@@ -1,0 +1,21 @@
+{{!-- Main Item Sheet Template --}}
+<div class="item-sheet">
+	<div class="item-sidebar"></div>
+	<div class="item-info">
+		<div class="header-layout">
+			<div class="header-main">
+				<h1>{{itemTypeLabel}}<i class="fa-solid fa-pipe"></i><input name="name" type="text" value="{{item.name}}" class="item-name-inline" /></h1>
+				{{> (concat "systems/tftloop/templates/items/partials/" item.type "-partial.hbs") }}
+			</div>
+			<div class="item-image">
+				<button type="button" class="item-image-edit icon fa-solid fa-pen-to-square" data-action="editImage" title="Edit Image"></button>
+				<img class="profile" src="{{item.img}}" data-action="viewImage" title="{{item.name}}">
+			</div>
+		</div>
+
+		<div class="item-notes">
+			<label>{{localize "tftloop.notes"}}:</label>
+			<prose-mirror name="system.notes" value="{{data.system.notes}}" toggled>{{{notesEnriched}}}</prose-mirror>
+		</div>
+	</div>
+</div>

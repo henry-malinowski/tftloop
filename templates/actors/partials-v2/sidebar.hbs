@@ -1,0 +1,27 @@
+{{! Name and Portrait (Main Tab) }}
+<div class="name-section">
+  <input
+    name="name"
+    type="text"
+    value="{{actor.name}}"
+    placeholder="{{localize 'tftloop.name'}}"
+    class="actor-name-input"
+  />
+</div>
+
+<div class="portrait-section">
+  <div class="portrait-container">
+    <button
+      type="button"
+      class="image-edit icon fa-solid fa-pen-to-square"
+      data-action="editImage"
+      title="{{localize 'tftloop.editImage'}}"
+    ></button>
+    <img
+      class="profile-img"
+      src="{{actor.img}}"
+      data-action="viewImage"
+      title="{{actor.name}}"
+    />
+  </div>
+</div>

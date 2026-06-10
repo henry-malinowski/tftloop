@@ -7,14 +7,46 @@
       "name": "DrOgres",
       "url": "https://github.com/DrOgres",
       "flags": {}
+    },
+    {
+      "name": "Henry Malinowski",
+      "url": "https://github.com/henry-malinowski",
+      "discord": "hmalinowski",
+      "flags": {}
     }
   ],
   "url": "https://github.com/DrOgres/tftloop",
-  "version": "4.0.1",
+  "version": "5.1.0",
   "compatibility": {
     "minimum": "13",
-    "verified": "14.360",
-    "maximum": "14"
+    "verified": "14"
+  },
+  "documentTypes": {
+    "Actor": {
+      "kid": {
+        "htmlFields": ["notes.value"]
+      },
+      "teen": {
+        "htmlFields": ["notes.value"]
+      },
+      "npc": {
+        "htmlFields": ["notes.value"]
+      }
+    },
+    "Item": {
+      "item": {
+        "htmlFields": ["notes"]
+      },
+      "relationship": {
+        "htmlFields": ["notes"]
+      },
+      "scar": {
+        "htmlFields": ["notes"]
+      },
+      "specialCharacteristic": {
+        "htmlFields": ["notes"]
+      }
+    }
   },
   "media": [
     {
@@ -31,12 +63,8 @@
     }
   ],
   "background": "systems/tftloop/img/loop_system.png",
-  "esmodules": [
-    "tftloop.js"
-  ],
-  "styles": [
-    "tftloop.css"
-  ],
+  "esmodules": ["tftloop.mjs"],
+  "styles": ["tftloop.css"],
   "languages": [
     {
       "lang": "en",
@@ -94,10 +122,13 @@
     }
   ],
   "initiative": "1d10",
-  "manifest": "https://github.com/DrOgres/tftloop/releases/latest/download/system.json",
-  "download": "https://github.com/DrOgres/tftloop/releases/download/4.0.1/system.zip",
-  "grid" : {
+  "grid": {
     "distance": 1,
     "units": "meter"
+  },
+  "flags": {
+    "hotReload": {
+      "extensions": ["css", "html", "hbs", "json"]
+    }
   }
 }

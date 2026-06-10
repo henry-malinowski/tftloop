@@ -1,0 +1,52 @@
+{{! Scars Section }}
+<div class="scars section">
+  <div class="section-header">
+    <h4 class="section-title">{{localize "tftflood.scars"}}</h4>
+    <p class="col-head">{{localize "tftflood.accepted"}}</p>
+
+    <button
+      type="button"
+      class="item-create"
+      data-action="createItem"
+      data-type="scar"
+    >
+      <i class="fas fa-plus"></i>
+    </button>
+  </div>
+
+  <ol class="info-list">
+    {{#each scars as |scar id|}}
+      <li class="info-item item" data-item-id="{{scar._id}}" draggable="true">
+        <input
+          class="scar-name inline-edit"
+          data-field="name"
+          type="text"
+          value="{{name}}"
+        />
+        <input
+          class="scar-desc inline-edit"
+          data-field="system.description"
+          type="text"
+          value="{{scar.system.description}}"
+        />
+
+        {{checkboxToggle scar.system.accepted "accepted"}}
+
+        <div class="item-control">
+          <a class="item-open" data-action="openItem">
+            <i class="fas fa-edit"></i>
+          </a>
+          <a
+            class="item-delete"
+            data-action="deleteItem"
+            data-type="scar"
+            data-trait="scar"
+            title="{{localize 'tftloop.delete'}}"
+          >
+            <i class="fas fa-minus"></i>
+          </a>
+        </div>
+      </li>
+    {{/each}}
+  </ol>
+</div>

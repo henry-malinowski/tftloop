@@ -1,0 +1,48 @@
+{{! Pride/Shame Main Tab Section }}
+{{#if (eq actor.type "kid")}}
+  <div class="pride-shame-section">
+    <h4 class="section-title">{{localize "tftloop.pride"}}</h4>
+    <div class="pride-shame-row">
+      <span class="pride-shame-preview">
+        <span class="pride-shame-preview-text">
+          <span class="pride-shame-preview-track">
+            {{#if model.pride}}{{model.pride}}{{else}}{{localize
+                "tftloop.pride"
+              }}{{/if}}
+          </span>
+        </span>
+      </span>
+      <label class="checkbox-toggle">
+        {{formInput
+          fields.prideCheck
+          name="system.prideCheck"
+          value=model.prideCheck
+          classes="tft-checkbox"
+        }}
+      </label>
+    </div>
+  </div>
+{{else}}
+  <div class="pride-shame-section">
+    <h4 class="section-title">{{localize "tftflood.shame"}}</h4>
+    <div class="pride-shame-row">
+      <span class="pride-shame-preview">
+        <span class="pride-shame-preview-text">
+          <span class="pride-shame-preview-track">
+            {{#if model.shame}}{{model.shame}}{{else}}{{localize
+                "tftflood.shame"
+              }}{{/if}}
+          </span>
+        </span>
+      </span>
+      <label class="checkbox-toggle">
+        {{formInput
+          fields.shameCheck
+          name="system.shameCheck"
+          value=model.shameCheck
+          classes="tft-checkbox"
+        }}
+      </label>
+    </div>
+  </div>
+{{/if}}

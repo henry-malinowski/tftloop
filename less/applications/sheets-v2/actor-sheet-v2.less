@@ -1,0 +1,271 @@
+/* Actor Sheet V2 - Vertical Tabs Layout (Redesigned) */
+
+@import url("../../variables.less");
+@import url("../../elements/_box-shadow.less");
+@import url("shared/_variables.less");
+@import url("shared/_mixins.less");
+@import url("shared/_sidebar-tabs.less");
+@import url("shared/_alternating-bg.less");
+@import url("shared/_section.less");
+@import url("shared/_sheet-row.less");
+
+/* ============================================
+   LAYOUT VARIABLES
+   ============================================ */
+@sidebar-width: 40px;
+@portrait-size: 120px;
+@column-left-width: 220px;
+@tab-icon-width: 44px;
+@tab-icon-height: 40px;
+
+/* ============================================
+   VERTICAL TABS - Window Level
+   ============================================ */
+.application.tftloop.actor.v2 {
+  &.vertical-tabs {
+    overflow: visible;
+  }
+
+  .sidebar-tabs-vertical();
+}
+
+/* ============================================
+   FORM & MAIN LAYOUT
+   ============================================ */
+form[id^="tftloopActorSheetV2"] {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+
+  .character-sheet {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    min-height: 0;
+
+    /* ============================================
+       DECORATIVE SIDEBAR
+       ============================================ */
+    .sheet-sidebar {
+      flex: 0 0 @sidebar-width;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      background: linear-gradient(
+        to bottom,
+        var(--color-sidebar-top) 0,
+        var(--color-sidebar-top) 10px,
+        var(--color-sidebar-mid) 10px,
+        var(--color-sidebar-mid) 90px,
+        var(--color-sidebar-bot) 90px,
+        var(--color-sidebar-bot) 100%
+      );
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("img/grunge.png");
+        z-index: 10;
+        pointer-events: none;
+      }
+    }
+
+    /* ============================================
+       MAIN CONTENT AREA
+       ============================================ */
+    .sheet-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: @gap-large;
+      background: var(--tftloop-item-background);
+      color: var(--system-item-text-color);
+      min-height: 0;
+      overflow: hidden;
+
+      /* ============================================
+         HEADER SECTION
+         ============================================ */
+      .sheet-header {
+        display: flex;
+        flex-direction: row;
+        gap: @gap-large;
+        padding-block-end: @gap-large;
+        border-block-end: 2px solid var(--color-highlight);
+        margin-block-end: @gap-large;
+
+        /* Portrait */
+        .portrait-container {
+          flex: 0 0 @portrait-size;
+          width: @portrait-size;
+          height: @portrait-size;
+          position: relative;
+          border: 1px solid var(--color-highlight);
+          background: var(--color-field);
+
+          .image-edit {
+            .edit-button();
+          }
+
+          .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            border: none;
+          }
+        }
+
+        /* Header Info Stack */
+        .header-info {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          gap: @gap-inline-large;
+          min-width: 0;
+
+          .name-row input {
+            width: 100%;
+            font-family: var(--font-avant-bold);
+            font-size: var(--font-size-20, 1.25em);
+            color: var(--color-highlight);
+            background: transparent;
+            border: 1px solid transparent;
+            padding: @gap-inline-small @gap-inline-standard;
+
+            &:focus {
+              border-color: var(--color-highlight);
+              outline: none;
+            }
+          }
+
+          .type-row,
+          .luck-row,
+          .pride-row,
+          .shame-row {
+            display: flex;
+            align-items: center;
+            gap: @gap-large;
+
+            label {
+              font-family: var(--font-avant-bold);
+              color: var(--system-item-bold-text-color);
+              white-space: nowrap;
+              min-width: 50px;
+            }
+
+            select {
+              flex: 1;
+              max-width: 200px;
+
+              .input-base();
+            }
+          }
+
+          /* Luck Points */
+          .luck-row {
+            .luck-boxes {
+              display: flex;
+              gap: 2px;
+            }
+
+            .luck-box {
+              width: 16px;
+              height: 16px;
+              border: 1px solid var(--color-highlight);
+              background: transparent;
+              cursor: pointer;
+
+              &.used {
+                background: var(--color-highlight);
+              }
+            }
+
+            .luck-reset {
+              background: transparent;
+              border: none;
+              color: var(--system-item-text-color);
+              cursor: pointer;
+              padding: 2px 6px;
+
+              &:hover {
+                color: var(--color-highlight);
+              }
+            }
+          }
+
+          /* Pride/Shame rows */
+          .pride-row,
+          .shame-row {
+            .pride-text,
+            .shame-text {
+              flex: 1;
+              font-family: var(--font-avant);
+              color: var(--system-item-text-color);
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+
+            input[type="checkbox"] {
+              width: 16px;
+              height: 16px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      /* ============================================
+         TAB CONTENT
+         ============================================ */
+      .sheet-body {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        overflow: hidden;
+
+        .tab {
+          display: none;
+          flex-direction: column;
+          flex: 1;
+          min-height: 0;
+          overflow: hidden;
+
+          &.active {
+            display: flex;
+          }
+        }
+      }
+
+      /* Form element styling */
+      label {
+        font-family: var(--font-avant-bold);
+        color: var(--system-item-bold-text-color);
+        white-space: nowrap;
+      }
+
+      input[type="text"],
+      input[type="number"] {
+        .input-base();
+      }
+
+      input:not([type="checkbox"], [type="radio"]):focus {
+        outline: 2px solid var(--color-highlight);
+        box-shadow: none;
+      }
+    }
+  }
+
+  /* Import tab partials (in tab order) */
+  @import url("partials/_main-tab.less");
+  @import url("partials/_conditions.less");
+  @import url("partials/_core-info.less");
+  @import url("partials/_relationships.less");
+  @import url("partials/_items.less");
+  @import url("partials/_notes.less");
+  @import url("partials/_scars.less");
+  @import url("partials/_hideout.less");
+}

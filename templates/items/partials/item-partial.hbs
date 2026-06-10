@@ -1,0 +1,25 @@
+{{! Content Partial for Basic Items }}
+<div class="header-details">
+  <div class="item-description">
+    <div class="row-label">{{localize "tftloop.description"}}</div>
+    <input
+      name="system.description"
+      type="text"
+      value="{{data.system.description}}"
+    />
+  </div>
+  <div class="info-item">
+    <div class="row-label">{{localize "tftloop.bonus"}}:</div>
+    <div class="item-bonus">
+      <i class="fa-solid fa-plus"></i>
+      <input
+        class="item-bonus-content"
+        name="system.bonus"
+        data-field="system.bonus"
+        type="text"
+        value="{{data.system.bonus}}"
+        data-dtype="Number"
+      />
+    </div>
+  </div>
+</div>

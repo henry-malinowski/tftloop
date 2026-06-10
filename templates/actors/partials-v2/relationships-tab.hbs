@@ -1,0 +1,49 @@
+{{! Relationships Items Section }}
+<div class="relationships section">
+  <div class="section-header">
+    <h4 class="section-title">{{localize "tftloop.relationships"}}</h4>
+    <button
+      type="button"
+      class="item-create"
+      data-action="createItem"
+      data-type="relationship"
+    >
+      <i class="fas fa-plus"></i>
+    </button>
+  </div>
+
+  {{#if relationships}}
+    <ol class="info-list item-list">
+      {{#each relationships}}
+        <li class="info-item item" data-item-id="{{this._id}}" draggable="true">
+          <input
+            class="relationship-name inline-edit"
+            data-field="name"
+            type="text"
+            value="{{this.name}}"
+          />
+          <input
+            class="relationship-desc inline-edit"
+            data-field="system.description"
+            type="text"
+            value="{{this.system.description}}"
+          />
+          <div class="item-control">
+            <a class="item-open" data-action="openItem">
+              <i class="fas fa-edit"></i>
+            </a>
+            <a
+              class="item-delete"
+              data-action="deleteItem"
+              data-type="relationship"
+              data-trait="relationship"
+              title="{{localize 'tftloop.delete'}}"
+            >
+              <i class="fas fa-minus"></i>
+            </a>
+          </div>
+        </li>
+      {{/each}}
+    </ol>
+  {{/if}}
+</div>

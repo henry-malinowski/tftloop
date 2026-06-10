@@ -1,0 +1,59 @@
+{{! Teen Core Information Section }}
+<div class="core-info">
+  {{! Row 1: Type and Age (side-by-side, responsive) }}
+  <div class="first-row">
+    <div class="type-section">
+      {{formGroup
+        fields.type
+        value=model.type
+        choices=teenSet
+        selected=selectedTeenType
+        localize=true
+      }}
+    </div>
+    <div class="age-section">
+      {{formGroup
+        fields.age
+        value=model.age
+        choices=teenAgeSet
+        selected=selectedAge
+        localize=true
+      }}
+    </div>
+  </div>
+
+  {{! Row 2: Drive and Anchor (side-by-side, responsive) }}
+  <div class="two-column-row">
+    <div class="drive-section">
+      {{formGroup fields.drive value=model.drive localize=true}}
+    </div>
+    <div class="anchor-section">
+      {{formGroup fields.anchor value=model.anchor localize=true}}
+    </div>
+  </div>
+
+  {{! Row 3: Problem (full-width) }}
+  <div class="full-width-wrapper">
+    {{formGroup fields.problem value=model.problem localize=true}}
+  </div>
+
+  {{! Row 4: Shame (full-width) }}
+  <div class="full-width-wrapper">
+    {{formGroup fields.shame value=model.shame localize=true}}
+  </div>
+
+  {{! Row 5: Friction (full-width) }}
+  <div class="full-width-wrapper">
+    {{formGroup fields.friction value=model.friction localize=true}}
+  </div>
+
+  {{! Row 6: Description (full-width) }}
+  <div class="full-width-wrapper">
+    {{formGroup fields.description value=model.description localize=true}}
+  </div>
+
+  {{! Row 7: Favorite Song (full-width) }}
+  <div class="full-width-wrapper">
+    {{formGroup fields.favoriteSong value=model.favoriteSong localize=true}}
+  </div>
+</div>

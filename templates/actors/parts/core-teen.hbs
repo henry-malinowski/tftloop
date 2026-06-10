@@ -1,51 +1,78 @@
 <div class="core-info info-group">
   <div class="flexrow">
-    <div class="info-item short">
+    <div class="form-row short">
       <label>{{localize "tftloop.age"}}</label>
       <select name="system.age">
         {{selectOptions teenAgeSet selected=selectedAge localize=false}}
       </select>
     </div>
 
-    <div class="info-item flexrow">
+    <div class="form-row flexrow">
       <label>{{localize "tftloop.favSong"}}</label>
-      <input name="system.favoriteSong" type="text" value="{{data.system.favoriteSong}}" placeholder="" />
+      <input
+        name="system.favoriteSong"
+        type="text"
+        value="{{data.system.favoriteSong}}"
+        placeholder=""
+      />
     </div>
   </div>
 
-  <div class="info-item even flexrow">
+  <div class="form-row flexrow">
     <label>{{localize "tftloop.drive"}}</label>
-    <input name="system.drive" type="text" value="{{data.system.drive}}" placeholder="" />
+    <input
+      name="system.drive"
+      type="text"
+      value="{{data.system.drive}}"
+      placeholder=""
+    />
   </div>
 
-  <div class="info-item odd flexrow">
+  <div class="form-row flexrow">
     <label>{{localize "tftloop.anchor"}}</label>
-    <input name="system.anchor" type="text" value="{{data.system.anchor}}" placeholder="" />
+    <input
+      name="system.anchor"
+      type="text"
+      value="{{data.system.anchor}}"
+      placeholder=""
+    />
   </div>
 
-  <div class="info-item even flexrow">
+  <div class="form-row flexrow">
     <label>{{localize "tftloop.problem"}}</label>
-    <input name="system.problem" type="text" value="{{data.system.problem}}" placeholder="" />
+    <input
+      name="system.problem"
+      type="text"
+      value="{{data.system.problem}}"
+      placeholder=""
+    />
   </div>
 
-  <div class="info-item odd flexrow">
+  <div class="form-row flexrow">
     <label>{{localize "tftflood.shame"}}: </label>
-    <input name="system.shame" type="text" value="{{data.system.shame}}" placeholder="" />
-    <label class="imgCheck">
-      {{#unless data.system.shameCheck}}
-      <img class="toggle-boolean" data-toggle="shameCheck" src="systems/tftloop/img/box_not_checked.png" height="18px"
-        width="18px" />
-      {{/unless}}
-
-      {{#if data.system.shameCheck}}
-      <img class="toggle-boolean" data-toggle="shameCheck" src="systems/tftloop/img/box_checked.png" height="18px"
-        width="18px" />
-      {{/if}}
+    <input
+      name="system.shame"
+      type="text"
+      value="{{data.system.shame}}"
+      placeholder=""
+    />
+    <label class="checkbox-toggle">
+      {{formInput
+        fields.shameCheck
+        name="system.shameCheck"
+        value=model.shameCheck
+        classes="tft-checkbox"
+      }}
     </label>
   </div>
 
-  <div class="info-item even flexrow">
+  <div class="form-row flexrow">
     <label>{{localize "tftloop.description"}}</label>
-    <input name="system.description" type="text" value="{{data.system.description}}" placeholder="" />
+    <input
+      name="system.description"
+      type="text"
+      value="{{data.system.description}}"
+      placeholder=""
+    />
   </div>
 </div>

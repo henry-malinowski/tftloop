@@ -1,0 +1,21 @@
+/* Light mode provides minimal overrides to semantic variables defined in theme files */
+
+/* Most variables inherit from loop.less or flood.less */
+
+/* Applies to both body-level theme and actor sheet theme overrides */
+body.theme-light,
+.theme-light {
+  /* Item sheet text colors */
+  --system-item-text-color: var(--color-black);
+  --system-item-bold-text-color: var(--color-black);
+  --border-color: rgb(68 68 68 / 20%);
+
+  /* Item background uses system image in light mode with size to prevent tiling */
+  --tftloop-item-background: url("img/chat_background.jpg") 0 0 / 100% auto;
+
+  /* Select background for light mode */
+  --select-background: var(--color-white);
+
+  /* Tab background for light mode */
+  --tab-background-color: var(--color-background);
+}

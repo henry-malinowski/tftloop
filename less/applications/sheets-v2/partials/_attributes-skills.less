@@ -1,0 +1,65 @@
+/* Attributes and Skills - V1 LEGACY (NOT USED BY V2)
+ * V2 uses inline styles in _main-tab.less
+ * This file may be deprecated in future releases
+ */
+
+.attributes-skills {
+  .attribute-list,
+  .skill-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  // Shared base styles for attribute and skill rows
+  .attribute,
+  .skill {
+    .row-base();
+    .flex-between();
+
+    color: var(--color-black);
+    margin: 0;
+    padding: @gap-inline-standard;
+    min-width: 0; // Allow flex children to shrink below content size
+
+    .roll-control {
+      cursor: pointer;
+      user-select: none;
+      flex: 0 1 auto; // Don't grow, but allow shrinking below content size
+      min-width: 0; // Allow text truncation if needed
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    input {
+      .attribute-skill-input();
+
+      flex: 0 0 auto; // Don't allow input to grow or shrink, keep its max-width
+    }
+  }
+
+  // Attribute-specific styles
+  .attribute {
+    background-color: var(--color-section-head);
+    font-weight: 500;
+    font-size: @font-size-large;
+    font-style: normal;
+
+    input {
+      max-width: @input-width-standard;
+    }
+  }
+
+  // Skill-specific styles
+  .skill {
+    background-color: var(--color-section-item);
+    font-weight: 400;
+    padding-inline-start: 15px; // Indentation for skills
+
+    input {
+      max-width: @input-width-small;
+    }
+  }
+}

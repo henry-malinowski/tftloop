@@ -1,0 +1,56 @@
+/* Theme-specific variable mappings for flood theme */
+
+/* Applies to both body-level theme and actor sheet theme overrides */
+body.theme-flood,
+.theme-flood {
+  /* Generic theme color variables */
+  --color-system-primary-0: #98314f; /* triangle from front and back of book */
+  --color-system-primary-1: #8e2c48; /* main theme color; second sidebar color */
+  --color-system-primary-2: #bf7b87; /* even row attribute background */
+  --color-system-primary-3: #e3c0c4; /* odd row attribute background */
+  --color-system-secondary-1: #768a9e; /* secondary theme color; third sidebar color */
+  --color-system-secondary-2: #aebaca; /* odd row other sheet background */
+  --color-system-secondary-3: #dbe0e8; /* even row other sheet background */
+  --color-system-secondary-4: #cad2de; /* odd row table background */
+
+  /* Foundry overrides */
+  --control-active-border-color: var(--color-system-primary-0);
+  --control-button-hover-bg-color: var(--color-system-primary-0);
+
+  /* Sidebar colors - generic coloring pattern */
+  --color-sidebar-top: black;
+  --color-sidebar-mid: var(--color-system-secondary-1);
+  --color-sidebar-bot: var(--color-system-primary-1);
+
+  /* Legacy variable mappings to generic theme variables */
+  --color-footer: var(--color-system-primary-1);
+  --color-highlight: var(--color-system-primary-0);
+  --color-section-head: var(--color-system-primary-2);
+  --color-section-item: var(--color-system-primary-3);
+  --color-field: var(--color-system-secondary-3);
+  --color-iconic-item: var(--color-system-secondary-2);
+  --color-sidebar-yellow: var(--color-system-secondary-1);
+  --color-spinner: var(--color-system-primary-1);
+  --color-button-hover: var(--color-system-primary-0);
+
+  /* Semantic variables - derived from palette or Foundry vars */
+  --dialog-accent-color: var(--color-footer); /* Derived from flood palette */
+  --dice-accent-color: var(--color-footer); /* Derived from flood palette */
+  --hover-text-color: var(--color-footer); /* Derived from flood palette */
+
+  /* These reference Foundry vars that auto-switch for light/dark */
+  --select-background: transparent; /* Stable across modes */
+  --option-background: var(--background); /* Foundry auto-switches */
+
+  /* Roll dialog colors */
+  --roll-dialog-accent-color: var(--color-system-primary-1);
+  --roll-dialog-penalty-color: var(--color-system-primary-1);
+  --roll-dialog-button-text-color: white;
+
+  /* Tab foreground color (system-dependent) */
+  --tab-color: var(--color-highlight);
+
+  /* Bug/footer image - constrained to 48px on longest dimension */
+  --bug-image-url: url("img/krafta_logo_bw_sm.png");
+  --bug-image-size: contain;
+}

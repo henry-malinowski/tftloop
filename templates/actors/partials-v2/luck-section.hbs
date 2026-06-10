@@ -1,0 +1,23 @@
+{{!-- Luck Points (Kid only) --}}
+{{#if (and (eq actor.type "kid") (lt actor.system.age 15))}}
+<div class="luck-section">
+	<h4 class="section-title">{{localize "tftloop.luck"}}</h4>
+	<div class="luck-content">
+		<div class="luck-boxes">
+			{{#each (range 1 luckMax)}}
+			<label class="checkbox-toggle">
+				<input type="checkbox"
+					   class="tft-checkbox luck-box"
+					   data-action="useLuck"
+					   {{#if (lte this ../luckCurrent)}}checked{{/if}}
+					   title="{{localize 'tftloop.luck'}}"
+					   aria-label="{{localize 'tftloop.luck'}}" />
+			</label>
+			{{/each}}
+		</div>
+		<button type="button" class="luck-reset" data-action="resetLuck" title="{{localize 'tftloop.reset'}}">
+			<i class="fas fa-undo"></i>
+		</button>
+	</div>
+</div>
+{{/if}}

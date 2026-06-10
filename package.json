@@ -1,0 +1,27 @@
+{
+  "name": "tftloop",
+  "private": true,
+  "scripts": {
+    "format:check": "oxfmt --check .",
+    "format:write": "oxfmt --write .",
+    "lint": "oxlint . && stylelint \"less/**/*.less\"",
+    "lint:fix": "oxlint --fix . && stylelint \"less/**/*.less\" --fix",
+    "less:build": "lessc --source-map --source-map-rootpath=less/ less/tftloop.less tftloop.css",
+    "less:watch": "bun less-watcher.ts less/tftloop.less tftloop.css --watch",
+    "check": "bun run format:check && bun run lint",
+    "fix": "bun run format:write && bun run lint:fix"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "less": "^4.6.4",
+    "oxfmt": "^0.46.0",
+    "oxlint": "^1.61.0",
+    "postcss-less": "^6.0.0",
+    "stylelint": "^17.9.0",
+    "stylelint-config-recommended-less": "^4.2.1",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-config-standard-less": "^4.1.0",
+    "stylelint-less": "^4.2.1"
+  },
+  "packageManager": "bun@1.3.12"
+}

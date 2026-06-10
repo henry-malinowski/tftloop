@@ -1,22 +1,29 @@
 # Changelog
 
-## [4.0.1] - 2026-04-21
+## [5.0.0]
+
+- ApplicationV2 Compatibility
+  - Actors
+  - Items
+  - Migrated from template.json to system.json and System Data Models
+- Added ProseMirror to the Notes section of items
+- New Roll Dialogs
+  - Light and Dark mode aware
+  - Tracks with the rolling character's sheet
+- Added NPC Actor Type
+
+## [4.0.1]
 
 ### Changed
 
-- Replaced TinyMCE with ProseMirror as the Actor Notes editor
-- Moved the CHANGELOG out of the README
-- Massive thanks to @henry-malinowski for the v14 update
+- Replacd TinyMCE with ProseMirror as Journal Editor for V14 compatibility
+- Moved the Changelog out of the Readme
 
 ### Fixed
 
-- FoundryVTT's native dialogs being improperly styled
+- FoundryVTT's Dark Mode dialogs
 - Minor Actor sheet inconsistencies
 - Deprecated usage of global `mergeObject`
-
-### Removed
-
-- Kid Type editor from System Settings pending a fuller treatment of the feature
 
 ## [4.0.0] - 2025-06-17
 
@@ -83,7 +90,8 @@
 ## [2.0.4] - 2023-02-22
 
 - Added drag and drop macro creation for tests on skills and attributes. This closes issue #31
-- 
+-
+
 ## [2.0.3] - 2023-01-18
 
 - Actor duplication bug fix. This closes issue #37

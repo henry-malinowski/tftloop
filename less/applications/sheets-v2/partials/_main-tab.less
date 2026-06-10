@@ -1,0 +1,479 @@
+/* Main Tab - Two Column Layout */
+
+.main-tab-content {
+  --checkbox-size: 18px;
+
+  display: flex;
+  flex-direction: row;
+  gap: @gap-large;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+
+  .column-left {
+    flex: 0 0 45%;
+    display: flex;
+    flex-direction: column;
+    gap: @gap-inline-large;
+    min-width: 0;
+    max-width: 45%;
+    box-sizing: border-box;
+  }
+
+  .column-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .section-title {
+    font-family: var(--font-avant-bold);
+    font-size: @font-size-standard;
+    color: var(--color-white);
+    background: var(--color-highlight);
+    padding: @gap-inline-standard @gap-inline-large;
+    margin: 0 0 @gap-sidebar;
+  }
+
+  .checkbox-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+
+    &.readonly {
+      cursor: not-allowed;
+    }
+  }
+
+  .tft-checkbox,
+  .conditions-grid > .form-group.condition-row input[type="checkbox"] {
+    appearance: none;
+    margin: 0;
+    width: var(--checkbox-size, 18px);
+    height: var(--checkbox-size, 18px);
+    border: 1px solid var(--color-highlight);
+    background: transparent;
+    border-radius: 0;
+    cursor: pointer;
+    display: block;
+    flex: 0 0 var(--checkbox-size, 18px);
+    box-sizing: border-box;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    /* Neutralize Foundry's global Font Awesome checkbox glyph layers */
+    &::before,
+    &::after {
+      content: none;
+      display: none;
+    }
+  }
+
+  .tft-checkbox:checked,
+  .conditions-grid > .form-group.condition-row input[type="checkbox"]:checked {
+    background-color: var(--color-highlight);
+  }
+
+  .tft-checkbox:disabled,
+  .conditions-grid > .form-group.condition-row input[type="checkbox"]:disabled {
+    cursor: not-allowed;
+    opacity: 0.9;
+  }
+
+  /* Keep focus visuals quiet by default; expose explicit ring for high-contrast users */
+  .tft-checkbox:focus,
+  .conditions-grid > .form-group.condition-row input[type="checkbox"]:focus,
+  .tft-checkbox:focus-visible,
+  .conditions-grid > .form-group.condition-row input[type="checkbox"]:focus-visible {
+    outline: none;
+    box-shadow: none;
+  }
+
+  @media (prefers-contrast: more), (forced-colors: active) {
+    .tft-checkbox:focus-visible,
+    .conditions-grid > .form-group.condition-row input[type="checkbox"]:focus-visible {
+      outline: 1px solid var(--color-highlight);
+      outline-offset: 2px;
+    }
+  }
+
+  /* ============================================
+     LEFT COLUMN SECTIONS
+     ============================================ */
+
+  /* Actor Name */
+  .name-section {
+    .actor-name-input {
+      width: 100%;
+      font-family: var(--font-avant-bold);
+      font-size: 1.1em;
+      color: var(--color-highlight);
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--color-highlight);
+      padding: @gap-inline-small;
+      text-align: center;
+
+      &:focus {
+        outline: none;
+        background: rgb(255 255 255 / 10%);
+      }
+    }
+  }
+
+  /* Portrait */
+  .portrait-section {
+    .portrait-container {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      position: relative;
+      border: 1px solid var(--color-highlight);
+      background: var(--color-field);
+
+      .image-edit {
+        .edit-button();
+      }
+
+      .profile-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+        border: none;
+      }
+    }
+  }
+
+  /* Luck Points */
+  .luck-section {
+    .luck-content {
+      display: flex;
+      align-items: center;
+      gap: @gap-inline-standard;
+      padding: @gap-inline-small;
+    }
+
+    .luck-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+      flex: 1;
+    }
+
+    .luck-box {
+      width: var(--checkbox-size, 18px);
+      height: var(--checkbox-size, 18px);
+    }
+
+    .luck-reset {
+      background: transparent;
+      border: none;
+      color: var(--system-item-text-color);
+      cursor: pointer;
+      padding: 2px 6px;
+      font-size: 0.9em;
+
+      &:hover {
+        color: var(--color-highlight);
+      }
+    }
+  }
+
+  /* Experience */
+  .experience-section {
+    .exp-boxes {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .exp-box {
+      width: 18px;
+      height: 18px;
+      border: 1px solid var(--color-highlight);
+      background: transparent;
+      border-radius: 0;
+      cursor: pointer;
+      box-sizing: border-box;
+      display: block;
+      flex: 0 0 18px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+
+      &.filled {
+        background: var(--color-highlight);
+      }
+    }
+  }
+
+  /* Pride/Shame */
+  .pride-shame-section {
+    .pride-shame-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: @gap-inline-standard;
+      padding: @gap-inline-small;
+      min-height: calc(var(--checkbox-size, 18px) + 6px);
+    }
+
+    .pride-shame-preview {
+      --ellipsis-lane: 0.95em;
+
+      flex: 1;
+      min-width: 0;
+      display: block;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      border: none;
+      background: transparent;
+      box-shadow: none;
+      text-shadow: none;
+      text-align: start;
+      font-family: var(--font-avant);
+      font-size: 0.95em;
+      line-height: 1.2;
+      color: var(--system-item-text-color);
+      cursor: default;
+      container-type: inline-size;
+
+      &:hover {
+        color: var(--system-item-text-color);
+      }
+
+      &.is-truncated::before {
+        content: "";
+        position: absolute;
+        inset-block: 0;
+        inset-inline-end: var(--ellipsis-lane);
+        width: 0.75em;
+        background: linear-gradient(
+          to right,
+          rgb(0 0 0 / 0%) 0%,
+          var(--tftloop-item-background) 100%
+        );
+        pointer-events: none;
+        opacity: 1;
+        transition: opacity 480ms ease-in-out;
+        z-index: 1;
+      }
+
+      &.is-truncated::after {
+        content: "...";
+        position: absolute;
+        inset-block: 0;
+        inset-inline-end: 0;
+        width: var(--ellipsis-lane);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-family: var(--font-avant-bold);
+        font-size: 1em;
+        font-weight: 700;
+        line-height: 1;
+        color: var(--system-item-text-color);
+        background: none;
+        opacity: 1;
+        transition: opacity 480ms ease-in-out;
+        pointer-events: none;
+        z-index: 2;
+      }
+
+      .pride-shame-preview-text {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: clip;
+      }
+
+      &.is-truncated .pride-shame-preview-text {
+        width: calc(100% - var(--ellipsis-lane));
+      }
+
+      .pride-shame-preview-track {
+        display: inline-block;
+        white-space: nowrap;
+        transform: translateX(0);
+        will-change: transform;
+        transition: transform 320ms ease-out;
+      }
+
+      @supports (width: 1cqw) {
+        &.is-truncated:hover .pride-shame-preview-text {
+          width: 100%;
+        }
+
+        &.is-truncated:hover::before,
+        &.is-truncated:hover::after {
+          opacity: 0;
+        }
+
+        &.is-truncated:hover .pride-shame-preview-track {
+          transition-duration: 4.2s;
+          transition-timing-function: ease-in-out;
+          transform: ~"translateX(min(0px, calc(100cqw - 100%)))";
+        }
+      }
+    }
+
+    .checkbox-toggle {
+      flex: 0 0 auto;
+    }
+  }
+
+  /* Attributes/Skills */
+  .attributes-skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    overflow: hidden;
+  }
+
+  .attribute-block {
+    min-width: 0;
+
+    .attribute-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--color-highlight);
+      padding: @gap-inline-small @gap-inline-standard;
+      min-width: 0;
+
+      .attribute-name {
+        font-family: var(--font-avant-bold);
+        color: var(--color-white);
+        cursor: pointer;
+        font-size: 0.95em;
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      input[type="number"] {
+        width: 36px;
+        height: 22px;
+        text-align: center;
+        background: var(--color-white);
+        border: 1px solid var(--color-white);
+        font-family: var(--font-avant-bold);
+        color: var(--color-highlight);
+        font-size: 0.95em;
+        flex-shrink: 0;
+      }
+    }
+
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+
+      > .skill-row + .skill-row {
+        border-block-start: 1px solid var(--border-color);
+      }
+    }
+
+    .skill-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 3px @gap-inline-standard;
+      padding-inline-start: 15px; // Indentation for skills under attributes
+      font-size: 1em;
+      min-width: 0;
+
+      .skill-name {
+        font-family: var(--font-avant);
+        color: var(--system-item-text-color);
+        cursor: pointer;
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        &:hover {
+          color: var(--color-highlight);
+        }
+      }
+
+      input[type="number"] {
+        width: 32px;
+        height: 20px;
+        text-align: center;
+        font-size: 0.9em;
+        flex-shrink: 0;
+
+        .input-base();
+      }
+    }
+  }
+}
+
+html[dir="rtl"]
+  .main-tab-content
+  .pride-shame-preview.is-truncated:hover
+  .pride-shame-preview-track {
+  transform: ~"translateX(max(0px, calc(100% - 100cqw)))";
+}
+
+html[dir="rtl"] .main-tab-content .pride-shame-preview.is-truncated::after {
+  justify-content: flex-start;
+}
+
+html[dir="rtl"] .main-tab-content .pride-shame-preview.is-truncated::before {
+  inset-inline: var(--ellipsis-lane) auto;
+  background: linear-gradient(to left, rgb(0 0 0 / 0%) 0%, var(--tftloop-item-background) 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .main-tab-content .pride-shame-preview.is-truncated:hover .pride-shame-preview-track {
+    transition-duration: 0s;
+    transform: translateX(0);
+  }
+}
+
+body.theme-light &,
+&.theme-light {
+  .main-tab-content {
+    .tft-checkbox,
+    .conditions-grid > .form-group.condition-row input[type="checkbox"] {
+      border: none;
+      background: url("img/box_not_checked.png") center / 100% 100% no-repeat;
+    }
+
+    .tft-checkbox:checked,
+    .conditions-grid > .form-group.condition-row input[type="checkbox"]:checked {
+      background: url("img/box_checked.png") center / 100% 100% no-repeat;
+    }
+
+    .experience-section {
+      .exp-box {
+        border: none;
+        background: url("img/box_not_checked.png") center / 100% 100% no-repeat;
+
+        &.filled {
+          background: url("img/box_checked.png") center / 100% 100% no-repeat;
+        }
+      }
+    }
+  }
+}

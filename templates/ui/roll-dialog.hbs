@@ -1,0 +1,48 @@
+<div class="form-group">
+    <h2>{{localize "tftloop.rolling"}}: {{rolledLabel}}</h2>
+    
+    <div class="pool-count divider-below">
+        {{localize "tftloop.currentPool"}}: {{poolData.pool}} {{localize "tftloop.dice"}}
+    </div>
+    
+    <div class="pool-details divider-below">
+        {{#each poolData.details}}
+        <div class="pool-detail {{#if isPenalty}}penalty{{/if}}">
+            {{label}} {{modifier}}
+        </div>
+        {{/each}}
+    </div>
+    
+    <div class="pool-options">
+        <div class="pool-item-select flexrow">
+            <label for="roll-item">{{localize "tftloop.useItem"}}:</label>
+            <select id="roll-item" name="useItem">
+                <option value="0">{{localize "tftloop.none"}}</option>
+                <option value="2">{{localize "tftloop.iconic"}}{{iconicItem.desc}} + 2</option>
+                {{#each items}}
+                <option value="{{bonus}}">{{name}} + {{bonus}}</option>
+                {{/each}}
+            </select>
+        </div>
+        
+        <div class="bonus-dice flexrow">
+            <label for="bonus-dice">{{localize "tftloop.bonusDice"}}: </label>
+            <input id="bonus-dice" name="bonusDice" type="number" value="0" min="0" step="1" data-dtype="Number"/>
+        </div>
+    </div>
+    
+    <footer class="sheet-footer flexrow">
+        <button type="submit">
+            <i class="fas fa-dice"></i> {{localize "tftloop.roll"}}
+        </button>
+    </footer>
+    
+    <div class="bug">
+        {{#if (eq systemTheme "theme-flood")}}
+        <img src="systems/tftloop/img/krafta_logo_bw_sm.png" height="48"/>
+        {{else}}
+        <img src="systems/tftloop/img/loop_bug_sm.png" height="48"/>
+        {{/if}}
+    </div>
+</div>
+

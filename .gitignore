@@ -1,30 +1,40 @@
-img/loop_system.png~
-img/.loop_logo_grey_alpha.png-autosave.kra
-img/grunge.png~
-img/loop_system.png~
-img/loop_bug_sm.png~
-img/riks_logo_black.png~
-img/.grunge.png-autosave.kra
-img/.riks_logo_white.png-autosave.kra
+# dependencies (bun install)
+node_modules
 
-# VS Code
-.idea/
-logs/
-img/dice/.face6.png-autosave.kra
-img/dice/face1.png~
-img/dice/face2.png~
-img/dice/face3.png~
-img/dice/face4.png~
-img/dice/face5.png~
-img/dice/face6.png~
+# output
+out
+dist
+*.tgz
 
-system.zip
-system.1.2.7.zip
+# code coverage
+coverage
+*.lcov
 
+# logs
+logs
+_.log
+report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
-node_modules/
-package-lock.json
-package.json
-less/config.css
-less/sheet.css
-less/tftloop.css
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# caches
+.eslintcache
+.cache
+*.tsbuildinfo
+
+# IntelliJ based IDEs
+.idea
+
+# Finder (MacOS) folder config
+.DS_Store
+
+# Foundry runtime
+tftloop.lock
+
+# build artifacts
+tftloop.css.map

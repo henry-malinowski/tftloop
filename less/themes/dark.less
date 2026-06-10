@@ -1,0 +1,41 @@
+/* Dark mode provides minimal overrides to semantic variables defined in theme files */
+
+/* Most variables inherit from loop.less or flood.less and Foundry's auto-switching vars */
+
+/* Applies to both body-level theme and actor sheet theme overrides */
+body.theme-dark,
+.theme-dark {
+  /* Use brighter accent colors for dark mode (better contrast) */
+  --dialog-accent-color: var(--color-highlight);
+
+  /* Brighter orange for dark mode */
+
+  --dice-accent-color: var(--color-highlight);
+
+  /* Brighter orange for dark mode */
+
+  --hover-text-color: var(--color-highlight);
+
+  /* Brighter orange for dark mode */
+
+  /* Item background inherits from Foundry in dark mode (no image) */
+  --tftloop-item-background: transparent;
+
+  /* Item text colors */
+  --system-item-text-color: var(--color-light-1);
+  --system-item-bold-text-color: var(--color-light-2);
+  --border-color: rgb(255 255 255 / 22%);
+}
+
+/*
+ * var(--background) is defined on .application by Foundry, not on body.
+ * Scoped here so global dark mode (body.theme-dark only) still resolves for sidetabs and options.
+ */
+body.theme-dark .application,
+.theme-dark {
+  /* Explicitly set option background for dark mode */
+  --option-background: var(--background);
+
+  /* Tab background for dark mode */
+  --tab-background-color: var(--background);
+}

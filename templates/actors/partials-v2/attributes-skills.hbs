@@ -1,0 +1,51 @@
+{{! Attributes and Skills Section }}
+<div class="column-right">
+  <h4 class="section-title">{{localize "tftloop.attributesSkills"}}</h4>
+  <div class="attributes-skills-grid">
+    {{#each attributesWithSkills as |attr|}}
+      <div class="attribute-block">
+        {{! Attribute Header }}
+        <div class="attribute-header">
+          <span
+            class="attribute-name roll-control"
+            data-action="rollAttribute"
+            data-stat="{{attr.id}}"
+          >
+            {{localize attr.key}}
+          </span>
+          <input
+            type="number"
+            name="system.attributes.{{attr.id}}"
+            value="{{attr.value}}"
+            min="1"
+            max="5"
+            data-dtype="Number"
+          />
+        </div>
+        {{! Skills }}
+        <div class="skills-list">
+          {{#each attr.skills as |skill|}}
+            <div class="skill-row">
+              <span
+                class="skill-name roll-control"
+                data-action="rollSkill"
+                data-attr="{{skill.attrId}}"
+                data-skill="{{skill.id}}"
+              >
+                {{localize skill.key}}
+              </span>
+              <input
+                type="number"
+                name="system.skills.{{skill.attrId}}.{{skill.id}}"
+                value="{{skill.value}}"
+                min="0"
+                max="5"
+                data-dtype="Number"
+              />
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

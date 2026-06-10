@@ -1,0 +1,56 @@
+/* Theme-specific variable mappings for loop theme */
+
+/* Applies to both body-level theme and actor sheet theme overrides */
+body.theme-loop,
+.theme-loop {
+  /* Generic theme color variables */
+  --color-system-primary-0: #ea7137; /* triangle from front and back of book */
+  --color-system-primary-1: #ed7012; /* main theme color; second sidebar color */
+  --color-system-primary-2: #f8bc8c; /* even row attribute background */
+  --color-system-primary-3: #fde5d1; /* odd row attribute background */
+  --color-system-secondary-1: #fbba1c; /* secondary theme color; third sidebar color */
+  --color-system-secondary-2: #fedd9d; /* odd row other sheet background */
+  --color-system-secondary-3: #fff1d9; /* even row other sheet background */
+  --color-system-secondary-4: #ffeed0; /* odd row table background */
+
+  /* Foundry overrides */
+  --control-active-border-color: var(--color-system-primary-0);
+  --control-button-hover-bg-color: var(--color-system-primary-0);
+
+  /* Sidebar colors - generic coloring pattern */
+  --color-sidebar-top: black;
+  --color-sidebar-mid: var(--color-system-secondary-1);
+  --color-sidebar-bot: var(--color-system-primary-1);
+
+  /* Legacy variable mappings to generic theme variables */
+  --color-footer: var(--color-system-primary-1);
+  --color-highlight: var(--color-system-primary-0);
+  --color-section-head: var(--color-system-primary-2);
+  --color-section-item: var(--color-system-primary-3);
+  --color-field: var(--color-system-secondary-3);
+  --color-iconic-item: var(--color-system-secondary-2);
+  --color-sidebar-yellow: var(--color-system-secondary-1);
+  --color-spinner: var(--color-system-primary-1);
+  --color-button-hover: var(--color-system-primary-0);
+
+  /* Semantic variables - derived from palette or Foundry vars */
+  --dialog-accent-color: var(--color-footer); /* Derived from loop palette */
+  --dice-accent-color: var(--color-footer); /* Derived from loop palette */
+  --hover-text-color: var(--color-footer); /* Derived from loop palette */
+
+  /* These reference Foundry vars that auto-switch for light/dark */
+  --select-background: transparent; /* Stable across modes */
+  --option-background: var(--background); /* Foundry auto-switches */
+
+  /* Roll dialog colors */
+  --roll-dialog-accent-color: var(--color-system-primary-0);
+  --roll-dialog-penalty-color: var(--color-system-primary-0);
+  --roll-dialog-button-text-color: black;
+
+  /* Tab foreground color (system-dependent) */
+  --tab-color: var(--color-highlight);
+
+  /* Bug/footer image - constrained to 48px in one dimension */
+  --bug-image-url: url("img/loop_bug_sm.png");
+  --bug-image-size: 48px auto;
+}

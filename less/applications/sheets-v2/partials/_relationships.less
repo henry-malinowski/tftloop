@@ -1,0 +1,40 @@
+/* Relationships */
+
+.relationships {
+  .item-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .item {
+      // Uses .info-item styles from _items.less for row-wise flow
+      // Additional relationship-specific styles can be added here if needed
+
+      .relationship-name {
+        flex: 0 0 100px;
+      }
+
+      .relationship-desc {
+        flex: 1;
+        min-width: 0;
+      }
+
+      input.relationship-name,
+      input.relationship-desc {
+        width: 100%;
+        .input-base();
+
+        font-size: inherit;
+      }
+    }
+  }
+
+  .empty-state {
+    padding: @gap-inline-standard;
+    text-align: center;
+    font-style: italic;
+    color: var(--color-black);
+
+    .alternating-rows();
+  }
+}

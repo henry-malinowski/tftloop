@@ -1,0 +1,80 @@
+/* @override less2/applications/applications.less, less2/applications/interface.less */
+
+@import url("../variables.less");
+
+/* Window App */
+.window-app .window-content {
+  background: var(--color-background);
+}
+
+/* Editor */
+.editor-edit {
+  box-shadow: 2px 2px var(--color-drop-shadow);
+}
+
+.editor {
+  height: auto;
+  min-height: 30px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ProseMirror Editor Styling */
+.editor.prosemirror {
+  border: none;
+  flex: 1;
+  min-height: 200px;
+}
+
+.editor.prosemirror .editor-content {
+  border: none;
+}
+
+/* Chat */
+.chat-header {
+  flex: 0 1 0;
+  justify-content: flex-start;
+  align-items: flex-end;
+  border-color: var(--color-highlight);
+  border-bottom: 1px solid;
+
+  .portrait {
+    max-width: 48px;
+    border: none;
+  }
+
+  h1 {
+    font-family: var(--font-avant);
+    font-size: 1.5em;
+    font-weight: 700;
+    text-align: right;
+    color: var(--color-highlight);
+    letter-spacing: 0.018em;
+  }
+}
+
+#chat-log .message {
+  border-color: var(--color-footer);
+}
+
+#chat-controls {
+  .roll-type-select {
+    background: var(--color-white);
+  }
+}
+
+.app {
+  color: var(--color-white);
+}
+
+/* Sidebar */
+.sidebar-tab {
+  .directory-header {
+    .header-search {
+      input {
+        background: var(--color-white);
+      }
+    }
+  }
+}

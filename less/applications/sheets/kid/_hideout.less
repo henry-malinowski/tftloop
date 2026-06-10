@@ -1,0 +1,33 @@
+/* Kid Hideout */
+.items-hideout {
+  flex: 1 1 auto;
+  flex-direction: row;
+  background: var(--color-field);
+  max-width: none;
+
+  .items,
+  .hideout {
+    flex: 1 1 auto;
+    flex-direction: column;
+    background: var(--color-field);
+    .box-shadow();
+
+    border-top: none; /* No top border for items/hideout */
+    padding: 0;
+  }
+
+  .hideout {
+    margin: 2px;
+    display: flex;
+
+    .hideout-text {
+      flex: 1;
+
+      textarea {
+        border: none;
+        resize: none;
+        height: 100%;
+      }
+    }
+  }
+}

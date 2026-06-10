@@ -1,0 +1,46 @@
+/* Conditions (V2)
+ *
+ * Keep this file minimal and responsible only for the output of:
+ * `templates/actors/partials-v2/conditions-list.hbs`
+ *
+ * That partial renders a `.conditions-grid` containing `formGroup` rows:
+ *   <div class="form-group condition-row">
+ *     <label>…</label>
+ *     <div class="form-fields"><input type="checkbox" …></div>
+ *   </div>
+ */
+
+.conditions-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.conditions-grid > .form-group.condition-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: @gap-inline-small;
+  min-height: calc(var(--checkbox-size, 18px) + 6px);
+
+  > label {
+    flex: 1;
+    margin: 0;
+    font-family: var(--font-avant);
+    color: var(--system-item-text-color);
+  }
+
+  > .form-fields {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    line-height: 0;
+  }
+
+  /* Broken row separator (last row in the partial) */
+  &:last-child {
+    border-top: 1px solid var(--color-highlight);
+    margin-top: @gap-inline-small;
+    padding-top: @gap-inline-small;
+  }
+}

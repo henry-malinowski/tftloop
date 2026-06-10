@@ -1,0 +1,21 @@
+{{! Content Partial for Special Characteristics }}
+<div class="header-details">
+  <div class="item-description">
+    <div class="row-label">{{localize "tftloop.description"}}</div>
+    <input
+      name="system.description"
+      type="text"
+      value="{{data.system.description}}"
+    />
+  </div>
+  <div class="info-item">
+    <div class="row-label">Number:</div>
+    <input
+      class="characteristic-number"
+      name="system.number"
+      type="number"
+      value="{{data.system.number}}"
+      data-dtype="Number"
+    />
+  </div>
+</div>

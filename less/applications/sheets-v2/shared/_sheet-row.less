@@ -1,0 +1,40 @@
+/* Sheet Row Mixin - V2 */
+
+.sheet-row() {
+  font-family: var(--font-avant);
+  font-size: 1em;
+  padding-inline-start: @gap-inline-standard;
+  align-items: center;
+  overflow-x: auto;
+
+  label {
+    max-width: fit-content;
+  }
+
+  input,
+  select,
+  textarea {
+    // Single point of modification for all input borders
+    .input-base();
+
+    margin-inline-end: @gap-inline-standard;
+  }
+
+  img {
+    border: none;
+  }
+}
+
+/* Attribute/Skill Input Box - V2 */
+.attribute-skill-input() {
+  .box-shadow();
+
+  background: var(--color-background);
+  font-family: var(--font-trixie);
+  font-size: 0.8em;
+  padding-inline-end: 0.2rem;
+  margin: 0;
+  text-align: end;
+  border: 1px solid var(--color-black);
+  max-height: 18px;
+}

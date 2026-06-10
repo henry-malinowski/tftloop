@@ -1,0 +1,11 @@
+{{! Notes Tab }}
+<div class="notes-tab-content">
+  <h3 class="notes-header">{{localize "tftloop.notes"}}</h3>
+  <div class="notes-editor">
+    <prose-mirror
+      name="system.notes.value"
+      value="{{model.notes.value}}"
+      toggled
+    >{{{notesEnriched}}}</prose-mirror>
+  </div>
+</div>

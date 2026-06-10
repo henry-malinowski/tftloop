@@ -1,2 +1,47 @@
-@import "./config.less";
-@import "./sheet.less";
+/* Variables and Theme */
+@layer variables.base {
+  @import url("./variables.less");
+}
+
+@layer variables.themes {
+  @import url("./themes/loop.less");
+  @import url("./themes/flood.less");
+  @import url("./themes/light.less");
+  @import url("./themes/dark.less");
+}
+
+/* Elements */
+@layer elements.typography {
+  @import url("./elements/typography.less");
+}
+
+@layer elements.forms {
+  @import url("./elements/forms.less");
+}
+
+@layer elements.media {
+  @import url("./elements/media.less");
+}
+
+/* Blocks */
+@layer blocks.base {
+  @import url("./blocks/basic.less");
+  @import url("./blocks/forms.less");
+  @import url("./blocks/dice.less");
+}
+
+@layer blocks.ui {
+  @import url("./blocks/ui.less");
+}
+
+/* Applications */
+@layer applications {
+  @import url("./applications/sheets/sheets.less");
+  @import url("./applications/journal.less");
+  @import url("./applications/settings.less");
+  @import url("./applications/interface.less");
+  @import url("./applications/roll-dialog.less");
+  @import url("./applications/sheets-v2/actor-sheet-v2.less");
+  @import url("./applications/sheets-v2/_npc-sheet.less");
+  @import url("./applications/item-sheet.less");
+}

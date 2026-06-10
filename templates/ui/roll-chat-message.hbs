@@ -1,0 +1,40 @@
+<span class="flavor-text">
+  <div class="chat-header flexrow">
+    <img class="portrait" width="48" height="48" src="{{actor.img}}" />
+    <h1>{{#if isReroll}}{{localize "tftloop.rerolled"}}{{else}}{{localize
+          "tftloop.tested"
+        }}{{/if}}:
+      {{localize (concat "tftloop." rolled)}}</h1>
+  </div>
+  <div
+    class="tftloop chat-card {{actor.systemTheme}}"
+    data-actor-id="{{actor.id}}"
+  >
+    <div class="dice-roll" data-action="expandRoll">
+      <div class="dice-result">
+        <div class="dice-formula">{{formula}}</div>
+        {{{tooltip}}}
+        <h4 class="dice-total">{{#if (and isReroll (gte rollValue 1))}}+
+          {{/if}}{{successText}}</h4>
+      </div>
+    </div>
+    <div class="reroll-info" data-owner-id="{{actor.id}}">
+      <button
+        class="reroll"
+        data-owner-id="{{actor.id}}"
+        data-tested="{{rolled}}"
+        data-dicepool="{{reRollDiceFormula}}"
+        type="button"
+      >
+        {{localize "tftloop.push"}}
+      </button>
+    </div>
+  </div>
+  <div class="bug">
+    <img
+      src="systems/tftloop/img/full_transparent.png"
+      width="48"
+      height="48"
+    />
+  </div>
+</span>

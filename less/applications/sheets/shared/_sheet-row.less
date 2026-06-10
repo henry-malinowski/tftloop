@@ -1,0 +1,29 @@
+/* Base Sheet Row - Common styling for all row-like elements */
+.sheet-row {
+  font-family: var(--font-avant);
+  font-size: 1em;
+  padding-left: 3px;
+
+  /* Borders removed - managed by flex containers or specific contexts */
+  align-items: center;
+  overflow-x: auto;
+
+  label {
+    max-width: fit-content;
+  }
+
+  input {
+    margin-right: 3px;
+    background: var(--color-transparent);
+    border: none;
+  }
+
+  img {
+    border: none;
+  }
+
+  select {
+    background: var(--color-transparent);
+    border: none;
+  }
+}

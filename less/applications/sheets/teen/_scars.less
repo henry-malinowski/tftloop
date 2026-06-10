@@ -1,0 +1,53 @@
+/* Teen Scars */
+.scars {
+  margin-bottom: 4px;
+  flex-basis: 225px;
+  background: var(--color-field);
+
+  .section-header {
+    flex: 0 0 auto;
+    height: 30px;
+
+    .col-head {
+      font-family: var(--font-avant);
+      font-size: 1em;
+      text-align: right;
+      padding-right: 20px;
+      font-weight: 700;
+      display: none; /* Hidden by default */
+    }
+  }
+
+  /* Show col-head only when info-list has items */
+  &:has(.info-list > li) .section-header .col-head {
+    display: block;
+  }
+
+  .info-item {
+    /* Match items/relationships sizing - more space, less tight */
+    font-size: 1em;
+    line-height: 34px;
+    place-content: space-between space-between;
+
+    .scar-name {
+      flex: 0 0 80px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    img {
+      border: none;
+      vertical-align: middle;
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    input {
+      background: var(--color-transparent);
+      border: none;
+    }
+  }
+}

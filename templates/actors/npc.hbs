@@ -1,0 +1,115 @@
+{{! NPC Sheet - Vertical Icon Tabs Layout }}
+<div class="npc-sheet">
+  {{! Decorative Sidebar }}
+  <div class="npc-sidebar"></div>
+
+  {{! Main Content Area }}
+  <div class="npc-info">
+    {{! Vertical Stack: Image, Name }}
+    <div class="header-section">
+      {{! NPC Image (top, centered) }}
+      <div class="npc-image">
+        <button
+          type="button"
+          class="image-edit icon fa-solid fa-pen-to-square"
+          data-action="editImage"
+          title="{{localize 'tftloop.editImage'}}"
+        ></button>
+        <img
+          class="profile"
+          src="{{actor.img}}"
+          data-action="viewImage"
+          title="{{actor.name}}"
+        />
+      </div>
+
+      {{! Name with styled header }}
+      <h1>
+        <span class="type-label">{{localize "TYPES.Actor.npc"}}</span>
+        <i class="fa-solid fa-pipe"></i>
+        <input
+          name="name"
+          type="text"
+          value="{{actor.name}}"
+          placeholder="{{localize 'tftloop.name'}}"
+          class="npc-name-input"
+        />
+      </h1>
+    </div>
+
+    {{! Tab Content Area }}
+    <div class="sheet-body">
+      {{! Main Tab: Characteristics Header + List }}
+      <div
+        class="tab {{tabs.main.cssClass}}"
+        data-group="primary"
+        data-tab="main"
+      >
+        {{! Special Characteristics Header (part of main tab) }}
+        <div class="section-header">
+          <h4 class="section-title">{{localize
+              "TYPES.Item.specialCharacteristic"
+            }}</h4>
+          <button
+            type="button"
+            class="item-create"
+            data-action="createItem"
+            data-type="specialCharacteristic"
+          >
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+
+        {{#if specialCharacteristics}}
+          <ol class="info-list item-list">
+            {{#each specialCharacteristics}}
+              <li
+                class="info-item item"
+                data-item-id="{{this._id}}"
+                draggable="true"
+              >
+                <div class="characteristic-display">
+                  <span class="characteristic-name">{{this.name}}</span>
+                  <span
+                    class="characteristic-number"
+                  >{{this.system.number}}</span>
+                </div>
+                <div class="item-control">
+                  <a class="item-open" data-action="openItem">
+                    <i class="fas fa-edit"></i>
+                  </a>
+                  <a
+                    class="item-delete"
+                    data-action="deleteItem"
+                    data-type="specialCharacteristic"
+                    title="{{localize 'tftloop.delete'}}"
+                  >
+                    <i class="fas fa-minus"></i>
+                  </a>
+                </div>
+              </li>
+            {{/each}}
+          </ol>
+        {{else}}
+          <p class="empty-list">{{localize "tftloop.noCharacteristics"}}</p>
+        {{/if}}
+      </div>
+
+      {{! Notes Tab }}
+      <div
+        class="tab {{tabs.notes.cssClass}}"
+        data-group="primary"
+        data-tab="notes"
+      >
+        <div class="notes-content">
+          <label>{{localize "tftloop.notes"}}:</label>
+          <prose-mirror
+            name="system.notes.value"
+            value="{{data.system.notes.value}}"
+            toggled
+          >{{{notesEnriched}}}</prose-mirror>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

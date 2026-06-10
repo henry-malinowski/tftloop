@@ -1,0 +1,27 @@
+/* Alternating Background Mixins - Common patterns for alternating row colors */
+
+/* Simple alternating rows - 2n and 2n+1 pattern */
+.alternating-rows() {
+  &:nth-child(2n) {
+    background: var(--color-iconic-item);
+  }
+
+  &:nth-child(2n + 1) {
+    background: var(--color-field);
+  }
+}
+
+/* Alternating rows with special last-child styling (like conditions) */
+.alternating-rows-with-last(@last-bg: var(--color-section-head)) {
+  &:last-child {
+    background: @last-bg;
+  }
+
+  &:not(:last-child):nth-child(2n) {
+    background: var(--color-iconic-item);
+  }
+
+  &:not(:last-child):nth-child(2n + 1) {
+    background: var(--color-field);
+  }
+}

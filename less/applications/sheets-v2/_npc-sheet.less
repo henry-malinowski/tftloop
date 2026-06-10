@@ -1,0 +1,323 @@
+/* NPC Sheet - Vertical Icon Tabs Layout */
+
+@import url("../../variables.less");
+@import url("../../elements/_box-shadow.less");
+@import url("shared/_variables.less");
+@import url("shared/_mixins.less");
+@import url("shared/_sidebar-tabs.less");
+
+/* ============================================
+   VARIABLES (scoped to NPC sheet)
+   ============================================ */
+@sidebar-width: 40px;
+@sidebar-gradient-top: 10px;
+@sidebar-gradient-bot: 90px;
+@image-size: 144px;
+@tab-width: 44px;
+@tab-height-item: 40px;
+
+/* ============================================
+   VERTICAL TABS - Window Level
+   ============================================ */
+.application.tftloop.actor.npc {
+  &.vertical-tabs {
+    overflow: visible;
+  }
+
+  .sidebar-tabs-vertical();
+}
+
+/* ============================================
+   FORM & MAIN LAYOUT
+   ============================================ */
+form[id^="tftloopNpcSheet"] {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+
+  .npc-sheet {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    min-height: 0;
+
+    /* ============================================
+		   DECORATIVE SIDEBAR
+		   ============================================ */
+    .npc-sidebar {
+      flex: 0 0 @sidebar-width;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      background: linear-gradient(
+        to bottom,
+        var(--color-sidebar-top) 0,
+        var(--color-sidebar-top) @sidebar-gradient-top,
+        var(--color-sidebar-mid) @sidebar-gradient-top,
+        var(--color-sidebar-mid) @sidebar-gradient-bot,
+        var(--color-sidebar-bot) @sidebar-gradient-bot,
+        var(--color-sidebar-bot) 100%
+      );
+
+      /* Grunge texture overlay */
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("img/grunge.png");
+        z-index: 10;
+        pointer-events: none;
+      }
+    }
+
+    /* ============================================
+		   MAIN CONTENT AREA
+		   ============================================ */
+    .npc-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: @gap-large;
+      background: var(--tftloop-item-background);
+      color: var(--system-item-text-color);
+      min-height: 0;
+      overflow: hidden;
+
+      /* ============================================
+			   HEADER SECTION - Vertical Stack
+			   ============================================ */
+      .header-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: @gap-large;
+        padding-block-end: @gap-large;
+
+        /* NPC Image (top, centered) */
+        .npc-image {
+          flex: 0 0 @image-size;
+          width: @image-size;
+          height: @image-size;
+          border: 1px solid var(--color-highlight);
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: var(--color-field);
+
+          .image-edit {
+            .edit-button();
+          }
+
+          img.profile {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            border: none;
+          }
+        }
+
+        /* Name header with pipe separator */
+        h1 {
+          width: 100%;
+          color: var(--color-highlight);
+          font-size: var(--font-size-20, 1.25em);
+          font-weight: 300;
+          border-block-end: 2px solid var(--color-highlight);
+          margin: 0;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.25em;
+
+          .type-label {
+            white-space: nowrap;
+          }
+
+          .fa-pipe {
+            color: var(--color-highlight);
+          }
+
+          .npc-name-input {
+            flex: 1;
+            border: 1px solid transparent;
+            background: var(--color-transparent);
+            padding: @gap-inline-small @gap-inline-standard;
+            min-width: 0;
+            font-family: var(--font-avant);
+            font-size: inherit;
+            color: var(--system-item-text-color);
+
+            &:focus {
+              border: 1px solid var(--color-highlight);
+              outline: none;
+            }
+          }
+        }
+      }
+
+      /* ============================================
+			   TAB CONTENT
+			   ============================================ */
+      .sheet-body {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        overflow: hidden;
+
+        .tab {
+          display: none;
+          flex-direction: column;
+          flex: 1;
+          min-height: 0;
+          overflow: hidden auto;
+
+          &.active {
+            display: flex;
+          }
+        }
+
+        /* Section header for characteristics (within main tab) */
+        .section-header {
+          width: 100%;
+          .section-header();
+
+          margin-block: 0;
+          border-block-start: none;
+          border-block-end: none;
+
+          .section-title {
+            margin: 0;
+            font-size: 1em;
+            font-family: var(--font-avant-bold);
+          }
+
+          .item-create {
+            background: transparent;
+            border: none;
+            color: var(--color-white);
+            cursor: pointer;
+            padding: @gap-inline-small @gap-inline-standard;
+            margin-inline-start: @gap-inline-standard;
+
+            &:hover {
+              color: var(--color-highlight);
+            }
+          }
+        }
+
+        /* Characteristics list */
+        .info-list {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          background: var(--color-transparent);
+
+          .item {
+            .row-base();
+
+            padding-inline: @gap-inline-standard;
+            background: var(--color-transparent);
+            line-height: 34px;
+            place-content: space-between;
+
+            &:first-child {
+              border-top: none;
+            }
+
+            .characteristic-display {
+              flex: 1;
+              font-family: var(--font-avant-bold);
+              color: var(--system-item-text-color);
+              display: flex;
+              align-items: baseline;
+              gap: @gap-inline-large;
+
+              .characteristic-name {
+                text-transform: uppercase;
+              }
+
+              .characteristic-number {
+                font-size: 1.5em;
+                font-weight: bold;
+              }
+            }
+
+            .item-control {
+              flex: 0 0 60px;
+              text-align: center;
+              display: flex;
+              gap: @gap-inline-small;
+              justify-content: center;
+
+              a {
+                cursor: pointer;
+                color: var(--system-item-text-color);
+
+                &:hover {
+                  color: var(--color-highlight);
+                }
+              }
+            }
+          }
+        }
+
+        /* Empty state */
+        .empty-list {
+          padding: @gap-large;
+          text-align: center;
+          color: var(--color-text-secondary, #666);
+          font-style: italic;
+        }
+
+        /* Notes tab */
+        .notes-content {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          min-height: 0;
+
+          label {
+            font-family: var(--font-avant-bold);
+            color: var(--system-item-bold-text-color);
+            margin-block-end: @gap-large;
+            flex: 0 0 auto;
+          }
+
+          .editor.prosemirror {
+            flex: 1;
+            min-height: 200px;
+            border: 1px solid var(--color-highlight);
+            border-radius: 4px;
+            padding: @gap-large;
+
+            .editor-content {
+              font-family: var(--font-avant);
+              font-size: 1em;
+              color: var(--system-item-text-color);
+            }
+          }
+        }
+      }
+
+      /* Form element styling */
+      label {
+        font-family: var(--font-avant-bold);
+        color: var(--system-item-bold-text-color);
+        white-space: nowrap;
+      }
+
+      input[type="text"],
+      input[type="number"] {
+        .input-base();
+      }
+
+      input:focus {
+        outline: 2px solid var(--color-highlight);
+        box-shadow: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,179 @@
+@import url("../variables.less");
+
+/* Roll Dialog Application */
+
+/* Override Foundry's application background for roll dialog (light mode only) */
+
+body.theme-light .application.tftloop.roll-dialog {
+  background: url("img/chat_background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* The form element itself has the classes "application" and "roll-dialog" */
+form.application.roll-dialog,
+form.roll-dialog {
+  .form-group {
+    position: relative; /* Ensure content is above background */
+    z-index: 1;
+
+    h2 {
+      font-size: var(--font-size-20);
+      color: var(--roll-dialog-accent-color);
+    }
+
+    /* Utility class: adds a divider with spacing above and below */
+    .divider-below {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--color-drop-shadow);
+    }
+
+    .pool-count {
+      text-align: center;
+      font-family: var(--font-trixie);
+      font-weight: 400;
+      font-size: var(--font-size-20);
+      padding-bottom: 3px;
+    }
+
+    .pool-details {
+      margin-top: 0;
+      padding-left: 5px;
+      font-family: var(--font-trixie);
+      font-size: var(--font-size-18);
+      font-weight: 300;
+
+      .pool-detail {
+        margin-bottom: 2px;
+
+        &.penalty {
+          color: var(--roll-dialog-penalty-color);
+        }
+      }
+    }
+
+    .pool-options {
+      padding-left: 5px;
+      font-family: var(--font-trixie);
+      font-size: var(--font-size-16);
+      font-weight: 300;
+
+      .pool-item-select {
+        margin-bottom: 5px;
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
+
+        label {
+          flex: 0 0 auto;
+          margin-bottom: 0;
+        }
+
+        select {
+          font-size: var(--font-size-16);
+          font-weight: 400;
+          color: var(--color-form-label);
+          border: none;
+          border-bottom: 1px solid var(--color-drop-shadow);
+          border-radius: 0;
+          background: var(--color-transparent);
+          flex: 1;
+          padding: 5px 0;
+          vertical-align: baseline;
+
+          &:focus {
+            outline: none;
+            border-radius: 4px;
+            box-shadow: 0 0 0 1px var(--roll-dialog-accent-color);
+          }
+
+          option {
+            background: var(--option-background);
+          }
+        }
+      }
+
+      .bonus-dice {
+        margin-bottom: 5px;
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
+
+        label {
+          flex: 0 0 auto;
+        }
+
+        input {
+          border: none;
+          border-bottom: 1px solid var(--color-drop-shadow);
+          border-radius: 0;
+          background: var(--color-transparent);
+          flex: 1;
+          font-size: var(--font-size-16);
+          padding: 5px 0;
+          vertical-align: baseline;
+
+          &:focus {
+            box-shadow: none;
+            outline: none;
+            border-bottom: 1px solid var(--roll-dialog-accent-color);
+          }
+        }
+      }
+    }
+
+    .sheet-footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-top: 10px;
+      padding-top: 5px;
+
+      button {
+        font-family: var(--font-avant-bold);
+        padding: 5px 15px;
+        border: none;
+        cursor: pointer;
+        font-size: var(--font-size-16);
+        background-color: var(--roll-dialog-accent-color);
+        color: var(--roll-dialog-button-text-color);
+
+        &:hover {
+          opacity: 0.9;
+        }
+
+        &:focus {
+          box-shadow: none;
+          outline: 2px solid var(--roll-dialog-accent-color);
+          outline-offset: 2px;
+        }
+      }
+    }
+
+    .bug {
+      text-align: center;
+      margin-top: 5px;
+      opacity: 0.5;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none; /* Override background-image from media.less */
+
+      img {
+        height: 48px;
+        width: auto;
+        image-rendering: auto; /* Use browser's high-quality scaling algorithm */
+        object-fit: contain;
+      }
+
+      /* Invert and lighten colors in dark mode */
+      body.theme-dark & {
+        filter: invert(1) brightness(2);
+      }
+    }
+  }
+}

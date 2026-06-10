@@ -1,0 +1,132 @@
+/* Sidebar - scoped to .actor-sheet.v2 */
+
+.name-box {
+  h1.charname {
+    background: var(--color-field);
+    font-family: var(--font-avant);
+    font-size: 1.25em;
+    font-weight: 700;
+    .box-shadow();
+
+    margin: 2px;
+
+    input {
+      background: var(--color-transparent);
+      border: none;
+      width: 100%;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+
+      &:focus {
+        outline: 2px solid var(--color-highlight);
+        box-shadow: none;
+      }
+    }
+  }
+
+  .portrait {
+    background: var(--color-field);
+    .box-shadow();
+
+    margin: 2px;
+    .flex-center();
+
+    overflow: hidden;
+    height: @portrait-height;
+    position: relative;
+
+    .portrait-edit {
+      .edit-button();
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      cursor: pointer;
+    }
+  }
+
+  .type-selector {
+    background: var(--color-field);
+    .box-shadow();
+
+    margin: 2px;
+    padding-inline: @gap-inline-small;
+    display: flex;
+    align-items: center;
+    gap: @gap-inline-large;
+
+    label {
+      font-weight: 500;
+      margin: 0;
+      flex-shrink: 0;
+    }
+
+    select {
+      flex: 1;
+      background: var(--color-transparent);
+      border: none;
+      padding: 2px;
+      font-family: inherit;
+      cursor: pointer;
+    }
+  }
+
+  .luck-points {
+    background: var(--color-field);
+    .box-shadow();
+
+    margin: 2px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    .luck-display {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      label {
+        font-weight: 500;
+        margin: 0;
+        flex-shrink: 0;
+      }
+
+      .luck-boxes {
+        display: flex;
+        gap: 2px;
+
+        &.use-luck {
+          cursor: pointer;
+        }
+
+        img {
+          width: 16px;
+          height: 16px;
+          border: none;
+        }
+      }
+    }
+
+    .luck-actions {
+      display: flex;
+      gap: 2px;
+
+      button {
+        padding: 2px 4px;
+        background: transparent;
+        border: none;
+        color: var(--color-black);
+        cursor: pointer;
+
+        &:hover {
+          background: var(--color-section-item);
+        }
+      }
+    }
+  }
+}

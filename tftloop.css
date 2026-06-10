@@ -1,1056 +1,3667 @@
-/*****************************
-/           Colors
-*****************************/
-/******************************
-/           Fonts
-******************************/
-@font-face {
-  font-family: Avant;
-  src: url(fonts/AvantGuard.ttf);
-}
-@font-face {
-  font-family: AvantBold;
-  src: url(fonts/AvantBold.otf);
-}
-@font-face {
-  font-family: SabonItalic;
-  src: url(fonts/Sabon_Italic.ttf);
-}
-@font-face {
-  font-family: SabonRoman;
-  src: url(fonts/Sabon_Roman.ttf);
-}
-@font-face {
-  font-family: Trixie;
-  src: url(fonts/Trixie-Text.otf);
-}
-/******************************
-/       Foundry overrides
-******************************/
-.flex-none {
-  flex: none;
-}
-.justify-start {
-  justify-items: flex-start;
-}
-.dialog-content {
-  font-family: Avant, sans-serif;
-}
-.dialog-content .option,
-.dialog-content .optgroup {
-  font-family: Avant, sans-serif;
-}
-#client-settings nav.tabs {
-  line-height: 32px;
-  font-size: 16px;
-  border-bottom: 1px solid #000;
-}
-.editor-edit {
-  box-shadow: 2px 2px #7f7f7f;
-}
-a.content-link {
-  background: none;
-  padding: none;
-  border: none;
-  white-space: normal;
-  word-break: normal;
-}
-#context-menu li.context-item:hover {
-  color: #f38704;
-  text-shadow: none;
-}
-button:hover {
-  box-shadow: 2px 2px #7f7f7f;
-}
-.window-app .window-content {
-  background-color: white;
-  background: white;
-}
-a:hover {
-  box-shadow: none;
-  text-shadow: none;
-  color: #f38704;
-}
-.fa-edit:hover {
-  text-shadow: none;
-}
-textarea {
-  font-family: Avant, sans-serif;
-  height: 100%;
-}
-textarea:focus {
-  outline: 2px solid #f38704;
-  box-shadow: 0 0 5px #ee7113;
-}
-h1,
-h2 {
-  font-family: AvantBold, sans-serif;
-  font-weight: 700;
-  border-color: #f38704;
-}
-h3,
-h4,
-h5,
-h6 {
-  font-family: Avant, sans-serif;
-}
-blockquote {
-  font-family: Trixie, 'Courier New', Courier, monospace;
-  background: url(img/chat_background.jpg);
-  max-width: 50%;
-  padding: 20px;
-  border: none;
-  break-inside: avoid;
-  font-style: normal;
-  float: right;
-}
-blockquote hr {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-}
-section.secret {
-  font-family: SabonRoman;
-  font-size: 1.1em;
-}
-#chat-form textarea {
-  background: url(img/chat_background.jpg);
-}
-#chat-controls .roll-type-select {
-  background: white;
-}
-#chat-log .message {
-  border-color: #ee7113;
-}
-.chat-message {
-  background: url(img/chat_background.jpg);
-  font-family: Trixie, 'Courier New', Courier, monospace;
-}
-.app {
-  color: white;
-}
-.sheet-tabs {
-  padding: 5px;
-  background-color: transparent;
-  margin-bottom: 0px;
-  margin-top: 5px;
-  max-height: 32px;
-  line-height: 16px;
-}
-.sheet-tabs .item:hover {
-  cursor: pointer;
-}
-.sheet-tabs[aria-role="Form Tab Navigation"] {
-  background: white;
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 1px;
-  margin: 5px;
-}
-.sheet.journal-entry .journal-entry-content {
-  background: unset;
-  color: black;
-  background: white;
-  padding: 10px;
-}
-.sheet.journal-entry .pages-list .directory-item {
-  border-bottom: #ee7113 1px solid;
-}
-.sheet.journal-entry .journal-sidebar {
-  background: unset;
-  color: black;
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 5px;
-  margin: 5px;
-}
-.sheet.journal-entry .pages-list .page-heading .page-title:hover {
-  cursor: pointer;
-  color: #f38704;
-  text-shadow: none;
-}
-.tabs .item.active {
-  text-shadow: none;
-  color: #f38704;
-  border-bottom: 2px solid #f38704;
-  margin-bottom: -4px;
-}
-.sidebar-tab .directory-header .header-search input {
-  background: white;
-}
-select:focus {
-  box-shadow: none;
-  border: 1px solid #f38704;
-}
-.journal-entry-content .journal-entry-pages {
-  padding-left: 3px;
-}
-.journal-entry-content .journal-entry-pages img {
-  border: none;
-}
-.journal-entry-content .journal-entry-pages table {
-  background: #fff1da;
-  border: none;
-  font-family: AvantBold;
-  margin: 30px;
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-}
-.journal-entry-content .journal-entry-pages table th {
-  padding-left: 3px;
-  background: black;
-  color: white;
-  text-align: left;
-  font-family: AvantBold;
-}
-.journal-entry-content .journal-entry-pages table tr:nth-child(odd) {
-  background: #fedd9e;
-}
-.journal-entry-content .journal-entry-pages .chapter-header {
-  font-family: AvantBold;
-  font-weight: 900;
-  color: #ee7113;
-  border-bottom: none;
-  font-style: bold;
-  padding-left: 5px;
-}
-.journal-entry-content .journal-entry-pages .lore-text {
-  font-family: SabonItalic;
-  padding-left: 5px;
-  text-indent: 0px;
-}
-.journal-entry-content .journal-entry-pages .us-text {
-  color: #f38704;
-  font-weight: 600;
-}
-.journal-entry-content .journal-entry-pages .example-text {
-  font-size: 0.9em;
-  padding-left: 8px;
-  border-left: dotted 2px #f38704;
-  max-width: 90%;
-  background: #fff1da;
-  break-inside: avoid;
-}
-.journal-entry-content .journal-entry-pages .example-text p {
-  text-indent: 0px;
-}
-.journal-entry-content .journal-entry-pages .major-heading {
-  display: grid;
-  grid-template-columns: 140px auto;
-  justify-items: stretch;
-}
-.journal-entry-content .journal-entry-pages .chap-number {
-  font-family: AvantBold;
-  color: white;
-  background-image: url('img/grunge.png');
-  background-color: #fbba1c;
-  object-fit: cover;
-}
-.journal-entry-content .journal-entry-pages .grunge {
-  position: absolute;
-  width: 140px;
-  z-index: 7;
-}
-.journal-entry-content .journal-entry-pages .grunge img {
-  border: none;
-  object-fit: cover;
-}
-.journal-entry-content .journal-entry-pages .two-col {
-  column-count: 2;
-  column-gap: 3em;
-  margin-top: 10px;
-  margin-right: 10px;
-  text-align: justify;
-}
-.journal-entry-content .journal-entry-pages h5 {
-  font-size: 1em;
-  font-family: AvantBold, Arial, Helvetica, sans-serif;
-  font-weight: 600;
-  color: #f38704;
-  margin-block-start: 1em;
-  margin-block-end: 0.5em;
-  font-style: italic;
-}
-.journal-entry-content .journal-entry-pages h1 {
-  font-size: 1.5em;
-  border-bottom: none;
-  border-left: 15px solid #f38704;
-}
-.journal-entry-content .journal-entry-pages h2 {
-  font-size: 1.2em;
-  border: none;
-  text-align: left;
-}
-.journal-entry-content .journal-entry-pages h3 {
-  font-family: AvantBold;
-  text-align: left;
-}
-.journal-entry-content .journal-entry-pages p {
-  text-indent: none;
-}
-.black-bar {
-  background: black;
-  max-height: 15px;
-}
-.dark-bar {
-  background-color: #ee7113;
-  font-size: 45px;
-  color: white;
-  text-align: right;
-  padding-right: 10px;
-  max-height: 120px;
-}
-.item-bonus:focus {
-  outline: 2px solid #f38704;
-  box-shadow: 0 0 5px #ee7113 !important;
-}
-.dice-result .dice-formula,
-.dice-result .dice-total {
-  background: #ffffff00;
-  border: none;
-  cursor: pointer;
-}
-.chat-header {
-  flex: 0 1 0;
-  margin-left: -7px;
-  margin-right: -7px;
-  padding-left: 7px;
-  padding-right: 7px;
-  justify-content: flex-start;
-  align-items: flex-end;
-  border-color: #f38704;
-  border-bottom: 1px solid;
-}
-.chat-header .portrait {
-  max-width: 48px;
-  border: none;
-  padding: 0 5px 0 0;
-}
-.chat-header h1 {
-  font-family: Avant, sans-serif;
-  font-size: 1.5em;
-  font-weight: 700;
-  text-align: right;
-  align-self: flex-end;
-  border: none;
-  color: #f38704;
-}
-.bug {
-  background: url(img/loop_bug_sm.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  text-align: center;
-}
-.bug img {
-  border: none;
-}
-.reroll-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 3px;
-  text-align: center;
-}
-.reroll-info button {
-  background-color: #f38704;
-  border: none;
-  text-align: center;
-  cursor: pointer;
-  max-width: 100px;
-  color: black;
-}
-.reroll-info button:focus {
-  box-shadow: none;
-}
-.dice-roll {
-  margin-top: 3px;
-}
-.imgCheck {
-  cursor: pointer;
-  max-width: fit-content;
-}
-.use-luck {
-  cursor: pointer;
-  align-items: center;
-}
-.use-luck div {
-  margin-left: 5px;
-}
-.add-to-pool {
-  cursor: pointer;
-}
-.add-to-pool:hover {
-  font-weight: 700;
-  color: #ee7113;
-  text-shadow: 1px 1px #7f7f7f;
-}
-.reset-luck {
-  cursor: pointer;
-  text-align: right;
-  max-width: 50px;
-  padding-right: 3px;
-}
-.reset-luck:hover {
-  font-weight: 700;
-}
-.window-content .dialog-content .bug {
-  background: url(img/loop_bug_sm.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  text-align: center;
-}
-.window-content .dialog-content .bug img {
-  border: none;
-}
-.window-content .dialog-content .pool-count {
-  text-align: center;
-  font-family: Trixie, 'Courier New', Courier, monospace;
-  font-weight: 400;
-  font-size: 1.5em;
-  border-bottom: 1px solid #7f7f7f;
-}
-.window-content .dialog-content .pool-details {
-  padding-left: 20px;
-  margin-top: 3px;
-  margin-bottom: 5px;
-}
-.window-content .dialog-content .pool-details .pool-detail {
-  font-family: Trixie, 'Courier New', Courier, monospace;
-  font-size: 1.2em;
-  font-weight: 300;
-  padding-left: 80px;
-}
-.window-content .dialog-content .pool-details .penalty {
-  color: #f38704;
-}
-.window-content .dialog-content .pool-details .divider {
-  margin-top: 2px;
-}
-.window-content .dialog-content .pool-details .pool-item-select {
-  font-family: Trixie, 'Courier New', Courier, monospace;
-  font-size: 1.2em;
-  font-weight: 300;
-}
-.window-content .dialog-content .pool-details .pool-item-select select {
-  font-family: Trixie, 'Courier New', Courier, monospace;
-  font-size: 0.8em;
-  font-weight: 400;
-  border: none;
-  border-bottom: 1px solid #7f7f7f;
-  border-radius: 0;
-  background: #ffffff00;
-}
-.window-content .dialog-content .pool-details .bonus-dice {
-  font-family: Trixie, 'Courier New', Courier, monospace;
-}
-.window-content .dialog-content .pool-details .bonus-dice label {
-  flex: 0 0 120px;
-  align-self: flex-end;
-  font-size: 1.2em;
-}
-.window-content .dialog-content .pool-details .bonus-dice input {
-  margin-left: 3px;
-  border: none;
-  border-bottom: 1px solid #7f7f7f;
-  border-radius: 0;
-  background: #ffffff00;
-  width: 200px;
-}
-.window-content .dialog-content .pool-details .bonus-dice input:focus {
-  box-shadow: none;
-  border-bottom: 1px solid #f38704;
-}
-.section-header {
-  background-color: black;
-  padding: 5px;
-  padding-top: 0px;
-  margin: 0px;
-  font-family: Avant, sans-serif;
-  color: white;
-  font-weight: 700;
-  font-size: 1.2em;
-  font-style: normal;
-  justify-content: space-between;
-  max-height: 36px;
-}
-.section-header .col-head {
-  font-size: 0.75em;
-  text-align: right;
-  padding-right: 45px;
-  font-weight: 200;
-}
-.section-header .item-control {
-  text-align: right;
-  max-width: fit-content;
-}
-.editor {
-  height: auto;
-  min-height: 30px;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-}
-.editor.prosemirror {
-  border: none;
-  flex: 1;
-  min-height: 200px;
-}
-.editor.prosemirror .editor-content {
-  border: none;
-}
-.kid-notes {
-  background: #fff1da;
-}
-#notes {
-  border: none;
-  resize: none;
-  height: 85%;
-  overflow-y: auto;
-}
-.notes-group {
-  height: fit-content;
-  background: #fff1da;
-  margin-left: 5px;
-}
-.info-group {
-  border-bottom: 1px solid black;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-  border-radius: 0px;
-  margin: 2px;
-  margin-left: 5px;
-  padding: 0px;
-  box-shadow: 2px 2px #7f7f7f;
-}
-.main #hideout {
-  border: none;
-  resize: none;
-  height: 85%;
-}
-.main .items {
-  min-height: 0px;
-  background: #fff1da;
-}
-.main .hideout {
-  flex: 1 1 auto;
-  flex-direction: column;
-  background: #fff1da;
-  max-width: 250px;
-}
-.main .hideout .hideout-text {
-  height: 85%;
-}
-.main .scars {
-  border-bottom: 1px solid black;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-  border-radius: 0px;
-  margin: 2px;
-  padding: 0px;
-  box-shadow: 2px 2px #7f7f7f;
-  margin-bottom: 4px;
-  margin-top: 4px;
-  flex-basis: 225px;
-  background: #fff1da;
-}
-.main .scars .section-header {
-  max-height: 36px;
-}
-.main .scars .info-item {
-  font-size: 0.85em;
-  line-height: 25px;
-  padding-left: 2px;
-  align-content: space-between;
-  justify-content: space-between;
-  padding-left: 3px;
-}
-.main .scars .info-item .even {
-  background: #fedd9e;
-}
-.main .scars .info-item p {
-  margin: 0px;
-}
-.main .scars .info-item img {
-  border: none;
-  vertical-align: middle;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.main .scars .info-item input {
-  background: #ffffff00;
-  border: none;
-}
-.main .conditions {
-  border-bottom: 1px solid black;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-  border-radius: 0px;
-  margin: 2px;
-  padding: 0px;
-  box-shadow: 2px 2px #7f7f7f;
-  margin-bottom: 4px;
-  margin-left: 5px;
-  max-height: 165px;
-}
-.main .conditions .common-item-style {
-  line-height: 25px;
-  padding-left: 3px;
-}
-.main .conditions .common-item-style p {
-  margin: 0px;
-}
-.main .conditions .common-item-style img {
-  border: none;
-  vertical-align: middle;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.main .conditions .common-item-style input {
-  background: #ffffff00;
-  border: none;
-}
-.main .conditions .common-item-style label {
-  padding-right: 3px;
-}
-.main .conditions .info-item {
-  line-height: 25px;
-  padding-left: 3px;
-}
-.main .conditions .info-item p {
-  margin: 0px;
-}
-.main .conditions .info-item img {
-  border: none;
-  vertical-align: middle;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.main .conditions .info-item input {
-  background: #ffffff00;
-  border: none;
-}
-.main .conditions .info-item label {
-  padding-right: 3px;
-}
-.main .conditions .info-item .even {
-  background: #fedd9e;
-}
-.main .conditions .special-item {
-  line-height: 25px;
-  padding-left: 3px;
-  border-bottom: 1px solid black;
-}
-.main .conditions .special-item p {
-  margin: 0px;
-}
-.main .conditions .special-item img {
-  border: none;
-  vertical-align: middle;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.main .conditions .special-item input {
-  background: #ffffff00;
-  border: none;
-}
-.main .conditions .special-item label {
-  padding-right: 3px;
-}
-.main .conditions .section-header {
-  line-height: 25px;
-}
-.main .info-list {
-  margin: 0px;
-  padding-left: 0px;
-}
-.main .info-list .item {
-  border-right: none;
-}
-.main .info-list .iconic-item {
-  list-style: none;
-  font-family: Avant, sans-serif;
-  font-size: 1em;
-  background: #fedd9e;
-  border-top: 1px solid black;
-  line-height: 34px;
-  justify-content: space-between;
-  padding-left: 3px;
-}
-.main .info-list .iconic-item .item-name {
-  flex: 0 0 60%;
-  font-size: 0.8em;
-}
-.main .info-list .iconic-item .item-bonus {
-  flex: 0 0 30px;
-}
-.main .info-list .iconic-item .item-plus {
-  flex: 0 0 10px;
-}
-.main .info-list .iconic-item .item-control {
-  flex: 0 0 30px;
-  text-align: center;
-}
-.main .info-list .iconic-item input {
-  margin-top: 3px;
-  margin-right: 3px;
-  background: #ffffff00;
-  border: none;
-  font-size: 1.2em;
-}
-.main .info-list .iconic-item input[type="text"]:focus {
-  box-shadow: 0 0 5px #f38704;
-}
-.main .friction {
-  list-style: none;
-  font-family: Avant, sans-serif;
-  font-size: 1em;
-  background: #fedd9e;
-  border-right: 1px solid black;
-  border-top: 1px solid black;
-  line-height: 34px;
-  justify-content: space-between;
-  align-content: space-between;
-}
-.main .friction label {
-  max-width: fit-content;
-}
-.main .friction input {
-  margin-top: 3px;
-  margin-right: 3px;
-  background: #ffffff00;
-  border: none;
-}
-.main .friction input[type="text"]:focus {
-  box-shadow: 0 0 5px #f38704;
-}
-.main .info-item.short {
-  flex: 0 0 180px;
-}
-.main .info-item.even {
-  background: #fedd9e;
-}
-.main .info-item.odd {
-  background: #fff1da;
-}
-.main .info-item {
-  list-style: none;
-  font-family: Avant, sans-serif;
-  font-size: 1em;
-  background: #fff1da;
-  border-right: 1px solid black;
-  border-top: 1px solid black;
-  padding-left: 3px;
-  overflow-x: auto;
-  align-items: center;
-  line-height: 34px;
-  justify-content: space-between;
-  align-content: space-between;
-}
-.main .info-item .item-name {
-  flex: 0 0 60%;
-}
-.main .info-item .item-bonus {
-  flex: 0 0 30px;
-}
-.main .info-item .item-plus {
-  flex: 0 0 10px;
-}
-.main .info-item .scar-name {
-  flex: 0 0 80px;
-}
-.main .info-item .relationship-name {
-  flex: 0 0 100px;
-}
-.main .info-item .item-control {
-  flex: 0 0 60px;
-  text-align: center;
-}
-.main .info-item label {
-  max-width: fit-content;
-}
-.main .info-item input {
-  margin-right: 3px;
-  background: #ffffff00;
-  border: none;
-}
-.main .info-item input[type="text"]:focus {
-  box-shadow: 0 0 5px #f38704;
-}
-.main .info-item img {
-  border: none;
-}
-.main .info-item select {
-  background: #ffffff00;
-  border: none;
-}
-.main .special-item {
-  font-family: Avant, sans-serif;
-  font-size: 1em;
-  background: #f9bd8d;
-  border-right: 1px solid black;
-  border-top: 1px solid black;
-  justify-content: space-between;
-  border-bottom: 1px solid black;
-  padding-left: 3px;
-  align-items: center;
-}
-.main .special-item img {
-  border: none;
-}
-.kid-header {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-}
-.kid-header img {
-  max-width: 50%;
-}
-.logo {
-  border: none;
-}
-.item-sheet {
-  border-radius: 0px;
-  border: 1px solid black;
-  box-shadow: 2px 2px #7f7f7f;
-}
-.item-sheet .info-item {
-  font-size: 0.85em;
-  line-height: 25px;
-  padding-left: 2px;
-  align-content: space-between;
-  margin-top: 4px;
-}
-.item-sheet .info-item .even {
-  background: #fedd9e;
-}
-.item-sheet .item-desc input {
-  background: #ffffff00;
-  border: none;
-}
-.item-sheet .item-desc .relationship-desc {
-  font-family: Avant, sans-serif;
-  font-size: 1em;
-  font-weight: 700;
-  border: 1px solid black;
-  border-radius: 0px;
-  margin: 2px;
-  padding: 3px;
-  box-shadow: 2px 2px #7f7f7f;
-  height: 20px;
-}
-.item-sheet .us-text {
-  color: #f38704;
-  font-weight: 300;
-}
-.item-sheet h1.charname {
-  background: #fff1da;
-  font-family: Avant, sans-serif;
-  font-size: 2em;
-  font-weight: 700;
-  border: 1px solid black;
-  border-radius: 0px;
-  margin: 2px;
-  padding: 4px;
-  box-shadow: 2px 2px #7f7f7f;
-  height: 35px;
-}
-.item-sheet h1.charname input:focus {
-  outline: 2px solid #f38704;
-  box-shadow: none;
-}
-.item-sheet h1.charname input {
-  background: #ffffff00;
-  border: none;
-}
-.item-sheet .item-sidebar {
-  max-width: 10%;
-  font-family: AvantBold;
-  color: white;
-  background-image: url('img/grunge.png');
-  background-color: #fbba1c;
-  object-fit: cover;
-  height: 100%;
-}
-.item-sheet .item-info {
-  flex-direction: column;
-  align-self: start;
-  margin: 0px;
-  padding: 5px;
-  background-color: #fff1da;
-  height: 100%;
-}
-.item-sheet .item-info .item-bonus {
-  max-width: 30px;
-  border: none;
-}
-.item-sheet .item-info .header-details .row-label {
-  font-family: AvantBold;
-  max-width: fit-content;
-  align-self: flex-end;
-  padding-right: 3px;
-}
-.item-sheet .item-info .header-details .item-plus {
-  flex: 0 0 10px;
-}
-.item-sheet .item-info .header-details .item-name {
-  width: calc(100% - 128px);
-}
-.item-sheet .item-info .header-details .item-name img {
-  border: none;
-  float: right;
-  position: absolute;
-  top: 43px;
-  right: 12px;
-  width: 128px;
-  border: 1px solid #f38704;
-  padding: 0px;
-}
-.item-sheet .item-info img {
-  border: none;
-  padding: 2px;
-}
-.sidebar {
-  max-width: 30%;
-}
-.sidebar .name-box {
-  margin: 0px;
-}
-.sidebar .name-box .type {
-  background: #fff1da;
-  border: 1px solid black;
-  border-radius: 0px;
-  margin: 2px;
-  padding: 4px;
-  box-shadow: 2px 2px #7f7f7f;
-}
-.sidebar .name-box .type select {
-  background: #ffffff00;
-  border: none;
-}
-.sidebar .name-box .portrait {
-  background: #fff1da;
-  border: 1px solid black;
-  border-radius: 0px;
-  margin: 2px;
-  padding: 4px;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 2px 2px #7f7f7f;
-}
-.sidebar .name-box .portrait img {
-  border: none;
-}
-.sidebar .name-box h1.charname {
-  background: #fff1da;
-  font-family: Avant, sans-serif;
-  font-size: 1.8em;
-  font-weight: 700;
-  border: 1px solid black;
-  border-radius: 0px;
-  margin: 2px;
-  padding: 4px;
-  box-shadow: 2px 2px #7f7f7f;
-}
-.sidebar .name-box h1.charname input:focus {
-  outline: 2px solid #f38704;
-  box-shadow: none;
-}
-.sidebar .name-box h1.charname input {
-  background: #ffffff00;
-  border: none;
-}
-.sidebar .experience-group {
-  margin: 2px;
-  box-shadow: 2px 2px #7f7f7f;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.sidebar .experience-group .experience {
-  text-align: left;
-}
-.sidebar .experience-group .exp-boxes {
-  cursor: pointer;
-  background: #f9bd8d;
-  flex: 0 0 auto;
-  justify-content: center;
-  align-items: center;
-  padding: 2px;
-  border: 1px solid black;
-}
-.sidebar .experience-group .exp-boxes img {
-  border: none;
-}
-.sidebar .attributes-skills {
-  margin: 2px;
-  box-shadow: 2px 2px #7f7f7f;
-}
-.sidebar .attributes-skills .attribute-list {
-  list-style: none;
-  padding-left: 0px;
-  margin: 0px;
-  border: 1px solid black;
-}
-.sidebar .attributes-skills .attribute-list .attribute {
-  background-color: #f9bd8d;
-  font-family: Avant, sans-serif;
-  padding: 3px;
-  margin: 0px;
-  color: black;
-  font-weight: 500;
-  font-size: 1.1em;
-  font-style: normal;
-  border-top: 1px solid black;
-  justify-content: space-between;
-}
-.sidebar .attributes-skills .attribute-list .attribute input {
-  background: white;
-  max-width: 35px;
-  max-height: 18px;
-  text-align: right;
-  border: 1px solid black;
-  border-radius: 0px;
-  box-shadow: 2px 2px #7f7f7f;
-  font-family: Trixie, 'Courier New', Courier, monospace;
-  font-size: 0.8em;
-}
-.sidebar .attributes-skills .attribute-list .skill-list {
-  list-style: none;
-  margin: 0px;
-  padding-left: 0px;
-}
-.sidebar .attributes-skills .attribute-list .skill-list .skill {
-  background-color: #fde5d2;
-  font-family: Avant, sans-serif;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 15px;
-  margin: 0px;
-  padding-right: 3px;
-  color: black;
-  font-weight: 400;
-  font-size: 1.1em;
-  font-style: normal ;
-  border-top: 1px solid black;
-  justify-content: space-between;
-}
-.sidebar .attributes-skills .attribute-list .skill-list .skill input {
-  background: white;
-  max-width: 25px;
-  max-height: 18px;
-  text-align: right;
-  border: 1px solid black;
-  border-radius: 0px;
-  box-shadow: 2px 2px #7f7f7f;
-  font-family: Trixie, 'Courier New', Courier, monospace;
-  font-size: 0.8em;
-}
+/* Variables and Theme */
+@layer variables.base {
+  /* Colors */
+  :root {
+    /* Migrated to theme-specific variables - commented for reference */
+    /* Theme-independent colors */
+    --color-black: black;
+    --color-background: white;
+    --color-white: white;
+    --color-transparent: #fff0;
+    --color-drop-shadow: #7f7f7f;
+    --color-button: black;
+    --color-button-text: white;
+    --color-button-hover-text: white;
+    --font-avant: avant, sans-serif;
+    --font-avant-bold: avantbold, sans-serif;
+    --font-sabon-italic: sabonitalic, serif;
+    --font-sabon-roman: sabonroman, serif;
+    --font-trixie: trixie, "Courier New", courier, monospace;
+  }
+  /* Fonts */
+  @font-face {
+    font-family: Avant;
+    src: url("fonts/AvantGuard.ttf");
+  }
+  @font-face {
+    font-family: AvantBold;
+    src: url("fonts/AvantBold.otf");
+  }
+  @font-face {
+    font-family: SabonItalic;
+    src: url("fonts/Sabon_Italic.ttf");
+  }
+  @font-face {
+    font-family: SabonRoman;
+    src: url("fonts/Sabon_Roman.ttf");
+  }
+  @font-face {
+    font-family: Trixie;
+    src: url("fonts/Trixie-Text.otf");
+  }
+}
+@layer variables.themes {
+  /* Theme-specific variable mappings for loop theme */
+  /* Applies to both body-level theme and actor sheet theme overrides */
+  body.theme-loop,
+  .theme-loop {
+    /* Generic theme color variables */
+    --color-system-primary-0: #ea7137;
+    /* triangle from front and back of book */
+    --color-system-primary-1: #ed7012;
+    /* main theme color; second sidebar color */
+    --color-system-primary-2: #f8bc8c;
+    /* even row attribute background */
+    --color-system-primary-3: #fde5d1;
+    /* odd row attribute background */
+    --color-system-secondary-1: #fbba1c;
+    /* secondary theme color; third sidebar color */
+    --color-system-secondary-2: #fedd9d;
+    /* odd row other sheet background */
+    --color-system-secondary-3: #fff1d9;
+    /* even row other sheet background */
+    --color-system-secondary-4: #ffeed0;
+    /* odd row table background */
+    /* Foundry overrides */
+    --control-active-border-color: var(--color-system-primary-0);
+    --control-button-hover-bg-color: var(--color-system-primary-0);
+    /* Sidebar colors - generic coloring pattern */
+    --color-sidebar-top: black;
+    --color-sidebar-mid: var(--color-system-secondary-1);
+    --color-sidebar-bot: var(--color-system-primary-1);
+    /* Legacy variable mappings to generic theme variables */
+    --color-footer: var(--color-system-primary-1);
+    --color-highlight: var(--color-system-primary-0);
+    --color-section-head: var(--color-system-primary-2);
+    --color-section-item: var(--color-system-primary-3);
+    --color-field: var(--color-system-secondary-3);
+    --color-iconic-item: var(--color-system-secondary-2);
+    --color-sidebar-yellow: var(--color-system-secondary-1);
+    --color-spinner: var(--color-system-primary-1);
+    --color-button-hover: var(--color-system-primary-0);
+    /* Semantic variables - derived from palette or Foundry vars */
+    --dialog-accent-color: var(--color-footer);
+    /* Derived from loop palette */
+    --dice-accent-color: var(--color-footer);
+    /* Derived from loop palette */
+    --hover-text-color: var(--color-footer);
+    /* Derived from loop palette */
+    /* These reference Foundry vars that auto-switch for light/dark */
+    --select-background: transparent;
+    /* Stable across modes */
+    --option-background: var(--background);
+    /* Foundry auto-switches */
+    /* Roll dialog colors */
+    --roll-dialog-accent-color: var(--color-system-primary-0);
+    --roll-dialog-penalty-color: var(--color-system-primary-0);
+    --roll-dialog-button-text-color: black;
+    /* Tab foreground color (system-dependent) */
+    --tab-color: var(--color-highlight);
+    /* Bug/footer image - constrained to 48px in one dimension */
+    --bug-image-url: url("img/loop_bug_sm.png");
+    --bug-image-size: 48px auto;
+  }
+  /* Theme-specific variable mappings for flood theme */
+  /* Applies to both body-level theme and actor sheet theme overrides */
+  body.theme-flood,
+  .theme-flood {
+    /* Generic theme color variables */
+    --color-system-primary-0: #98314f;
+    /* triangle from front and back of book */
+    --color-system-primary-1: #8e2c48;
+    /* main theme color; second sidebar color */
+    --color-system-primary-2: #bf7b87;
+    /* even row attribute background */
+    --color-system-primary-3: #e3c0c4;
+    /* odd row attribute background */
+    --color-system-secondary-1: #768a9e;
+    /* secondary theme color; third sidebar color */
+    --color-system-secondary-2: #aebaca;
+    /* odd row other sheet background */
+    --color-system-secondary-3: #dbe0e8;
+    /* even row other sheet background */
+    --color-system-secondary-4: #cad2de;
+    /* odd row table background */
+    /* Foundry overrides */
+    --control-active-border-color: var(--color-system-primary-0);
+    --control-button-hover-bg-color: var(--color-system-primary-0);
+    /* Sidebar colors - generic coloring pattern */
+    --color-sidebar-top: black;
+    --color-sidebar-mid: var(--color-system-secondary-1);
+    --color-sidebar-bot: var(--color-system-primary-1);
+    /* Legacy variable mappings to generic theme variables */
+    --color-footer: var(--color-system-primary-1);
+    --color-highlight: var(--color-system-primary-0);
+    --color-section-head: var(--color-system-primary-2);
+    --color-section-item: var(--color-system-primary-3);
+    --color-field: var(--color-system-secondary-3);
+    --color-iconic-item: var(--color-system-secondary-2);
+    --color-sidebar-yellow: var(--color-system-secondary-1);
+    --color-spinner: var(--color-system-primary-1);
+    --color-button-hover: var(--color-system-primary-0);
+    /* Semantic variables - derived from palette or Foundry vars */
+    --dialog-accent-color: var(--color-footer);
+    /* Derived from flood palette */
+    --dice-accent-color: var(--color-footer);
+    /* Derived from flood palette */
+    --hover-text-color: var(--color-footer);
+    /* Derived from flood palette */
+    /* These reference Foundry vars that auto-switch for light/dark */
+    --select-background: transparent;
+    /* Stable across modes */
+    --option-background: var(--background);
+    /* Foundry auto-switches */
+    /* Roll dialog colors */
+    --roll-dialog-accent-color: var(--color-system-primary-1);
+    --roll-dialog-penalty-color: var(--color-system-primary-1);
+    --roll-dialog-button-text-color: white;
+    /* Tab foreground color (system-dependent) */
+    --tab-color: var(--color-highlight);
+    /* Bug/footer image - constrained to 48px on longest dimension */
+    --bug-image-url: url("img/krafta_logo_bw_sm.png");
+    --bug-image-size: contain;
+  }
+  /* Light mode provides minimal overrides to semantic variables defined in theme files */
+  /* Most variables inherit from loop.less or flood.less */
+  /* Applies to both body-level theme and actor sheet theme overrides */
+  body.theme-light,
+  .theme-light {
+    /* Item sheet text colors */
+    --system-item-text-color: var(--color-black);
+    --system-item-bold-text-color: var(--color-black);
+    --border-color: rgba(68, 68, 68, 0.2);
+    /* Item background uses system image in light mode with size to prevent tiling */
+    --tftloop-item-background: url("img/chat_background.jpg") 0 0 / 100% auto;
+    /* Select background for light mode */
+    --select-background: var(--color-white);
+    /* Tab background for light mode */
+    --tab-background-color: var(--color-background);
+  }
+  /* Dark mode provides minimal overrides to semantic variables defined in theme files */
+  /* Most variables inherit from loop.less or flood.less and Foundry's auto-switching vars */
+  /* Applies to both body-level theme and actor sheet theme overrides */
+  body.theme-dark,
+  .theme-dark {
+    /* Use brighter accent colors for dark mode (better contrast) */
+    --dialog-accent-color: var(--color-highlight);
+    /* Brighter orange for dark mode */
+    --dice-accent-color: var(--color-highlight);
+    /* Brighter orange for dark mode */
+    --hover-text-color: var(--color-highlight);
+    /* Brighter orange for dark mode */
+    /* Item background inherits from Foundry in dark mode (no image) */
+    --tftloop-item-background: transparent;
+    /* Item text colors */
+    --system-item-text-color: var(--color-light-1);
+    --system-item-bold-text-color: var(--color-light-2);
+    --border-color: rgba(255, 255, 255, 0.22);
+  }
+  /*
+ * var(--background) is defined on .application by Foundry, not on body.
+ * Scoped here so global dark mode (body.theme-dark only) still resolves for sidetabs and options.
+ */
+  body.theme-dark .application,
+  .theme-dark {
+    /* Explicitly set option background for dark mode */
+    --option-background: var(--background);
+    /* Tab background for dark mode */
+    --tab-background-color: var(--background);
+  }
+}
+/* Elements */
+@layer elements.typography {
+  /* @override less2/elements/typography.less */
+  /* Headers */
+  h1,
+  h2 {
+    font-family: var(--font-avant-bold);
+    font-weight: 700;
+    border-color: var(--color-highlight);
+  }
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-avant);
+  }
+  /* Journal Entry Specific Headers and Text Styles */
+  .journal-entry-content {
+    /* Used in existing Journal Entries (do not remove) */
+  }
+  .journal-entry-content h1 {
+    font-size: 1.5em;
+    border-bottom: none;
+    border-left: 15px solid var(--color-highlight);
+  }
+  .journal-entry-content h2 {
+    font-size: 1.2em;
+    border: none;
+    text-align: left;
+  }
+  .journal-entry-content h3 {
+    font-family: var(--font-avant-bold);
+    text-align: left;
+  }
+  .journal-entry-content h5 {
+    font-size: 1em;
+    font-family: var(--font-avant-bold), Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: var(--color-highlight);
+    margin-block: 1em 0.5em;
+    font-style: italic;
+  }
+  .journal-entry-content p {
+    text-indent: none;
+  }
+  .journal-entry-content .chapter-header {
+    font-family: var(--font-avant-bold);
+    font-weight: 900;
+    color: var(--color-footer);
+    border-bottom: none;
+    font-style: bold;
+    padding-left: 5px;
+  }
+  .journal-entry-content .lore-text {
+    font-family: var(--font-sabon-italic);
+    padding-left: 5px;
+    text-indent: 0;
+  }
+  .journal-entry-content .us-text {
+    color: var(--color-highlight);
+    font-weight: 600;
+  }
+  .journal-entry-content .example-text {
+    font-size: 0.9em;
+    padding-left: 8px;
+    border-left: dotted 2px var(--color-highlight);
+    max-width: 90%;
+    background: var(--color-field);
+    break-inside: avoid;
+  }
+  .journal-entry-content .example-text p {
+    text-indent: 0;
+  }
+  /* Blockquote */
+  blockquote {
+    font-family: var(--font-trixie);
+    background: url("img/chat_background.jpg");
+    max-width: 50%;
+    padding: 20px;
+    border: none;
+    break-inside: avoid;
+    font-style: normal;
+    float: right;
+  }
+  blockquote hr {
+    border-top: 1px solid var(--color-black);
+    border-bottom: 1px solid var(--color-black);
+  }
+  /* Secret Sections */
+  section.secret {
+    font-family: var(--font-sabon-roman);
+    font-size: 1.1em;
+  }
+}
+@layer elements.forms {
+  /* @override less2/elements/forms.less */
+  /* Textarea */
+  textarea {
+    font-family: var(--font-avant);
+    height: 100%;
+  }
+  textarea:focus {
+    outline: 2px solid var(--color-highlight);
+    box-shadow: 0 0 5px var(--color-footer);
+  }
+  #chat-form textarea {
+    background: url("img/chat_background.jpg");
+  }
+  /* Select */
+  select:focus {
+    box-shadow: none;
+    border: 1px solid var(--transparent);
+  }
+  /* Input Focus States */
+  .item-bonus input:focus,
+  .item-bonus-content input:focus {
+    outline: 2px solid var(--transparent);
+    box-shadow: 0 0 5px var(--color-footer);
+  }
+  input[type="text"]:focus {
+    box-shadow: 0 0 5px var(--color-highlight);
+  }
+}
+@layer elements.media {
+  /* @override less2/elements/media.less */
+  /* Images */
+  img {
+    border: none;
+  }
+  .bug {
+    background: var(--bug-image-url);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: var(--bug-image-size);
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo {
+    border: none;
+  }
+  /* Chat message background - global style (light mode only) */
+  .chat-message {
+    background: url("img/chat_background.jpg");
+    font-family: var(--font-trixie);
+    color: var(--color-black);
+  }
+}
+/* Blocks */
+@layer blocks.base {
+  /* @override less2/blocks/basic.less */
+  /* Flex Utilities */
+  .flex-none {
+    flex: none;
+  }
+  .justify-start {
+    justify-items: flex-start;
+  }
+  /* Tales from the Loop - Form Component Styles */
+  /* @override less2/blocks/forms.less */
+  /* ---------------------------------------- */
+  /*  Dialog Content                          */
+  /* ---------------------------------------- */
+  .dialog-content {
+    font-family: var(--font-avant);
+  }
+  .dialog-content .option,
+  .dialog-content .optgroup {
+    font-family: var(--font-avant);
+  }
+  /* @override less2/blocks/dice.less */
+  /* Dice Results */
+  .dice-result .dice-formula {
+    background: var(--color-transparent);
+    border: none;
+    color: var(--color-black);
+    box-shadow: none;
+  }
+  .dice-result .dice-total {
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: var(--color-black);
+  }
+  .dice-roll {
+    margin-top: 3px;
+  }
+  /* Reroll Info */
+  .reroll-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    text-align: center;
+  }
+  .reroll-info button {
+    font-family: var(--font-avant-bold);
+    background-color: var(--roll-dialog-accent-color);
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    max-width: 100px;
+    color: var(--roll-dialog-button-text-color);
+  }
+  .reroll-info button:hover {
+    opacity: 0.9;
+  }
+  .reroll-info button:focus {
+    box-shadow: none;
+    outline: 1px solid var(--dice-accent-color);
+    outline-offset: 1px;
+  }
+  /* Dice Pool Dialog */
+  .window-content .dialog-content .pool-count {
+    text-align: center;
+    font-family: var(--font-trixie);
+    font-weight: 400;
+    font-size: var(--font-size-20);
+    border-bottom: 1px solid var(--color-drop-shadow);
+    color: var(--color-text-primary);
+  }
+  .window-content .dialog-content .pool-details {
+    padding-left: 20px;
+    margin-top: 3px;
+    margin-bottom: 5px;
+  }
+  .window-content .dialog-content .pool-details .pool-detail {
+    font-family: var(--font-trixie);
+    font-size: var(--font-size-18);
+    font-weight: 300;
+    padding-left: 80px;
+    color: var(--color-text-primary);
+  }
+  .window-content .dialog-content .pool-details .penalty {
+    color: var(--roll-dialog-penalty-color);
+  }
+  .window-content .dialog-content .pool-details .divider {
+    margin-top: 2px;
+  }
+  .window-content .dialog-content .pool-details .pool-item-select {
+    font-family: var(--font-trixie);
+    font-size: var(--font-size-18);
+    font-weight: 300;
+    color: var(--color-form-label);
+  }
+  .window-content .dialog-content .pool-details .pool-item-select select {
+    font-family: var(--font-trixie);
+    font-size: var(--font-size-14);
+    font-weight: 400;
+    color: var(--color-form-label);
+    border: none;
+    border-bottom: 1px solid var(--color-drop-shadow);
+    border-radius: 0;
+    background: var(--color-transparent);
+  }
+  .window-content .dialog-content .pool-details .pool-item-select select:focus {
+    outline: none;
+    border-bottom: 1px solid var(--roll-dialog-accent-color);
+  }
+  .window-content .dialog-content .pool-details .bonus-dice {
+    font-family: var(--font-trixie);
+    font-size: var(--font-size-18);
+  }
+  .window-content .dialog-content .pool-details .bonus-dice label {
+    flex: 0 0 120px;
+    align-self: flex-end;
+    font-size: var(--font-size-18);
+    color: var(--color-form-label);
+  }
+  .window-content .dialog-content .pool-details .bonus-dice input {
+    margin-left: 3px;
+    border: none;
+    border-bottom: 1px solid var(--color-drop-shadow);
+    border-radius: 0;
+    background: var(--color-transparent);
+    width: 200px;
+    color: var(--color-form-label);
+  }
+  .window-content .dialog-content .pool-details .bonus-dice input:focus {
+    box-shadow: none;
+    outline: none;
+    border-bottom: 1px solid var(--roll-dialog-accent-color);
+  }
+}
+@layer blocks.ui {
+  /* @override less2/blocks/ui.less */
+  /*  Tabs  */
+  .sheet-tabs {
+    padding: 5px;
+    background-color: transparent;
+    margin-bottom: 0;
+    margin-top: 5px;
+    max-height: 32px;
+    line-height: 16px;
+  }
+  .sheet-tabs .item:hover {
+    cursor: pointer;
+  }
+  .sheet-tabs[aria-role="Form Tab Navigation"] {
+    background: var(--color-background);
+    border: 1px solid var(--color-black);
+    border-radius: 5px;
+    padding: 1px;
+    margin: 5px;
+  }
+  .tabs .item.active {
+    text-shadow: none;
+    color: var(--color-highlight);
+    border-bottom: 2px solid var(--color-highlight);
+    margin-bottom: -4px;
+  }
+  /*  Buttons  */
+  button:hover {
+    box-shadow: 1.5px 1.5px var(--color-drop-shadow);
+    background-color: var(--color-highlight);
+  }
+  /*  Context Menu  */
+  #context-menu li.context-item:hover {
+    color: var(--hover-text-color);
+    text-shadow: none;
+  }
+  /*  Links  */
+  a:hover {
+    box-shadow: none;
+    text-shadow: none;
+    color: var(--color-highlight);
+  }
+  a.content-link {
+    background: none;
+    padding: none;
+    border: none;
+    white-space: normal;
+    word-break: normal;
+  }
+  /*  Icons  */
+  .fa-edit:hover {
+    text-shadow: none;
+  }
+  /*  Interactive Elements  */
+  .imgCheck {
+    cursor: pointer;
+    max-width: fit-content;
+  }
+  .use-luck {
+    cursor: pointer;
+    align-items: center;
+  }
+  .use-luck div {
+    margin-left: 5px;
+  }
+  .roll-control {
+    cursor: pointer;
+  }
+  .roll-control:hover {
+    font-weight: 700;
+    color: var(--color-footer);
+    text-shadow: 1px 1px var(--color-drop-shadow);
+  }
+  .reset-luck {
+    cursor: pointer;
+    text-align: right;
+    max-width: 50px;
+    padding-right: 3px;
+  }
+  .reset-luck:hover {
+    font-weight: 700;
+  }
+  /*  Pause Spinner Override  */
+  #pause {
+    background: none;
+    gap: 1rem;
+  }
+  #pause > img {
+    /* Replace image source and use SVG mask for themeable coloring */
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E");
+    width: 200px;
+    height: 200px;
+    top: -50px;
+    left: calc(50% - 90px);
+    opacity: 1;
+    /* Themeable background color revealed by SVG mask */
+    background-color: var(--color-highlight);
+    /* Use SVG file as mask */
+    mask-image: url("img/pause-spinner.svg");
+    mask-mode: alpha;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    --fa-animation-duration: 6s;
+  }
+  #pause figcaption {
+    font-family: var(--font-avant-bold);
+    font-size: 32px;
+    text-shadow: 0 3px 5px #000000;
+    color: var(--color-highlight);
+  }
+}
+/* Applications */
+@layer applications {
+  /* @override less2/applications/sheets.less */
+  /* Import utility classes */
+  /* Box Shadow Utility - Shadow + Border Pattern */
+  .box-shadow {
+    border: 1px solid var(--color-black);
+    border-radius: 0;
+    box-shadow: 2px 2px var(--color-drop-shadow);
+  }
+  div[id^="tftloopActorSheet"] {
+    /* Import shared components	*/
+    /* Bars */
+    /* Section Header */
+    /* Conditions sections need specific line-height for flexcol layout */
+    /* Section Title (h4 inside section-header) */
+    /* Base Sheet Row - Common styling for all row-like elements */
+    /* Condition Row - For condition checkboxes (extends .sheet-row) */
+    /* Form Row - For form fields in core-info (extends .sheet-row) */
+    /* Main Sheet Container */
+    /* Info Group */
+    /* Sidebar */
+    /* Notes */
+    /* Import Kid-specific components */
+    /* Kid Header */
+    /* Kid Core Info */
+    /* Kid Hideout */
+    /* Kid Conditions (horizontal layout) — V1 legacy sheet (conditions-v1 + formGroup partial) */
+    /* Kid Relationships (no friction) */
+    /* Import Teen-specific components */
+    /* Teen Header */
+    /* Teen Scars */
+    /* Teen Conditions (vertical layout with scars) — V1 legacy sheet (conditions-v1 + formGroup partial) */
+    /* Teen Relationships (includes friction) */
+  }
+  div[id^="tftloopActorSheet"] .black-bar {
+    background: var(--color-black);
+    max-height: 15px;
+  }
+  div[id^="tftloopActorSheet"] .dark-bar {
+    background-color: var(--color-footer);
+    font-size: 45px;
+    color: var(--color-white);
+    text-align: right;
+    padding-right: 10px;
+    max-height: 120px;
+  }
+  div[id^="tftloopActorSheet"] .section-header {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 0 5px;
+    margin: 0;
+    min-height: 30px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  div[id^="tftloopActorSheet"] .section-header .item-control {
+    text-align: right;
+    max-width: fit-content;
+  }
+  div[id^="tftloopActorSheet"] .conditions .section-header {
+    line-height: 25px;
+  }
+  div[id^="tftloopActorSheet"] .section-title {
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 1.2em;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2em;
+  }
+  div[id^="tftloopActorSheet"] .sheet-row {
+    font-family: var(--font-avant);
+    font-size: 1em;
+    padding-left: 3px;
+    /* Borders removed - managed by flex containers or specific contexts */
+    align-items: center;
+    overflow-x: auto;
+  }
+  div[id^="tftloopActorSheet"] .sheet-row label {
+    max-width: fit-content;
+  }
+  div[id^="tftloopActorSheet"] .sheet-row input {
+    margin-right: 3px;
+    background: var(--color-transparent);
+    border: none;
+  }
+  div[id^="tftloopActorSheet"] .sheet-row img {
+    border: none;
+  }
+  div[id^="tftloopActorSheet"] .sheet-row select {
+    background: var(--color-transparent);
+    border: none;
+  }
+  div[id^="tftloopActorSheet"] .condition-row {
+    font-family: var(--font-avant);
+    font-size: 1em;
+    padding-left: 3px;
+    /* Borders removed - managed by flex containers or specific contexts */
+    align-items: center;
+    overflow-x: auto;
+    line-height: 34px;
+    place-content: space-between space-between;
+  }
+  div[id^="tftloopActorSheet"] .condition-row label {
+    max-width: fit-content;
+  }
+  div[id^="tftloopActorSheet"] .condition-row input {
+    margin-right: 3px;
+    background: var(--color-transparent);
+    border: none;
+  }
+  div[id^="tftloopActorSheet"] .condition-row img {
+    border: none;
+  }
+  div[id^="tftloopActorSheet"] .condition-row select {
+    background: var(--color-transparent);
+    border: none;
+  }
+  div[id^="tftloopActorSheet"] .condition-row.flexrow {
+    justify-content: space-between;
+  }
+  div[id^="tftloopActorSheet"] .condition-row p {
+    margin: 0;
+  }
+  div[id^="tftloopActorSheet"] .condition-row img {
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  div[id^="tftloopActorSheet"] .condition-row label {
+    padding-right: 3px;
+  }
+  div[id^="tftloopActorSheet"] .form-row {
+    font-family: var(--font-avant);
+    font-size: 1em;
+    padding-left: 3px;
+    /* Borders removed - managed by flex containers or specific contexts */
+    align-items: center;
+    overflow-x: auto;
+    line-height: 34px;
+    place-content: space-between space-between;
+  }
+  div[id^="tftloopActorSheet"] .form-row label {
+    max-width: fit-content;
+  }
+  div[id^="tftloopActorSheet"] .form-row input {
+    margin-right: 3px;
+    background: var(--color-transparent);
+    border: none;
+  }
+  div[id^="tftloopActorSheet"] .form-row img {
+    border: none;
+  }
+  div[id^="tftloopActorSheet"] .form-row select {
+    background: var(--color-transparent);
+    border: none;
+  }
+  div[id^="tftloopActorSheet"] .form-row.flexrow {
+    justify-content: space-between;
+  }
+  div[id^="tftloopActorSheet"] .form-row .checkbox-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    margin-left: 3px;
+    flex: 0 0 auto;
+  }
+  div[id^="tftloopActorSheet"] .form-row .tft-checkbox {
+    appearance: none;
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    display: block;
+    flex: 0 0 18px;
+    box-sizing: border-box;
+    background: transparent url("img/box_not_checked.png") center / 100% 100% no-repeat;
+  }
+  div[id^="tftloopActorSheet"] .form-row .tft-checkbox::before,
+  div[id^="tftloopActorSheet"] .form-row .tft-checkbox::after {
+    content: none;
+    display: none;
+  }
+  div[id^="tftloopActorSheet"] .form-row .tft-checkbox:checked {
+    background-image: url("img/box_checked.png");
+  }
+  div[id^="tftloopActorSheet"] .form-row .tft-checkbox:focus,
+  div[id^="tftloopActorSheet"] .form-row .tft-checkbox:focus-visible {
+    outline: none;
+    box-shadow: none;
+  }
+  div[id^="tftloopActorSheet"] .main {
+    margin-left: 5px;
+    /* Space between sidebar and main content */
+    /* Info Item - Draggable list items (extends .sheet-row) */
+    /* Base Special Item (must come before nested versions) */
+    /* Info List */
+  }
+  div[id^="tftloopActorSheet"] .main .items {
+    min-height: 0;
+    background: var(--color-field);
+  }
+  div[id^="tftloopActorSheet"] .main .info-item {
+    font-family: var(--font-avant);
+    font-size: 1em;
+    padding-left: 3px;
+    /* Borders removed - managed by flex containers or specific contexts */
+    align-items: center;
+    overflow-x: auto;
+    list-style: none;
+    background: var(--color-field);
+    line-height: 34px;
+    place-content: space-between space-between;
+    border-top: 1px solid var(--color-black);
+    /* Vertical list separation */
+  }
+  div[id^="tftloopActorSheet"] .main .info-item label {
+    max-width: fit-content;
+  }
+  div[id^="tftloopActorSheet"] .main .info-item input {
+    margin-right: 3px;
+    background: var(--color-transparent);
+    border: none;
+  }
+  div[id^="tftloopActorSheet"] .main .info-item img {
+    border: none;
+  }
+  div[id^="tftloopActorSheet"] .main .info-item select {
+    background: var(--color-transparent);
+    border: none;
+  }
+  div[id^="tftloopActorSheet"] .main .info-item.short {
+    flex: 0 0 180px;
+  }
+  div[id^="tftloopActorSheet"] .main .info-item .item-name {
+    flex: 0 0 60%;
+  }
+  div[id^="tftloopActorSheet"] .main .info-item .item-bonus {
+    flex: 0 0 35px;
+    text-align: right;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  div[id^="tftloopActorSheet"] .main .info-item .item-bonus::before {
+    content: "\f067";
+    /* Font Awesome fa-plus icon */
+    font-family: var(--font-awesome), sans-serif;
+    font-weight: 900;
+    /* Solid style */
+    font-size: 0.8em;
+    position: relative;
+    flex-shrink: 0;
+  }
+  div[id^="tftloopActorSheet"] .main .info-item .item-bonus .item-bonus-content {
+    flex: 1;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0;
+    padding-right: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: right;
+  }
+  div[id^="tftloopActorSheet"] .main .info-item .item-bonus .item-bonus-content input {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-align: right;
+  }
+  div[id^="tftloopActorSheet"] .main .info-item .relationship-name {
+    flex: 0 0 100px;
+  }
+  div[id^="tftloopActorSheet"] .main .info-item .item-control {
+    flex: 0 0 60px;
+    text-align: center;
+  }
+  div[id^="tftloopActorSheet"] .main .special-item {
+    font-family: var(--font-avant);
+    font-size: 1em;
+    background: var(--color-section-head);
+    border-right: 1px solid var(--color-black);
+    border-top: 1px solid var(--color-black);
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-black);
+    padding-left: 3px;
+    align-items: center;
+  }
+  div[id^="tftloopActorSheet"] .main .special-item img {
+    border: none;
+  }
+  div[id^="tftloopActorSheet"] .main .info-list {
+    margin: 0;
+    padding-left: 0;
+  }
+  div[id^="tftloopActorSheet"] .main .info-list .item {
+    border-right: none;
+  }
+  div[id^="tftloopActorSheet"] .main .info-list .iconic-item {
+    list-style: none;
+    font-family: var(--font-avant);
+    font-size: 1em;
+    background: var(--color-iconic-item);
+    line-height: 34px;
+    place-content: space-between space-between;
+    align-items: center;
+    padding-left: 3px;
+  }
+  div[id^="tftloopActorSheet"] .main .info-list .iconic-item .item-name {
+    flex: 0 0 60%;
+    align-items: center;
+  }
+  div[id^="tftloopActorSheet"] .main .info-list .iconic-item .item-bonus {
+    flex: 0 0 35px;
+    text-align: right;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 5px;
+  }
+  div[id^="tftloopActorSheet"] .main .info-list .iconic-item .item-bonus::before {
+    content: "\f067";
+    /* Font Awesome fa-plus icon */
+    font-family: var(--font-awesome), sans-serif;
+    font-weight: 900;
+    /* Solid style */
+    font-size: 0.8em;
+    position: relative;
+    flex-shrink: 0;
+  }
+  div[id^="tftloopActorSheet"] .main .info-list .iconic-item .item-bonus .item-bonus-content {
+    flex: 1;
+    min-width: 0;
+    max-width: 100%;
+    margin-right: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: right;
+  }
+  div[id^="tftloopActorSheet"] .main .info-list .iconic-item .item-control {
+    flex: 0 0 60px;
+    text-align: center;
+  }
+  div[id^="tftloopActorSheet"] .main .info-list .iconic-item label {
+    max-width: fit-content;
+  }
+  div[id^="tftloopActorSheet"] .main .info-list .iconic-item input {
+    margin-right: 3px;
+    background: var(--color-transparent);
+    border: none;
+  }
+  div[id^="tftloopActorSheet"] .info-group {
+    border: 1px solid var(--color-black);
+    border-radius: 0;
+    box-shadow: 2px 2px var(--color-drop-shadow);
+    border-top: none;
+    /* No top border for info groups */
+    margin: 2px;
+    padding: 0;
+  }
+  div[id^="tftloopActorSheet"] .sidebar {
+    max-width: 30%;
+  }
+  div[id^="tftloopActorSheet"] .sidebar .name-box {
+    margin: 0;
+  }
+  div[id^="tftloopActorSheet"] .sidebar .name-box .type {
+    background: var(--color-field);
+    border: 1px solid var(--color-black);
+    border-radius: 0;
+    box-shadow: 2px 2px var(--color-drop-shadow);
+    margin: 2px;
+    padding: 4px;
+  }
+  div[id^="tftloopActorSheet"] .sidebar .name-box .type select {
+    background: var(--color-transparent);
+    border: none;
+  }
+  div[id^="tftloopActorSheet"] .sidebar .name-box .portrait {
+    background: var(--color-field);
+    border: 1px solid var(--color-black);
+    border-radius: 0;
+    box-shadow: 2px 2px var(--color-drop-shadow);
+    margin: 2px;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Hide overflow if image exceeds container */
+    height: 168px;
+    /* Fixed height: 160px image + 4px padding top + 4px padding bottom */
+  }
+  div[id^="tftloopActorSheet"] .sidebar .name-box .portrait img {
+    border: none;
+    width: 100%;
+    /* Fill horizontal width */
+    height: 100%;
+    /* Fill container height */
+    object-fit: cover;
+    /* Maintain aspect ratio, crop overflow above/below */
+    object-position: center;
+    /* Center the image */
+  }
+  div[id^="tftloopActorSheet"] .sidebar .name-box h1.charname {
+    background: var(--color-field);
+    font-family: var(--font-avant);
+    font-size: 1.8em;
+    font-weight: 700;
+    border: 1px solid var(--color-black);
+    border-radius: 0;
+    box-shadow: 2px 2px var(--color-drop-shadow);
+    margin: 2px;
+    padding: 4px;
+  }
+  div[id^="tftloopActorSheet"] .sidebar .name-box h1.charname input:focus {
+    outline: 2px solid var(--color-highlight);
+    box-shadow: none;
+  }
+  div[id^="tftloopActorSheet"] .sidebar .name-box h1.charname input {
+    background: var(--color-transparent);
+    border: none;
+  }
+  div[id^="tftloopActorSheet"] .sidebar .experience-group {
+    border: 1px solid var(--color-black);
+    border-radius: 0;
+    box-shadow: 2px 2px var(--color-drop-shadow);
+    border: none;
+    /* Experience group has no border, only shadow */
+    margin: 2px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  div[id^="tftloopActorSheet"] .sidebar .experience-group .experience {
+    text-align: left;
+  }
+  div[id^="tftloopActorSheet"] .sidebar .experience-group .exp-boxes {
+    cursor: pointer;
+    background: var(--color-section-head);
+    flex: 0 0 auto;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    border: 1px solid var(--color-black);
+  }
+  div[id^="tftloopActorSheet"] .sidebar .experience-group .exp-boxes img {
+    border: none;
+  }
+  div[id^="tftloopActorSheet"] .sidebar .attributes-skills {
+    border: 1px solid var(--color-black);
+    border-radius: 0;
+    box-shadow: 2px 2px var(--color-drop-shadow);
+    border: none;
+    /* Attributes-skills container has no border, only shadow */
+    margin: 2px;
+  }
+  div[id^="tftloopActorSheet"] .sidebar .attributes-skills .attribute-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    border: 1px solid var(--color-black);
+  }
+  div[id^="tftloopActorSheet"] .sidebar .attributes-skills .attribute-list .attribute {
+    background-color: var(--color-section-head);
+    font-family: var(--font-avant);
+    padding: 3px;
+    margin: 0;
+    color: var(--color-black);
+    font-weight: 500;
+    font-size: 1.1em;
+    font-style: normal;
+    border-top: 1px solid var(--color-black);
+    justify-content: space-between;
+  }
+  div[id^="tftloopActorSheet"] .sidebar .attributes-skills .attribute-list .attribute input {
+    background: var(--color-background);
+    max-width: 35px;
+    max-height: 18px;
+    text-align: right;
+    border: 1px solid var(--color-black);
+    border-radius: 0;
+    box-shadow: 2px 2px var(--color-drop-shadow);
+    font-family: var(--font-trixie);
+    font-size: 0.8em;
+  }
+  div[id^="tftloopActorSheet"] .sidebar .attributes-skills .attribute-list .skill-list {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+  }
+  div[id^="tftloopActorSheet"] .sidebar .attributes-skills .attribute-list .skill-list .skill {
+    background-color: var(--color-section-item);
+    font-family: var(--font-avant);
+    padding: 3px 3px 3px 15px;
+    margin: 0;
+    color: var(--color-black);
+    font-weight: 400;
+    font-size: 1.1em;
+    font-style: normal;
+    border-top: 1px solid var(--color-black);
+    justify-content: space-between;
+  }
+  div[id^="tftloopActorSheet"] .sidebar .attributes-skills .attribute-list .skill-list .skill input {
+    background: var(--color-background);
+    max-width: 25px;
+    max-height: 18px;
+    text-align: right;
+    border: 1px solid var(--color-black);
+    border-radius: 0;
+    box-shadow: 2px 2px var(--color-drop-shadow);
+    font-family: var(--font-trixie);
+    font-size: 0.8em;
+  }
+  div[id^="tftloopActorSheet"] .kid-notes {
+    background: var(--color-field);
+  }
+  div[id^="tftloopActorSheet"] #notes {
+    border: none;
+    resize: none;
+    height: 85%;
+    overflow-y: auto;
+  }
+  div[id^="tftloopActorSheet"] .notes-group {
+    height: fit-content;
+    background: var(--color-field);
+    border-top: 1px solid var(--color-black);
+    /* Notes needs top border */
+  }
+  div[id^="tftloopActorSheet"] .notes-group .section-title {
+    color: var(--color-black);
+    /* Dark text on light background */
+  }
+  div[id^="tftloopActorSheet"] .kid-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  div[id^="tftloopActorSheet"] .kid-header img {
+    max-width: 50%;
+  }
+  div[id^="tftloopActorSheet"] .core-info {
+    border-top: 1px solid var(--color-black);
+    /* Top border for core-info box */
+    /* Even/odd background handling - ONLY place that needs it */
+    /* Form-rows inside flexrow (age selector gets field background) */
+    /* Form-rows as direct children (after flexrow) - even/odd pattern */
+  }
+  div[id^="tftloopActorSheet"] .core-info > .flexrow {
+    border-bottom: 1px solid var(--color-black);
+    /* Separate flexrow from form-rows below */
+    /* Form-rows in flexrow - borders managed by container */
+    /* Add border-right to all except last */
+  }
+  div[id^="tftloopActorSheet"] .core-info > .flexrow > .form-row {
+    border-top: none;
+    border-right: none;
+    /* Remove base border, managed by container */
+    background: var(--color-field);
+  }
+  div[id^="tftloopActorSheet"] .core-info > .flexrow > .form-row:not(:last-child) {
+    border-right: 1px solid var(--color-black);
+  }
+  div[id^="tftloopActorSheet"] .core-info > .form-row {
+    border-bottom: 1px solid var(--color-black);
+    /* Vertical separation between form rows */
+  }
+  div[id^="tftloopActorSheet"] .core-info > .form-row:nth-child(2n) {
+    background: var(--color-iconic-item);
+  }
+  div[id^="tftloopActorSheet"] .core-info > .form-row:nth-child(2n + 1) {
+    background: var(--color-field);
+  }
+  div[id^="tftloopActorSheet"] .luck-item {
+    font-family: var(--font-avant);
+    font-size: 1em;
+    background: var(--color-section-head);
+    /* Borders removed - managed by flexrow container */
+    justify-content: space-between;
+    /* No border-bottom for luck points */
+    padding-left: 3px;
+    align-items: center;
+  }
+  div[id^="tftloopActorSheet"] .luck-item img {
+    border: none;
+  }
+  div[id^="tftloopActorSheet"] .items-hideout {
+    flex: 1 1 auto;
+    flex-direction: row;
+    background: var(--color-field);
+    max-width: none;
+  }
+  div[id^="tftloopActorSheet"] .items-hideout .items,
+  div[id^="tftloopActorSheet"] .items-hideout .hideout {
+    flex: 1 1 auto;
+    flex-direction: column;
+    background: var(--color-field);
+    border: 1px solid var(--color-black);
+    border-radius: 0;
+    box-shadow: 2px 2px var(--color-drop-shadow);
+    border-top: none;
+    /* No top border for items/hideout */
+    padding: 0;
+  }
+  div[id^="tftloopActorSheet"] .items-hideout .hideout {
+    margin: 2px;
+    display: flex;
+  }
+  div[id^="tftloopActorSheet"] .items-hideout .hideout .hideout-text {
+    flex: 1;
+  }
+  div[id^="tftloopActorSheet"] .items-hideout .hideout .hideout-text textarea {
+    border: none;
+    resize: none;
+    height: 100%;
+  }
+  div[id^="tftloopActorSheet"] .conditions.conditions-v1 {
+    border: 1px solid var(--color-black);
+    border-radius: 0;
+    box-shadow: 2px 2px var(--color-drop-shadow);
+    border-top: none;
+    /* No top border for conditions */
+    margin: 2px;
+    margin-bottom: 4px;
+    padding: 0;
+    /* PNG-backed checkboxes (match prior checkboxToggle look) */
+  }
+  div[id^="tftloopActorSheet"] .conditions.conditions-v1 .conditions-grid {
+    display: flex;
+    gap: 0;
+  }
+  div[id^="tftloopActorSheet"] .conditions.conditions-v1 .conditions-grid.row-layout {
+    flex-flow: row nowrap;
+    align-items: stretch;
+  }
+  div[id^="tftloopActorSheet"] .conditions.conditions-v1 .conditions-grid > .form-group.condition-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px 4px;
+    min-height: 34px;
+    box-sizing: border-box;
+  }
+  div[id^="tftloopActorSheet"] .conditions.conditions-v1 .conditions-grid > .form-group.condition-row > label {
+    flex: 1;
+    margin: 0;
+    padding-right: 3px;
+  }
+  div[id^="tftloopActorSheet"] .conditions.conditions-v1 .conditions-grid > .form-group.condition-row > .form-fields {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    line-height: 0;
+  }
+  div[id^="tftloopActorSheet"] .conditions.conditions-v1 .conditions-grid.row-layout > .form-group.condition-row {
+    flex: 1 1 0;
+    min-width: 0;
+    border-top: none;
+    border-right: none;
+    background: var(--color-field);
+  }
+  div[id^="tftloopActorSheet"] .conditions.conditions-v1 .conditions-grid.row-layout > .form-group.condition-row:not(:last-child) {
+    border-right: 1px solid var(--color-black);
+  }
+  div[id^="tftloopActorSheet"] .conditions.conditions-v1 .conditions-grid.row-layout > .form-group.condition-row:last-child {
+    background: var(--color-section-head);
+    border-bottom: none;
+  }
+  div[id^="tftloopActorSheet"] .conditions.conditions-v1 .conditions-grid .tft-checkbox,
+  div[id^="tftloopActorSheet"] .conditions.conditions-v1 .conditions-grid > .form-group.condition-row input[type="checkbox"] {
+    appearance: none;
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    display: block;
+    flex: 0 0 18px;
+    box-sizing: border-box;
+    background-color: transparent;
+    background-image: url("img/box_not_checked.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  div[id^="tftloopActorSheet"] .conditions.conditions-v1 .conditions-grid .tft-checkbox::before,
+  div[id^="tftloopActorSheet"] .conditions.conditions-v1 .conditions-grid > .form-group.condition-row input[type="checkbox"]::before,
+  div[id^="tftloopActorSheet"] .conditions.conditions-v1 .conditions-grid .tft-checkbox::after,
+  div[id^="tftloopActorSheet"] .conditions.conditions-v1 .conditions-grid > .form-group.condition-row input[type="checkbox"]::after {
+    content: none;
+    display: none;
+  }
+  div[id^="tftloopActorSheet"] .conditions.conditions-v1 .conditions-grid .tft-checkbox:checked,
+  div[id^="tftloopActorSheet"] .conditions.conditions-v1 .conditions-grid > .form-group.condition-row input[type="checkbox"]:checked {
+    background-image: url("img/box_checked.png");
+    background-color: transparent;
+  }
+  div[id^="tftloopActorSheet"] .conditions.conditions-v1 .conditions-grid .tft-checkbox:disabled,
+  div[id^="tftloopActorSheet"] .conditions.conditions-v1 .conditions-grid > .form-group.condition-row input[type="checkbox"]:disabled {
+    cursor: not-allowed;
+    opacity: 0.9;
+  }
+  div[id^="tftloopActorSheet"] .relationships {
+    border: 1px solid var(--color-black);
+    border-radius: 0;
+    box-shadow: 2px 2px var(--color-drop-shadow);
+    border-top: none;
+    /* No top border for relationships */
+    margin: 2px;
+    padding: 0;
+  }
+  div[id^="tftloopActorSheet"] .teen-header {
+    /* Teen-specific header styles if any */
+  }
+  div[id^="tftloopActorSheet"] .scars {
+    margin-bottom: 4px;
+    flex-basis: 225px;
+    background: var(--color-field);
+    /* Show col-head only when info-list has items */
+  }
+  div[id^="tftloopActorSheet"] .scars .section-header {
+    flex: 0 0 auto;
+    height: 30px;
+  }
+  div[id^="tftloopActorSheet"] .scars .section-header .col-head {
+    font-family: var(--font-avant);
+    font-size: 1em;
+    text-align: right;
+    padding-right: 20px;
+    font-weight: 700;
+    display: none;
+    /* Hidden by default */
+  }
+  div[id^="tftloopActorSheet"] .scars:has(.info-list > li) .section-header .col-head {
+    display: block;
+  }
+  div[id^="tftloopActorSheet"] .scars .info-item {
+    /* Match items/relationships sizing - more space, less tight */
+    font-size: 1em;
+    line-height: 34px;
+    place-content: space-between space-between;
+  }
+  div[id^="tftloopActorSheet"] .scars .info-item .scar-name {
+    flex: 0 0 80px;
+  }
+  div[id^="tftloopActorSheet"] .scars .info-item p {
+    margin: 0;
+  }
+  div[id^="tftloopActorSheet"] .scars .info-item img {
+    border: none;
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  div[id^="tftloopActorSheet"] .scars .info-item input {
+    background: var(--color-transparent);
+    border: none;
+  }
+  div[id^="tftloopActorSheet"] .conditions-scars {
+    align-items: flex-start;
+  }
+  div[id^="tftloopActorSheet"] .conditions-scars .conditions.conditions-v1 {
+    border: 1px solid var(--color-black);
+    border-radius: 0;
+    box-shadow: 2px 2px var(--color-drop-shadow);
+    border-top: none;
+    /* No top border for conditions */
+    margin: 2px;
+    margin-bottom: 4px;
+    padding: 0;
+  }
+  div[id^="tftloopActorSheet"] .conditions-scars .conditions.conditions-v1 .conditions-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  div[id^="tftloopActorSheet"] .conditions-scars .conditions.conditions-v1 .conditions-grid > .form-group.condition-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px 4px;
+    min-height: 34px;
+    box-sizing: border-box;
+  }
+  div[id^="tftloopActorSheet"] .conditions-scars .conditions.conditions-v1 .conditions-grid > .form-group.condition-row > label {
+    flex: 1;
+    margin: 0;
+    padding-right: 3px;
+  }
+  div[id^="tftloopActorSheet"] .conditions-scars .conditions.conditions-v1 .conditions-grid > .form-group.condition-row > .form-fields {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    line-height: 0;
+  }
+  div[id^="tftloopActorSheet"] .conditions-scars .conditions.conditions-v1 .conditions-grid.column-layout > .form-group.condition-row {
+    border-right: none;
+    border-top: none;
+    background: var(--color-field);
+  }
+  div[id^="tftloopActorSheet"] .conditions-scars .conditions.conditions-v1 .conditions-grid.column-layout > .form-group.condition-row:not(:last-child) {
+    border-bottom: 1px solid var(--color-black);
+  }
+  div[id^="tftloopActorSheet"] .conditions-scars .conditions.conditions-v1 .conditions-grid.column-layout > .form-group.condition-row:last-child {
+    background: var(--color-section-head);
+    border-bottom: none;
+  }
+  div[id^="tftloopActorSheet"] .conditions-scars .conditions.conditions-v1 .conditions-grid .tft-checkbox,
+  div[id^="tftloopActorSheet"] .conditions-scars .conditions.conditions-v1 .conditions-grid > .form-group.condition-row input[type="checkbox"] {
+    appearance: none;
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    display: block;
+    flex: 0 0 18px;
+    box-sizing: border-box;
+    background-color: transparent;
+    background-image: url("img/box_not_checked.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  div[id^="tftloopActorSheet"] .conditions-scars .conditions.conditions-v1 .conditions-grid .tft-checkbox::before,
+  div[id^="tftloopActorSheet"] .conditions-scars .conditions.conditions-v1 .conditions-grid > .form-group.condition-row input[type="checkbox"]::before,
+  div[id^="tftloopActorSheet"] .conditions-scars .conditions.conditions-v1 .conditions-grid .tft-checkbox::after,
+  div[id^="tftloopActorSheet"] .conditions-scars .conditions.conditions-v1 .conditions-grid > .form-group.condition-row input[type="checkbox"]::after {
+    content: none;
+    display: none;
+  }
+  div[id^="tftloopActorSheet"] .conditions-scars .conditions.conditions-v1 .conditions-grid .tft-checkbox:checked,
+  div[id^="tftloopActorSheet"] .conditions-scars .conditions.conditions-v1 .conditions-grid > .form-group.condition-row input[type="checkbox"]:checked {
+    background-image: url("img/box_checked.png");
+    background-color: transparent;
+  }
+  div[id^="tftloopActorSheet"] .conditions-scars .conditions.conditions-v1 .conditions-grid .tft-checkbox:disabled,
+  div[id^="tftloopActorSheet"] .conditions-scars .conditions.conditions-v1 .conditions-grid > .form-group.condition-row input[type="checkbox"]:disabled {
+    cursor: not-allowed;
+    opacity: 0.9;
+  }
+  div[id^="tftloopActorSheet"] .relationships {
+    border: 1px solid var(--color-black);
+    border-radius: 0;
+    box-shadow: 2px 2px var(--color-drop-shadow);
+    border-top: none;
+    /* No top border for relationships */
+    margin: 2px;
+    padding: 0;
+  }
+  div[id^="tftloopActorSheet"] .relationships .friction {
+    list-style: none;
+    font-family: var(--font-avant);
+    font-size: 1em;
+    background: var(--color-iconic-item);
+    line-height: 34px;
+    place-content: space-between space-between;
+    align-items: center;
+    padding-left: 5px;
+  }
+  div[id^="tftloopActorSheet"] .relationships .friction label {
+    max-width: fit-content;
+  }
+  div[id^="tftloopActorSheet"] .relationships .friction input {
+    margin-right: 3px;
+    background: var(--color-transparent);
+    border: none;
+  }
+  /* @override less2/applications/journal.less */
+  /* Journal Entry Sheet */
+  .sheet.journal-entry {
+    /* Journal Entry Pages */
+  }
+  .sheet.journal-entry .journal-entry-content {
+    color: var(--color-black);
+    background: var(--color-background);
+    padding: 10px;
+  }
+  .sheet.journal-entry .pages-list .directory-item {
+    border-bottom: var(--color-footer) 1px solid;
+  }
+  .sheet.journal-entry .journal-sidebar {
+    background: unset;
+    color: var(--color-black);
+    background-color: var(--color-background);
+    border: 1px solid var(--color-black);
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+  }
+  .sheet.journal-entry .pages-list .page-heading .page-title:hover {
+    cursor: pointer;
+    color: var(--color-highlight);
+    text-shadow: none;
+  }
+  .sheet.journal-entry .journal-entry-content .journal-entry-pages {
+    padding-left: 3px;
+  }
+  .sheet.journal-entry .journal-entry-content .journal-entry-pages img {
+    border: none;
+  }
+  .sheet.journal-entry .journal-entry-content .journal-entry-pages table {
+    background: var(--color-field);
+    border: none;
+    font-family: var(--font-avant-bold);
+    margin: 30px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sheet.journal-entry .journal-entry-content .journal-entry-pages table th {
+    padding-left: 3px;
+    background: var(--color-black);
+    color: var(--color-white);
+    text-align: left;
+    font-family: var(--font-avant-bold);
+  }
+  .sheet.journal-entry .journal-entry-content .journal-entry-pages table tr:nth-child(odd) {
+    background: var(--color-iconic-item);
+  }
+  .sheet.journal-entry .journal-entry-content .journal-entry-pages .major-heading {
+    display: grid;
+    grid-template-columns: 140px auto;
+    justify-items: stretch;
+  }
+  .sheet.journal-entry .journal-entry-content .journal-entry-pages .chap-number {
+    font-family: var(--font-avant-bold);
+    color: white;
+    background-image: url("img/grunge.png");
+    background-color: #fbba1c;
+    object-fit: cover;
+  }
+  .sheet.journal-entry .journal-entry-content .journal-entry-pages .grunge {
+    position: absolute;
+    width: 140px;
+    z-index: 7;
+  }
+  .sheet.journal-entry .journal-entry-content .journal-entry-pages .grunge img {
+    border: none;
+    object-fit: cover;
+  }
+  .sheet.journal-entry .journal-entry-content .journal-entry-pages .two-col {
+    column-count: 2;
+    column-gap: 3em;
+    margin-top: 10px;
+    margin-right: 10px;
+    text-align: justify;
+  }
+  /* @override less2/applications/settings.less */
+  /* Client Settings */
+  #client-settings nav.tabs {
+    line-height: 32px;
+    font-size: 16px;
+    border-bottom: 1px solid #000;
+  }
+  /* @override less2/applications/applications.less, less2/applications/interface.less */
+  /* Window App */
+  .window-app .window-content {
+    background: var(--color-background);
+  }
+  /* Editor */
+  .editor-edit {
+    box-shadow: 2px 2px var(--color-drop-shadow);
+  }
+  .editor {
+    height: auto;
+    min-height: 30px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  /* ProseMirror Editor Styling */
+  .editor.prosemirror {
+    border: none;
+    flex: 1;
+    min-height: 200px;
+  }
+  .editor.prosemirror .editor-content {
+    border: none;
+  }
+  /* Chat */
+  .chat-header {
+    flex: 0 1 0;
+    justify-content: flex-start;
+    align-items: flex-end;
+    border-color: var(--color-highlight);
+    border-bottom: 1px solid;
+  }
+  .chat-header .portrait {
+    max-width: 48px;
+    border: none;
+  }
+  .chat-header h1 {
+    font-family: var(--font-avant);
+    font-size: 1.5em;
+    font-weight: 700;
+    text-align: right;
+    color: var(--color-highlight);
+    letter-spacing: 0.018em;
+  }
+  #chat-log .message {
+    border-color: var(--color-footer);
+  }
+  #chat-controls .roll-type-select {
+    background: var(--color-white);
+  }
+  .app {
+    color: var(--color-white);
+  }
+  /* Sidebar */
+  .sidebar-tab .directory-header .header-search input {
+    background: var(--color-white);
+  }
+  /* Roll Dialog Application */
+  /* Override Foundry's application background for roll dialog (light mode only) */
+  body.theme-light .application.tftloop.roll-dialog {
+    background: url("img/chat_background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  /* The form element itself has the classes "application" and "roll-dialog" */
+  form.application.roll-dialog .form-group,
+  form.roll-dialog .form-group {
+    position: relative;
+    /* Ensure content is above background */
+    z-index: 1;
+    /* Utility class: adds a divider with spacing above and below */
+  }
+  form.application.roll-dialog .form-group h2,
+  form.roll-dialog .form-group h2 {
+    font-size: var(--font-size-20);
+    color: var(--roll-dialog-accent-color);
+  }
+  form.application.roll-dialog .form-group .divider-below,
+  form.roll-dialog .form-group .divider-below {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--color-drop-shadow);
+  }
+  form.application.roll-dialog .form-group .pool-count,
+  form.roll-dialog .form-group .pool-count {
+    text-align: center;
+    font-family: var(--font-trixie);
+    font-weight: 400;
+    font-size: var(--font-size-20);
+    padding-bottom: 3px;
+  }
+  form.application.roll-dialog .form-group .pool-details,
+  form.roll-dialog .form-group .pool-details {
+    margin-top: 0;
+    padding-left: 5px;
+    font-family: var(--font-trixie);
+    font-size: var(--font-size-18);
+    font-weight: 300;
+  }
+  form.application.roll-dialog .form-group .pool-details .pool-detail,
+  form.roll-dialog .form-group .pool-details .pool-detail {
+    margin-bottom: 2px;
+  }
+  form.application.roll-dialog .form-group .pool-details .pool-detail.penalty,
+  form.roll-dialog .form-group .pool-details .pool-detail.penalty {
+    color: var(--roll-dialog-penalty-color);
+  }
+  form.application.roll-dialog .form-group .pool-options,
+  form.roll-dialog .form-group .pool-options {
+    padding-left: 5px;
+    font-family: var(--font-trixie);
+    font-size: var(--font-size-16);
+    font-weight: 300;
+  }
+  form.application.roll-dialog .form-group .pool-options .pool-item-select,
+  form.roll-dialog .form-group .pool-options .pool-item-select {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+  }
+  form.application.roll-dialog .form-group .pool-options .pool-item-select label,
+  form.roll-dialog .form-group .pool-options .pool-item-select label {
+    flex: 0 0 auto;
+    margin-bottom: 0;
+  }
+  form.application.roll-dialog .form-group .pool-options .pool-item-select select,
+  form.roll-dialog .form-group .pool-options .pool-item-select select {
+    font-size: var(--font-size-16);
+    font-weight: 400;
+    color: var(--color-form-label);
+    border: none;
+    border-bottom: 1px solid var(--color-drop-shadow);
+    border-radius: 0;
+    background: var(--color-transparent);
+    flex: 1;
+    padding: 5px 0;
+    vertical-align: baseline;
+  }
+  form.application.roll-dialog .form-group .pool-options .pool-item-select select:focus,
+  form.roll-dialog .form-group .pool-options .pool-item-select select:focus {
+    outline: none;
+    border-radius: 4px;
+    box-shadow: 0 0 0 1px var(--roll-dialog-accent-color);
+  }
+  form.application.roll-dialog .form-group .pool-options .pool-item-select select option,
+  form.roll-dialog .form-group .pool-options .pool-item-select select option {
+    background: var(--option-background);
+  }
+  form.application.roll-dialog .form-group .pool-options .bonus-dice,
+  form.roll-dialog .form-group .pool-options .bonus-dice {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+  }
+  form.application.roll-dialog .form-group .pool-options .bonus-dice label,
+  form.roll-dialog .form-group .pool-options .bonus-dice label {
+    flex: 0 0 auto;
+  }
+  form.application.roll-dialog .form-group .pool-options .bonus-dice input,
+  form.roll-dialog .form-group .pool-options .bonus-dice input {
+    border: none;
+    border-bottom: 1px solid var(--color-drop-shadow);
+    border-radius: 0;
+    background: var(--color-transparent);
+    flex: 1;
+    font-size: var(--font-size-16);
+    padding: 5px 0;
+    vertical-align: baseline;
+  }
+  form.application.roll-dialog .form-group .pool-options .bonus-dice input:focus,
+  form.roll-dialog .form-group .pool-options .bonus-dice input:focus {
+    box-shadow: none;
+    outline: none;
+    border-bottom: 1px solid var(--roll-dialog-accent-color);
+  }
+  form.application.roll-dialog .form-group .sheet-footer,
+  form.roll-dialog .form-group .sheet-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    padding-top: 5px;
+  }
+  form.application.roll-dialog .form-group .sheet-footer button,
+  form.roll-dialog .form-group .sheet-footer button {
+    font-family: var(--font-avant-bold);
+    padding: 5px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: var(--font-size-16);
+    background-color: var(--roll-dialog-accent-color);
+    color: var(--roll-dialog-button-text-color);
+  }
+  form.application.roll-dialog .form-group .sheet-footer button:hover,
+  form.roll-dialog .form-group .sheet-footer button:hover {
+    opacity: 0.9;
+  }
+  form.application.roll-dialog .form-group .sheet-footer button:focus,
+  form.roll-dialog .form-group .sheet-footer button:focus {
+    box-shadow: none;
+    outline: 2px solid var(--roll-dialog-accent-color);
+    outline-offset: 2px;
+  }
+  form.application.roll-dialog .form-group .bug,
+  form.roll-dialog .form-group .bug {
+    text-align: center;
+    margin-top: 5px;
+    opacity: 0.5;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    /* Override background-image from media.less */
+    /* Invert and lighten colors in dark mode */
+  }
+  form.application.roll-dialog .form-group .bug img,
+  form.roll-dialog .form-group .bug img {
+    height: 48px;
+    width: auto;
+    image-rendering: auto;
+    /* Use browser's high-quality scaling algorithm */
+    object-fit: contain;
+  }
+  body.theme-dark form.application.roll-dialog .form-group .bug,
+  body.theme-dark form.roll-dialog .form-group .bug {
+    filter: invert(1) brightness(2);
+  }
+  /* Actor Sheet V2 - Vertical Tabs Layout (Redesigned) */
+  /* Shared vertical sidebar tabs - single source for actor v2 and NPC sheets */
+  /**
+ * Mixin: vertical sidebar tab strip and window-content containing block.
+ * Use inside .application.tftloop.actor.v2 or .application.tftloop.actor.npc.
+ */
+  /* Alternating Background Mixins - Common patterns for alternating row colors */
+  /* Simple alternating rows - 2n and 2n+1 pattern */
+  /* Alternating rows with special last-child styling (like conditions) */
+  /* Section class - applies wrapper styles to elements with .section class */
+  .section {
+    border: 1px solid var(--color-black);
+    box-shadow: 2px 2px var(--color-drop-shadow);
+    margin: 2px;
+    padding: 0;
+    /* Remove top border when section-header is present (header provides it) */
+    /* Section Header Class - Black header with white text pattern */
+  }
+  .section:has(.section-header) {
+    border-top: none;
+  }
+  .section .section-header {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding-block: 0;
+    padding-inline: 5px;
+    min-height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--color-black);
+    margin-block-end: 0;
+    /* All text within should be white and vertically centered */
+    /* Style button when it exists in the template */
+  }
+  .section .section-header * {
+    color: var(--color-white);
+  }
+  .section .section-header .section-title {
+    font-weight: 700;
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2em;
+  }
+  .section .section-header button {
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+  }
+  /* Sheet Row Mixin - V2 */
+  /* Attribute/Skill Input Box - V2 */
+  /* ============================================
+   LAYOUT VARIABLES
+   ============================================ */
+  /* ============================================
+   VERTICAL TABS - Window Level
+   ============================================ */
+  .application.tftloop.actor.v2 {
+    /* Vertical Tab Navigation */
+  }
+  .application.tftloop.actor.v2.vertical-tabs {
+    overflow: visible;
+  }
+  .application.tftloop.actor.v2 .window-content {
+    position: relative;
+    /* containing block for nav.sidebar-tabs */
+    padding: 0;
+    overflow: visible;
+  }
+  .application.tftloop.actor.v2 nav.sidebar-tabs {
+    position: absolute;
+    left: 100%;
+    top: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    z-index: -1;
+    border: none;
+  }
+  .application.tftloop.actor.v2 nav.sidebar-tabs > .item {
+    position: relative;
+    width: 44px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--tab-background-color);
+    color: var(--tab-color);
+    border: 1px solid transparent;
+    border-radius: 0 8px 8px 0;
+    margin-inline-start: -5px;
+    transition: all 250ms ease;
+    cursor: pointer;
+  }
+  .application.tftloop.actor.v2 nav.sidebar-tabs > .item i {
+    font-size: var(--font-size-14, 14px);
+    margin: 0;
+  }
+  .application.tftloop.actor.v2 nav.sidebar-tabs > .item::after {
+    content: "";
+    position: absolute;
+    inset: 3px 3px 3px 0;
+    border: 1px solid transparent;
+    border-radius: 0 5px 5px 0;
+    border-inline-start: none;
+    pointer-events: none;
+    transition: border-color 250ms ease;
+  }
+  .application.tftloop.actor.v2 nav.sidebar-tabs > .item.active::after,
+  .application.tftloop.actor.v2 nav.sidebar-tabs > .item:hover::after {
+    border-color: var(--tab-color);
+  }
+  .application.tftloop.actor.v2 nav.sidebar-tabs > .item.active,
+  .application.tftloop.actor.v2 nav.sidebar-tabs > .item:hover {
+    margin-inline-start: 0;
+    border-color: var(--tab-color);
+    box-shadow: 0 0 5px var(--tab-color);
+    text-shadow: none;
+  }
+  /* ============================================
+   FORM & MAIN LAYOUT
+   ============================================ */
+  form[id^="tftloopActorSheetV2"] {
+    flex: 1;
+    display: flex;
+    min-height: 0;
+    /* Import tab partials (in tab order) */
+    /* Main Tab - Two Column Layout */
+    /* Conditions (V2)
+ *
+ * Keep this file minimal and responsible only for the output of:
+ * `templates/actors/partials-v2/conditions-list.hbs`
+ *
+ * That partial renders a `.conditions-grid` containing `formGroup` rows:
+ *   <div class="form-group condition-row">
+ *     <label>…</label>
+ *     <div class="form-fields"><input type="checkbox" …></div>
+ *   </div>
+ */
+    /* Core Info Tab - Flexible Grid Layout */
+    /* Relationships */
+    /* Items */
+    /* Info Item - Draggable list items (extends .sheet-row) */
+    /* Base Special Item (must come before nested versions) */
+    /* Info List */
+    /* Notes Tab */
+    /* Scars - Teen Only */
+    /* Hideout Section (Kid Only) */
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    min-height: 0;
+    /* ============================================
+       DECORATIVE SIDEBAR
+       ============================================ */
+    /* ============================================
+       MAIN CONTENT AREA
+       ============================================ */
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-sidebar {
+    flex: 0 0 40px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: linear-gradient(to bottom, var(--color-sidebar-top) 0, var(--color-sidebar-top) 10px, var(--color-sidebar-mid) 10px, var(--color-sidebar-mid) 90px, var(--color-sidebar-bot) 90px, var(--color-sidebar-bot) 100%);
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-sidebar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("img/grunge.png");
+    z-index: 10;
+    pointer-events: none;
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    background: var(--tftloop-item-background);
+    color: var(--system-item-text-color);
+    min-height: 0;
+    overflow: hidden;
+    /* ============================================
+         HEADER SECTION
+         ============================================ */
+    /* ============================================
+         TAB CONTENT
+         ============================================ */
+    /* Form element styling */
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    padding-block-end: 8px;
+    border-block-end: 2px solid var(--color-highlight);
+    margin-block-end: 8px;
+    /* Portrait */
+    /* Header Info Stack */
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .portrait-container {
+    flex: 0 0 120px;
+    width: 120px;
+    height: 120px;
+    position: relative;
+    border: 1px solid var(--color-highlight);
+    background: var(--color-field);
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .portrait-container .image-edit {
+    --button-size: 24px;
+    position: absolute;
+    inset-block-start: 2px;
+    inset-inline-end: 2px;
+    padding: 0;
+    z-index: 10;
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .portrait-container .profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    border: none;
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+    /* Luck Points */
+    /* Pride/Shame rows */
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .name-row input {
+    width: 100%;
+    font-family: var(--font-avant-bold);
+    font-size: var(--font-size-20, 1.25em);
+    color: var(--color-highlight);
+    background: transparent;
+    border: 1px solid transparent;
+    padding: 2px 3px;
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .name-row input:focus {
+    border-color: var(--color-highlight);
+    outline: none;
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .type-row,
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .luck-row,
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .pride-row,
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .shame-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .type-row label,
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .luck-row label,
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .pride-row label,
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .shame-row label {
+    font-family: var(--font-avant-bold);
+    color: var(--system-item-bold-text-color);
+    white-space: nowrap;
+    min-width: 50px;
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .type-row select,
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .luck-row select,
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .pride-row select,
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .shame-row select {
+    flex: 1;
+    max-width: 200px;
+    background: var(--color-transparent);
+    border: 1px solid var(--color-transparent);
+    font-family: inherit;
+    padding: 2px 3px;
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .type-row select:focus,
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .luck-row select:focus,
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .pride-row select:focus,
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .shame-row select:focus {
+    outline: none;
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .luck-row .luck-boxes {
+    display: flex;
+    gap: 2px;
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .luck-row .luck-box {
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--color-highlight);
+    background: transparent;
+    cursor: pointer;
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .luck-row .luck-box.used {
+    background: var(--color-highlight);
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .luck-row .luck-reset {
+    background: transparent;
+    border: none;
+    color: var(--system-item-text-color);
+    cursor: pointer;
+    padding: 2px 6px;
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .luck-row .luck-reset:hover {
+    color: var(--color-highlight);
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .pride-row .pride-text,
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .shame-row .pride-text,
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .pride-row .shame-text,
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .shame-row .shame-text {
+    flex: 1;
+    font-family: var(--font-avant);
+    color: var(--system-item-text-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .pride-row input[type="checkbox"],
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-header .header-info .shame-row input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-body .tab {
+    display: none;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main .sheet-body .tab.active {
+    display: flex;
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main label {
+    font-family: var(--font-avant-bold);
+    color: var(--system-item-bold-text-color);
+    white-space: nowrap;
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main input[type="text"],
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main input[type="number"] {
+    background: var(--color-transparent);
+    border: 1px solid var(--color-transparent);
+    font-family: inherit;
+    padding: 2px 3px;
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main input[type="text"]:focus,
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main input[type="number"]:focus {
+    outline: none;
+  }
+  form[id^="tftloopActorSheetV2"] .character-sheet .sheet-main input:not([type="checkbox"], [type="radio"]):focus {
+    outline: 2px solid var(--color-highlight);
+    box-shadow: none;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content {
+    --checkbox-size: 18px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    /* Keep focus visuals quiet by default; expose explicit ring for high-contrast users */
+    /* ============================================
+     LEFT COLUMN SECTIONS
+     ============================================ */
+    /* Actor Name */
+    /* Portrait */
+    /* Luck Points */
+    /* Experience */
+    /* Pride/Shame */
+    /* Attributes/Skills */
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .column-left {
+    flex: 0 0 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+    max-width: 45%;
+    box-sizing: border-box;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .column-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .section-title {
+    font-family: var(--font-avant-bold);
+    font-size: 1em;
+    color: var(--color-white);
+    background: var(--color-highlight);
+    padding: 3px 4px;
+    margin: 0 0 5px;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .checkbox-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .checkbox-toggle.readonly {
+    cursor: not-allowed;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .tft-checkbox,
+  form[id^="tftloopActorSheetV2"] .main-tab-content .conditions-grid > .form-group.condition-row input[type="checkbox"] {
+    appearance: none;
+    margin: 0;
+    width: var(--checkbox-size, 18px);
+    height: var(--checkbox-size, 18px);
+    border: 1px solid var(--color-highlight);
+    background: transparent;
+    border-radius: 0;
+    cursor: pointer;
+    display: block;
+    flex: 0 0 var(--checkbox-size, 18px);
+    box-sizing: border-box;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* Neutralize Foundry's global Font Awesome checkbox glyph layers */
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .tft-checkbox::before,
+  form[id^="tftloopActorSheetV2"] .main-tab-content .conditions-grid > .form-group.condition-row input[type="checkbox"]::before,
+  form[id^="tftloopActorSheetV2"] .main-tab-content .tft-checkbox::after,
+  form[id^="tftloopActorSheetV2"] .main-tab-content .conditions-grid > .form-group.condition-row input[type="checkbox"]::after {
+    content: none;
+    display: none;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .tft-checkbox:checked,
+  form[id^="tftloopActorSheetV2"] .main-tab-content .conditions-grid > .form-group.condition-row input[type="checkbox"]:checked {
+    background-color: var(--color-highlight);
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .tft-checkbox:disabled,
+  form[id^="tftloopActorSheetV2"] .main-tab-content .conditions-grid > .form-group.condition-row input[type="checkbox"]:disabled {
+    cursor: not-allowed;
+    opacity: 0.9;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .tft-checkbox:focus,
+  form[id^="tftloopActorSheetV2"] .main-tab-content .conditions-grid > .form-group.condition-row input[type="checkbox"]:focus,
+  form[id^="tftloopActorSheetV2"] .main-tab-content .tft-checkbox:focus-visible,
+  form[id^="tftloopActorSheetV2"] .main-tab-content .conditions-grid > .form-group.condition-row input[type="checkbox"]:focus-visible {
+    outline: none;
+    box-shadow: none;
+  }
+  @media (prefers-contrast: more), (forced-colors: active) {
+    form[id^="tftloopActorSheetV2"] .main-tab-content .tft-checkbox:focus-visible,
+    form[id^="tftloopActorSheetV2"] .main-tab-content .conditions-grid > .form-group.condition-row input[type="checkbox"]:focus-visible {
+      outline: 1px solid var(--color-highlight);
+      outline-offset: 2px;
+    }
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .name-section .actor-name-input {
+    width: 100%;
+    font-family: var(--font-avant-bold);
+    font-size: 1.1em;
+    color: var(--color-highlight);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-highlight);
+    padding: 2px;
+    text-align: center;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .name-section .actor-name-input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .portrait-section .portrait-container {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    border: 1px solid var(--color-highlight);
+    background: var(--color-field);
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .portrait-section .portrait-container .image-edit {
+    --button-size: 24px;
+    position: absolute;
+    inset-block-start: 2px;
+    inset-inline-end: 2px;
+    padding: 0;
+    z-index: 10;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .portrait-section .portrait-container .profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    border: none;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .luck-section .luck-content {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 2px;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .luck-section .luck-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    flex: 1;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .luck-section .luck-box {
+    width: var(--checkbox-size, 18px);
+    height: var(--checkbox-size, 18px);
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .luck-section .luck-reset {
+    background: transparent;
+    border: none;
+    color: var(--system-item-text-color);
+    cursor: pointer;
+    padding: 2px 6px;
+    font-size: 0.9em;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .luck-section .luck-reset:hover {
+    color: var(--color-highlight);
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .experience-section .exp-boxes {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .experience-section .exp-box {
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--color-highlight);
+    background: transparent;
+    border-radius: 0;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: block;
+    flex: 0 0 18px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .experience-section .exp-box.filled {
+    background: var(--color-highlight);
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .pride-shame-section .pride-shame-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3px;
+    padding: 2px;
+    min-height: calc(var(--checkbox-size, 18px) + 6px);
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .pride-shame-section .pride-shame-preview {
+    --ellipsis-lane: 0.95em;
+    flex: 1;
+    min-width: 0;
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    text-shadow: none;
+    text-align: start;
+    font-family: var(--font-avant);
+    font-size: 0.95em;
+    line-height: 1.2;
+    color: var(--system-item-text-color);
+    cursor: default;
+    container-type: inline-size;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .pride-shame-section .pride-shame-preview:hover {
+    color: var(--system-item-text-color);
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .pride-shame-section .pride-shame-preview.is-truncated::before {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    inset-inline-end: var(--ellipsis-lane);
+    width: 0.75em;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, var(--tftloop-item-background) 100%);
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 480ms ease-in-out;
+    z-index: 1;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .pride-shame-section .pride-shame-preview.is-truncated::after {
+    content: "...";
+    position: absolute;
+    inset-block: 0;
+    inset-inline-end: 0;
+    width: var(--ellipsis-lane);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-family: var(--font-avant-bold);
+    font-size: 1em;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--system-item-text-color);
+    background: none;
+    opacity: 1;
+    transition: opacity 480ms ease-in-out;
+    pointer-events: none;
+    z-index: 2;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .pride-shame-section .pride-shame-preview .pride-shame-preview-text {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .pride-shame-section .pride-shame-preview.is-truncated .pride-shame-preview-text {
+    width: calc(100% - var(--ellipsis-lane));
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .pride-shame-section .pride-shame-preview .pride-shame-preview-track {
+    display: inline-block;
+    white-space: nowrap;
+    transform: translateX(0);
+    will-change: transform;
+    transition: transform 320ms ease-out;
+  }
+  @supports (width: 1cqw) {
+    form[id^="tftloopActorSheetV2"] .main-tab-content .pride-shame-section .pride-shame-preview.is-truncated:hover .pride-shame-preview-text {
+      width: 100%;
+    }
+    form[id^="tftloopActorSheetV2"] .main-tab-content .pride-shame-section .pride-shame-preview.is-truncated:hover::before,
+    form[id^="tftloopActorSheetV2"] .main-tab-content .pride-shame-section .pride-shame-preview.is-truncated:hover::after {
+      opacity: 0;
+    }
+    form[id^="tftloopActorSheetV2"] .main-tab-content .pride-shame-section .pride-shame-preview.is-truncated:hover .pride-shame-preview-track {
+      transition-duration: 4.2s;
+      transition-timing-function: ease-in-out;
+      transform: translateX(min(0px, calc(100cqw - 100%)));
+    }
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .pride-shame-section .checkbox-toggle {
+    flex: 0 0 auto;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .attributes-skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    overflow: hidden;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .attribute-block {
+    min-width: 0;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .attribute-block .attribute-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-highlight);
+    padding: 2px 3px;
+    min-width: 0;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .attribute-block .attribute-header .attribute-name {
+    font-family: var(--font-avant-bold);
+    color: var(--color-white);
+    cursor: pointer;
+    font-size: 0.95em;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .attribute-block .attribute-header .attribute-name:hover {
+    text-decoration: underline;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .attribute-block .attribute-header input[type="number"] {
+    width: 36px;
+    height: 22px;
+    text-align: center;
+    background: var(--color-white);
+    border: 1px solid var(--color-white);
+    font-family: var(--font-avant-bold);
+    color: var(--color-highlight);
+    font-size: 0.95em;
+    flex-shrink: 0;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .attribute-block .skills-list {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .attribute-block .skills-list > .skill-row + .skill-row {
+    border-block-start: 1px solid var(--border-color);
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .attribute-block .skill-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px 3px;
+    padding-inline-start: 15px;
+    font-size: 1em;
+    min-width: 0;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .attribute-block .skill-row .skill-name {
+    font-family: var(--font-avant);
+    color: var(--system-item-text-color);
+    cursor: pointer;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .attribute-block .skill-row .skill-name:hover {
+    color: var(--color-highlight);
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .attribute-block .skill-row input[type="number"] {
+    width: 32px;
+    height: 20px;
+    text-align: center;
+    font-size: 0.9em;
+    flex-shrink: 0;
+    background: var(--color-transparent);
+    border: 1px solid var(--color-transparent);
+    font-family: inherit;
+    padding: 2px 3px;
+  }
+  form[id^="tftloopActorSheetV2"] .main-tab-content .attribute-block .skill-row input[type="number"]:focus {
+    outline: none;
+  }
+  form[id^="tftloopActorSheetV2"] html[dir="rtl"] .main-tab-content .pride-shame-preview.is-truncated:hover .pride-shame-preview-track {
+    transform: translateX(max(0px, calc(100% - 100cqw)));
+  }
+  form[id^="tftloopActorSheetV2"] html[dir="rtl"] .main-tab-content .pride-shame-preview.is-truncated::after {
+    justify-content: flex-start;
+  }
+  form[id^="tftloopActorSheetV2"] html[dir="rtl"] .main-tab-content .pride-shame-preview.is-truncated::before {
+    inset-inline: var(--ellipsis-lane) auto;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, var(--tftloop-item-background) 100%);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    form[id^="tftloopActorSheetV2"] .main-tab-content .pride-shame-preview.is-truncated:hover .pride-shame-preview-track {
+      transition-duration: 0s;
+      transform: translateX(0);
+    }
+  }
+  body.theme-light form[id^="tftloopActorSheetV2"] .main-tab-content .tft-checkbox,
+  form[id^="tftloopActorSheetV2"].theme-light .main-tab-content .tft-checkbox,
+  body.theme-light form[id^="tftloopActorSheetV2"] .main-tab-content .conditions-grid > .form-group.condition-row input[type="checkbox"],
+  form[id^="tftloopActorSheetV2"].theme-light .main-tab-content .conditions-grid > .form-group.condition-row input[type="checkbox"] {
+    border: none;
+    background: url("img/box_not_checked.png") center / 100% 100% no-repeat;
+  }
+  body.theme-light form[id^="tftloopActorSheetV2"] .main-tab-content .tft-checkbox:checked,
+  form[id^="tftloopActorSheetV2"].theme-light .main-tab-content .tft-checkbox:checked,
+  body.theme-light form[id^="tftloopActorSheetV2"] .main-tab-content .conditions-grid > .form-group.condition-row input[type="checkbox"]:checked,
+  form[id^="tftloopActorSheetV2"].theme-light .main-tab-content .conditions-grid > .form-group.condition-row input[type="checkbox"]:checked {
+    background: url("img/box_checked.png") center / 100% 100% no-repeat;
+  }
+  body.theme-light form[id^="tftloopActorSheetV2"] .main-tab-content .experience-section .exp-box,
+  form[id^="tftloopActorSheetV2"].theme-light .main-tab-content .experience-section .exp-box {
+    border: none;
+    background: url("img/box_not_checked.png") center / 100% 100% no-repeat;
+  }
+  body.theme-light form[id^="tftloopActorSheetV2"] .main-tab-content .experience-section .exp-box.filled,
+  form[id^="tftloopActorSheetV2"].theme-light .main-tab-content .experience-section .exp-box.filled {
+    background: url("img/box_checked.png") center / 100% 100% no-repeat;
+  }
+  form[id^="tftloopActorSheetV2"] .conditions-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  form[id^="tftloopActorSheetV2"] .conditions-grid > .form-group.condition-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px;
+    min-height: calc(var(--checkbox-size, 18px) + 6px);
+    /* Broken row separator (last row in the partial) */
+  }
+  form[id^="tftloopActorSheetV2"] .conditions-grid > .form-group.condition-row > label {
+    flex: 1;
+    margin: 0;
+    font-family: var(--font-avant);
+    color: var(--system-item-text-color);
+  }
+  form[id^="tftloopActorSheetV2"] .conditions-grid > .form-group.condition-row > .form-fields {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    line-height: 0;
+  }
+  form[id^="tftloopActorSheetV2"] .conditions-grid > .form-group.condition-row:last-child {
+    border-top: 1px solid var(--color-highlight);
+    margin-top: 2px;
+    padding-top: 2px;
+  }
+  form[id^="tftloopActorSheetV2"] .core-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    /* Foundry's native .form-group structure */
+    /* Two-column row wrapper (Type+Age, Drive+Anchor) */
+    /* Full-width wrapper for Problem, Pride/Shame, Friction, Description, Favorite Song */
+  }
+  form[id^="tftloopActorSheetV2"] .core-info .form-group {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4px;
+    align-items: center;
+    padding: 3px;
+    /* Label styling - inline with input */
+    /* Form fields container - inline after label */
+  }
+  form[id^="tftloopActorSheetV2"] .core-info .form-group > label {
+    font-family: var(--font-avant-bold);
+    font-weight: 500;
+    color: var(--system-item-bold-text-color);
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+  form[id^="tftloopActorSheetV2"] .core-info .form-group > .form-fields {
+    display: flex;
+    gap: 2px;
+  }
+  form[id^="tftloopActorSheetV2"] .core-info .form-group > .form-fields input,
+  form[id^="tftloopActorSheetV2"] .core-info .form-group > .form-fields select,
+  form[id^="tftloopActorSheetV2"] .core-info .form-group > .form-fields textarea {
+    flex: 1;
+    background: var(--color-transparent);
+    border: 1px solid var(--color-transparent);
+    font-family: inherit;
+    padding: 2px 3px;
+    border: 1px solid var(--color-highlight);
+  }
+  form[id^="tftloopActorSheetV2"] .core-info .form-group > .form-fields input:focus,
+  form[id^="tftloopActorSheetV2"] .core-info .form-group > .form-fields select:focus,
+  form[id^="tftloopActorSheetV2"] .core-info .form-group > .form-fields textarea:focus {
+    outline: none;
+  }
+  form[id^="tftloopActorSheetV2"] .core-info .form-group > .form-fields input:focus,
+  form[id^="tftloopActorSheetV2"] .core-info .form-group > .form-fields select:focus,
+  form[id^="tftloopActorSheetV2"] .core-info .form-group > .form-fields textarea:focus {
+    outline: 2px solid var(--color-highlight);
+    border-color: var(--color-highlight);
+    box-shadow: 0 0 4px var(--color-highlight);
+  }
+  form[id^="tftloopActorSheetV2"] .core-info .form-group > .form-fields textarea {
+    min-height: 80px;
+    resize: vertical;
+  }
+  form[id^="tftloopActorSheetV2"] .core-info .first-row,
+  form[id^="tftloopActorSheetV2"] .core-info .two-column-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0;
+    /* Remove right border on last item in row */
+  }
+  form[id^="tftloopActorSheetV2"] .core-info .first-row > div:last-child .form-group,
+  form[id^="tftloopActorSheetV2"] .core-info .two-column-row > div:last-child .form-group {
+    border-inline-end: none;
+  }
+  form[id^="tftloopActorSheetV2"] .core-info .full-width-wrapper {
+    display: contents;
+  }
+  form[id^="tftloopActorSheetV2"] .relationships .item-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  form[id^="tftloopActorSheetV2"] .relationships .item-list .item .relationship-name {
+    flex: 0 0 100px;
+  }
+  form[id^="tftloopActorSheetV2"] .relationships .item-list .item .relationship-desc {
+    flex: 1;
+    min-width: 0;
+  }
+  form[id^="tftloopActorSheetV2"] .relationships .item-list .item input.relationship-name,
+  form[id^="tftloopActorSheetV2"] .relationships .item-list .item input.relationship-desc {
+    width: 100%;
+    background: var(--color-transparent);
+    border: 1px solid var(--color-transparent);
+    font-family: inherit;
+    padding: 2px 3px;
+    font-size: inherit;
+  }
+  form[id^="tftloopActorSheetV2"] .relationships .item-list .item input.relationship-name:focus,
+  form[id^="tftloopActorSheetV2"] .relationships .item-list .item input.relationship-desc:focus {
+    outline: none;
+  }
+  form[id^="tftloopActorSheetV2"] .relationships .empty-state {
+    padding: 3px;
+    text-align: center;
+    font-style: italic;
+    color: var(--color-black);
+  }
+  form[id^="tftloopActorSheetV2"] .relationships .empty-state:nth-child(2n) {
+    background: var(--color-iconic-item);
+  }
+  form[id^="tftloopActorSheetV2"] .relationships .empty-state:nth-child(2n + 1) {
+    background: var(--color-field);
+  }
+  form[id^="tftloopActorSheetV2"] .items {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    background: var(--color-field);
+  }
+  form[id^="tftloopActorSheetV2"] .info-item {
+    font-family: var(--font-avant);
+    font-size: 1em;
+    padding-inline-start: 3px;
+    align-items: center;
+    overflow-x: auto;
+    list-style: none;
+    background: var(--color-field);
+    line-height: 34px;
+    display: flex;
+    flex-direction: row;
+    place-content: space-between space-between;
+    border-top: 1px solid var(--color-black);
+    /* Vertical list separation */
+  }
+  form[id^="tftloopActorSheetV2"] .info-item label {
+    max-width: fit-content;
+  }
+  form[id^="tftloopActorSheetV2"] .info-item input,
+  form[id^="tftloopActorSheetV2"] .info-item select,
+  form[id^="tftloopActorSheetV2"] .info-item textarea {
+    background: var(--color-transparent);
+    border: 1px solid var(--color-transparent);
+    font-family: inherit;
+    padding: 2px 3px;
+    margin-inline-end: 3px;
+  }
+  form[id^="tftloopActorSheetV2"] .info-item input:focus,
+  form[id^="tftloopActorSheetV2"] .info-item select:focus,
+  form[id^="tftloopActorSheetV2"] .info-item textarea:focus {
+    outline: none;
+  }
+  form[id^="tftloopActorSheetV2"] .info-item img {
+    border: none;
+  }
+  form[id^="tftloopActorSheetV2"] .info-item.short {
+    flex: 0 0 180px;
+  }
+  form[id^="tftloopActorSheetV2"] .info-item .item-name {
+    flex: 0 0 60%;
+  }
+  form[id^="tftloopActorSheetV2"] .info-item .item-bonus {
+    flex: 0 0 35px;
+    text-align: end;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  form[id^="tftloopActorSheetV2"] .info-item .item-bonus::before {
+    content: "\f067";
+    /* Font Awesome fa-plus icon */
+    font-family: var(--font-awesome), sans-serif;
+    font-weight: 900;
+    /* Solid style */
+    font-size: 0.8em;
+    position: relative;
+    flex-shrink: 0;
+  }
+  form[id^="tftloopActorSheetV2"] .info-item .item-bonus .item-bonus-content {
+    flex: 1;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0;
+    padding-inline-end: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: end;
+  }
+  form[id^="tftloopActorSheetV2"] .info-item .item-bonus .item-bonus-content input {
+    background: var(--color-transparent);
+    border: 1px solid var(--color-transparent);
+    font-family: inherit;
+    padding: 2px 3px;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-align: end;
+  }
+  form[id^="tftloopActorSheetV2"] .info-item .item-bonus .item-bonus-content input:focus {
+    outline: none;
+  }
+  form[id^="tftloopActorSheetV2"] .info-item .relationship-name {
+    flex: 0 0 100px;
+  }
+  form[id^="tftloopActorSheetV2"] .info-item .item-control {
+    flex: 0 0 60px;
+    text-align: center;
+  }
+  form[id^="tftloopActorSheetV2"] .special-item {
+    font-family: var(--font-avant);
+    font-size: 1em;
+    background: var(--color-section-head);
+    border-inline-end: 1px solid var(--color-black);
+    border-top: 1px solid var(--color-black);
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-black);
+    padding-inline-start: 3px;
+    align-items: center;
+  }
+  form[id^="tftloopActorSheetV2"] .special-item img {
+    border: none;
+  }
+  form[id^="tftloopActorSheetV2"] .info-list {
+    margin: 0;
+    padding-inline-start: 0;
+  }
+  form[id^="tftloopActorSheetV2"] .info-list .item {
+    border-inline-end: none;
+  }
+  form[id^="tftloopActorSheetV2"] .info-list .iconic-item {
+    list-style: none;
+    font-family: var(--font-avant);
+    font-size: 1em;
+    background: var(--color-iconic-item);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    border-top: 1px solid var(--color-black);
+  }
+  form[id^="tftloopActorSheetV2"] .info-list .iconic-item .iconic-item-label {
+    padding: 3px;
+    font-weight: 500;
+    text-align: start;
+    line-height: 20px;
+  }
+  form[id^="tftloopActorSheetV2"] .info-list .iconic-item .iconic-item-row {
+    display: flex;
+    flex-direction: row;
+    place-content: space-between space-between;
+    align-items: center;
+    padding-inline-start: 3px;
+    line-height: 34px;
+  }
+  form[id^="tftloopActorSheetV2"] .info-list .iconic-item .item-name {
+    flex: 0 0 60%;
+  }
+  form[id^="tftloopActorSheetV2"] .info-list .iconic-item .item-bonus {
+    flex: 0 0 35px;
+    text-align: end;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-inline-start: 5px;
+  }
+  form[id^="tftloopActorSheetV2"] .info-list .iconic-item .item-bonus::before {
+    content: "\f067";
+    /* Font Awesome fa-plus icon */
+    font-family: var(--font-awesome), sans-serif;
+    font-weight: 900;
+    /* Solid style */
+    font-size: 0.8em;
+    position: relative;
+    flex-shrink: 0;
+  }
+  form[id^="tftloopActorSheetV2"] .info-list .iconic-item .item-bonus .item-bonus-content {
+    flex: 1;
+    min-width: 0;
+    max-width: 100%;
+    margin-inline-end: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: end;
+  }
+  form[id^="tftloopActorSheetV2"] .info-list .iconic-item .item-control {
+    flex: 0 0 60px;
+    text-align: center;
+  }
+  form[id^="tftloopActorSheetV2"] .info-list .iconic-item label {
+    max-width: fit-content;
+  }
+  form[id^="tftloopActorSheetV2"] .info-list .iconic-item input {
+    margin-inline-end: 3px;
+    background: var(--color-transparent);
+    border: 1px solid var(--color-transparent);
+    font-family: inherit;
+    padding: 2px 3px;
+  }
+  form[id^="tftloopActorSheetV2"] .info-list .iconic-item input:focus {
+    outline: none;
+  }
+  form[id^="tftloopActorSheetV2"] .notes-tab-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding: 3px;
+  }
+  form[id^="tftloopActorSheetV2"] .notes-tab-content .notes-header {
+    font-family: var(--font-avant-bold);
+    font-size: 1.1em;
+    color: var(--color-highlight);
+    margin: 0 0 3px;
+    padding-bottom: 2px;
+    border-bottom: 2px solid var(--color-highlight);
+  }
+  form[id^="tftloopActorSheetV2"] .notes-tab-content .notes-editor {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  form[id^="tftloopActorSheetV2"] .notes-tab-content .editor.prosemirror {
+    flex: 1;
+    min-height: 200px;
+    border: 1px solid var(--color-highlight);
+    border-radius: 4px;
+    padding: 8px;
+  }
+  form[id^="tftloopActorSheetV2"] .notes-tab-content .editor.prosemirror .editor-content {
+    font-family: var(--font-avant);
+    color: var(--system-item-text-color);
+  }
+  form[id^="tftloopActorSheetV2"] .notes-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding: 3px;
+  }
+  form[id^="tftloopActorSheetV2"] .notes-content .notes-header {
+    font-family: var(--font-avant-bold);
+    font-size: 1.1em;
+    color: var(--color-highlight);
+    margin: 0 0 3px;
+    padding-bottom: 2px;
+    border-bottom: 2px solid var(--color-highlight);
+  }
+  form[id^="tftloopActorSheetV2"] .notes-content .notes-editor {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  form[id^="tftloopActorSheetV2"] .notes-content .editor.prosemirror {
+    flex: 1;
+    min-height: 200px;
+    border: 1px solid var(--color-highlight);
+    border-radius: 4px;
+    padding: 8px;
+  }
+  form[id^="tftloopActorSheetV2"] .notes-content .editor.prosemirror .editor-content {
+    font-family: var(--font-avant);
+    color: var(--system-item-text-color);
+  }
+  form[id^="tftloopActorSheetV2"] .scars {
+    margin-block-end: 4px;
+    flex-basis: 225px;
+    background: var(--color-field);
+    /* Show col-head only when info-list has items */
+  }
+  form[id^="tftloopActorSheetV2"] .scars .section-header .col-head {
+    font-family: var(--font-avant);
+    font-size: 1em;
+    text-align: end;
+    padding-inline-end: 20px;
+    font-weight: 700;
+    display: none;
+    /* Hidden by default */
+  }
+  form[id^="tftloopActorSheetV2"] .scars:has(.info-list > li) .section-header .col-head {
+    display: block;
+  }
+  form[id^="tftloopActorSheetV2"] .scars .info-item {
+    font-family: var(--font-avant);
+    padding-inline-start: 3px;
+    align-items: center;
+    overflow-x: auto;
+    font-size: 1em;
+    line-height: 34px;
+    display: flex;
+    flex-direction: row;
+    place-content: space-between space-between;
+  }
+  form[id^="tftloopActorSheetV2"] .scars .info-item label {
+    max-width: fit-content;
+  }
+  form[id^="tftloopActorSheetV2"] .scars .info-item input,
+  form[id^="tftloopActorSheetV2"] .scars .info-item select,
+  form[id^="tftloopActorSheetV2"] .scars .info-item textarea {
+    background: var(--color-transparent);
+    border: 1px solid var(--color-transparent);
+    font-family: inherit;
+    padding: 2px 3px;
+    margin-inline-end: 3px;
+  }
+  form[id^="tftloopActorSheetV2"] .scars .info-item input:focus,
+  form[id^="tftloopActorSheetV2"] .scars .info-item select:focus,
+  form[id^="tftloopActorSheetV2"] .scars .info-item textarea:focus {
+    outline: none;
+  }
+  form[id^="tftloopActorSheetV2"] .scars .info-item img {
+    border: none;
+  }
+  form[id^="tftloopActorSheetV2"] .scars .info-item .scar-name {
+    flex: 0 0 80px;
+  }
+  form[id^="tftloopActorSheetV2"] .scars .info-item input {
+    background: var(--color-transparent);
+    border: 1px solid var(--color-transparent);
+    font-family: inherit;
+    padding: 2px 3px;
+  }
+  form[id^="tftloopActorSheetV2"] .scars .info-item input:focus {
+    outline: none;
+  }
+  form[id^="tftloopActorSheetV2"] .hideout {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    background: var(--color-field);
+  }
+  form[id^="tftloopActorSheetV2"] .hideout .hideout-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  form[id^="tftloopActorSheetV2"] .hideout .hideout-text textarea {
+    border: none;
+    resize: none;
+    flex: 1;
+    width: 100%;
+    padding: 4px;
+    background: var(--color-transparent);
+    font-family: inherit;
+    font-size: 0.9em;
+    margin: 0;
+  }
+  form[id^="tftloopActorSheetV2"] .hideout .hideout-text textarea:focus {
+    outline: none;
+  }
+  /* NPC Sheet - Vertical Icon Tabs Layout */
+  /* ============================================
+   VARIABLES (scoped to NPC sheet)
+   ============================================ */
+  /* ============================================
+   VERTICAL TABS - Window Level
+   ============================================ */
+  .application.tftloop.actor.npc {
+    /* Vertical Tab Navigation */
+  }
+  .application.tftloop.actor.npc.vertical-tabs {
+    overflow: visible;
+  }
+  .application.tftloop.actor.npc .window-content {
+    position: relative;
+    /* containing block for nav.sidebar-tabs */
+    padding: 0;
+    overflow: visible;
+  }
+  .application.tftloop.actor.npc nav.sidebar-tabs {
+    position: absolute;
+    left: 100%;
+    top: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    z-index: -1;
+    border: none;
+  }
+  .application.tftloop.actor.npc nav.sidebar-tabs > .item {
+    position: relative;
+    width: 44px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--tab-background-color);
+    color: var(--tab-color);
+    border: 1px solid transparent;
+    border-radius: 0 8px 8px 0;
+    margin-inline-start: -5px;
+    transition: all 250ms ease;
+    cursor: pointer;
+  }
+  .application.tftloop.actor.npc nav.sidebar-tabs > .item i {
+    font-size: var(--font-size-14, 14px);
+    margin: 0;
+  }
+  .application.tftloop.actor.npc nav.sidebar-tabs > .item::after {
+    content: "";
+    position: absolute;
+    inset: 3px 3px 3px 0;
+    border: 1px solid transparent;
+    border-radius: 0 5px 5px 0;
+    border-inline-start: none;
+    pointer-events: none;
+    transition: border-color 250ms ease;
+  }
+  .application.tftloop.actor.npc nav.sidebar-tabs > .item.active::after,
+  .application.tftloop.actor.npc nav.sidebar-tabs > .item:hover::after {
+    border-color: var(--tab-color);
+  }
+  .application.tftloop.actor.npc nav.sidebar-tabs > .item.active,
+  .application.tftloop.actor.npc nav.sidebar-tabs > .item:hover {
+    margin-inline-start: 0;
+    border-color: var(--tab-color);
+    box-shadow: 0 0 5px var(--tab-color);
+    text-shadow: none;
+  }
+  /* ============================================
+   FORM & MAIN LAYOUT
+   ============================================ */
+  form[id^="tftloopNpcSheet"] {
+    flex: 1;
+    display: flex;
+    min-height: 0;
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    min-height: 0;
+    /* ============================================
+		   DECORATIVE SIDEBAR
+		   ============================================ */
+    /* ============================================
+		   MAIN CONTENT AREA
+		   ============================================ */
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-sidebar {
+    flex: 0 0 40px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: linear-gradient(to bottom, var(--color-sidebar-top) 0, var(--color-sidebar-top) 10px, var(--color-sidebar-mid) 10px, var(--color-sidebar-mid) 90px, var(--color-sidebar-bot) 90px, var(--color-sidebar-bot) 100%);
+    /* Grunge texture overlay */
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-sidebar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("img/grunge.png");
+    z-index: 10;
+    pointer-events: none;
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    background: var(--tftloop-item-background);
+    color: var(--system-item-text-color);
+    min-height: 0;
+    overflow: hidden;
+    /* ============================================
+			   HEADER SECTION - Vertical Stack
+			   ============================================ */
+    /* ============================================
+			   TAB CONTENT
+			   ============================================ */
+    /* Form element styling */
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .header-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding-block-end: 8px;
+    /* NPC Image (top, centered) */
+    /* Name header with pipe separator */
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .header-section .npc-image {
+    flex: 0 0 144px;
+    width: 144px;
+    height: 144px;
+    border: 1px solid var(--color-highlight);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-field);
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .header-section .npc-image .image-edit {
+    --button-size: 24px;
+    position: absolute;
+    inset-block-start: 2px;
+    inset-inline-end: 2px;
+    padding: 0;
+    z-index: 10;
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .header-section .npc-image img.profile {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    border: none;
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .header-section h1 {
+    width: 100%;
+    color: var(--color-highlight);
+    font-size: var(--font-size-20, 1.25em);
+    font-weight: 300;
+    border-block-end: 2px solid var(--color-highlight);
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.25em;
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .header-section h1 .type-label {
+    white-space: nowrap;
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .header-section h1 .fa-pipe {
+    color: var(--color-highlight);
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .header-section h1 .npc-name-input {
+    flex: 1;
+    border: 1px solid transparent;
+    background: var(--color-transparent);
+    padding: 2px 3px;
+    min-width: 0;
+    font-family: var(--font-avant);
+    font-size: inherit;
+    color: var(--system-item-text-color);
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .header-section h1 .npc-name-input:focus {
+    border: 1px solid var(--color-highlight);
+    outline: none;
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .sheet-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+    /* Section header for characteristics (within main tab) */
+    /* Characteristics list */
+    /* Empty state */
+    /* Notes tab */
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .sheet-body .tab {
+    display: none;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden auto;
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .sheet-body .tab.active {
+    display: flex;
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .sheet-body .section-header {
+    width: 100%;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding-block: 0;
+    padding-inline: 5px;
+    min-height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--color-black);
+    margin-block-end: 0;
+    margin-block: 0;
+    border-block-start: none;
+    border-block-end: none;
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .sheet-body .section-header * {
+    color: var(--color-white);
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .sheet-body .section-header .section-title {
+    margin: 0;
+    font-size: 1em;
+    font-family: var(--font-avant-bold);
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .sheet-body .section-header .item-create {
+    background: transparent;
+    border: none;
+    color: var(--color-white);
+    cursor: pointer;
+    padding: 2px 3px;
+    margin-inline-start: 3px;
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .sheet-body .section-header .item-create:hover {
+    color: var(--color-highlight);
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .sheet-body .info-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: var(--color-transparent);
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .sheet-body .info-list .item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow-x: auto;
+    font-family: var(--font-avant);
+    font-size: 1em;
+    border-top: 1px solid var(--color-black);
+    padding-inline: 3px;
+    background: var(--color-transparent);
+    line-height: 34px;
+    place-content: space-between;
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .sheet-body .info-list .item:first-child {
+    border-top: none;
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .sheet-body .info-list .item .characteristic-display {
+    flex: 1;
+    font-family: var(--font-avant-bold);
+    color: var(--system-item-text-color);
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .sheet-body .info-list .item .characteristic-display .characteristic-name {
+    text-transform: uppercase;
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .sheet-body .info-list .item .characteristic-display .characteristic-number {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .sheet-body .info-list .item .item-control {
+    flex: 0 0 60px;
+    text-align: center;
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .sheet-body .info-list .item .item-control a {
+    cursor: pointer;
+    color: var(--system-item-text-color);
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .sheet-body .info-list .item .item-control a:hover {
+    color: var(--color-highlight);
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .sheet-body .empty-list {
+    padding: 8px;
+    text-align: center;
+    color: var(--color-text-secondary, #666);
+    font-style: italic;
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .sheet-body .notes-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .sheet-body .notes-content label {
+    font-family: var(--font-avant-bold);
+    color: var(--system-item-bold-text-color);
+    margin-block-end: 8px;
+    flex: 0 0 auto;
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .sheet-body .notes-content .editor.prosemirror {
+    flex: 1;
+    min-height: 200px;
+    border: 1px solid var(--color-highlight);
+    border-radius: 4px;
+    padding: 8px;
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info .sheet-body .notes-content .editor.prosemirror .editor-content {
+    font-family: var(--font-avant);
+    font-size: 1em;
+    color: var(--system-item-text-color);
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info label {
+    font-family: var(--font-avant-bold);
+    color: var(--system-item-bold-text-color);
+    white-space: nowrap;
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info input[type="text"],
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info input[type="number"] {
+    background: var(--color-transparent);
+    border: 1px solid var(--color-transparent);
+    font-family: inherit;
+    padding: 2px 3px;
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info input[type="text"]:focus,
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info input[type="number"]:focus {
+    outline: none;
+  }
+  form[id^="tftloopNpcSheet"] .npc-sheet .npc-info input:focus {
+    outline: 2px solid var(--color-highlight);
+    box-shadow: none;
+  }
+  /* ============================================
+   LAYOUT
+   ============================================ */
+  .application.tftloop.item .window-content {
+    padding: 0;
+  }
+  .item-sheet {
+    /* ============================================
+     VARIABLES (scoped to prevent global leakage)
+     ============================================ */
+    /* ============================================
+     MIXINS (scoped to prevent global leakage)
+     ============================================ */
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    min-height: 0;
+  }
+  .item-sheet .item-sidebar {
+    flex: 0 0 65px;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-avant-bold);
+    position: relative;
+    background: linear-gradient(to bottom, var(--color-sidebar-top) 0, var(--color-sidebar-top) 15px, var(--color-sidebar-mid) 15px, var(--color-sidebar-mid) 135px, var(--color-sidebar-bot) 135px, var(--color-sidebar-bot) 100%);
+  }
+  .item-sheet .item-sidebar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("img/grunge.png");
+    z-index: 10;
+    pointer-events: none;
+  }
+  .item-sheet .item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    background: var(--tftloop-item-background);
+    min-height: 0;
+    /* ============================================
+       FORM ELEMENTS
+       ============================================ */
+    /* ============================================
+       HEADER
+       ============================================ */
+    /* ============================================
+       INFO ITEMS
+       ============================================ */
+    /* ============================================
+       NOTES
+       ============================================ */
+  }
+  .item-sheet .item-info .row-label,
+  .item-sheet .item-info label {
+    font-family: var(--font-avant-bold);
+    color: var(--system-item-bold-text-color);
+    white-space: nowrap;
+    padding-inline-end: 5px;
+    flex: 0 0 auto;
+  }
+  .item-sheet .item-info input[type="text"],
+  .item-sheet .item-info input[type="number"],
+  .item-sheet .item-info .editor.prosemirror {
+    font-family: var(--font-avant);
+    font-size: 1em;
+    background: var(--color-transparent);
+    border: 1px solid var(--color-highlight);
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: var(--system-item-text-color);
+  }
+  .item-sheet .item-info input:focus,
+  .item-sheet .item-info textarea:focus {
+    outline: 2px solid var(--color-highlight);
+    box-shadow: none;
+  }
+  .item-sheet .item-info .header-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: flex-start;
+    padding-block-end: 8px;
+  }
+  .item-sheet .item-info .header-layout .header-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .item-sheet .item-info .header-layout .header-main h1 {
+    color: var(--color-highlight);
+    font-size: var(--font-size-20);
+    font-weight: 300;
+    border-block-end: 2px solid var(--color-highlight);
+    margin-block-end: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.25em;
+  }
+  .item-sheet .item-info .header-layout .header-main h1 .fa-pipe {
+    color: var(--color-highlight);
+  }
+  .item-sheet .item-info .header-layout .header-main h1 .item-name-inline {
+    flex: 1;
+    border: 1px solid transparent;
+    background: var(--color-transparent);
+    padding: 2px 5px;
+    min-width: 0;
+  }
+  .item-sheet .item-info .header-layout .header-main h1 .item-name-inline:focus {
+    border: 1px solid var(--color-highlight);
+    outline: none;
+  }
+  .item-sheet .item-info .header-layout .header-main .header-details {
+    display: flex;
+    flex-direction: column;
+  }
+  .item-sheet .item-info .header-layout .header-main .header-details .item-description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    margin-block-end: 5px;
+    gap: 5px;
+  }
+  .item-sheet .item-info .header-layout .header-main .header-details .item-description input {
+    flex: 1;
+    min-width: 0;
+    text-align: start;
+  }
+  .item-sheet .item-info .header-layout .item-image {
+    flex: 0 0 128px;
+    height: 128px;
+    border: 1px solid var(--color-highlight);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .item-sheet .item-info .header-layout .item-image .item-image-edit {
+    --button-size: 24px;
+    position: absolute;
+    inset-block-start: 2px;
+    inset-inline-end: 2px;
+    padding: 0;
+    z-index: 10;
+  }
+  .item-sheet .item-info .header-layout .item-image img.profile {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+  }
+  [dir="rtl"] .item-sheet .item-info .header-layout {
+    flex-direction: row-reverse;
+  }
+  .item-sheet .item-info .info-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 5px;
+    margin-block-end: 5px;
+  }
+  .item-sheet .item-info .info-item .item-bonus {
+    flex: 0 0 40px;
+    text-align: end;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+  }
+  .item-sheet .item-info .info-item .item-bonus .fa-plus {
+    font-size: 0.8em;
+  }
+  .item-sheet .item-info .info-item .item-bonus .item-bonus-content {
+    flex: 1;
+    min-width: 0;
+    padding-inline-end: 5px;
+    text-align: end;
+  }
+  .item-sheet .item-info .item-notes {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    position: relative;
+    overflow: visible;
+  }
+  .item-sheet .item-info .item-notes label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-block-end: 0;
+    flex: 0 0 auto;
+  }
+  .item-sheet .item-info .item-notes .editor.prosemirror {
+    flex: 1;
+    min-height: 200px;
+    position: relative;
+    margin-block-start: 2px;
+    padding: 8px;
+    overflow: visible;
+  }
+  .item-sheet .item-info .item-notes .editor.prosemirror button.toggle {
+    --button-size: 24px;
+    transform: translateY(calc(-100% - 3px));
+  }
+  .item-sheet .item-info .item-notes .editor.prosemirror .editor-content {
+    font-family: var(--font-avant);
+    font-size: 1em;
+    color: var(--system-item-text-color);
+    padding-inline: 5px;
+  }
+  .item-sheet .item-info .item-notes .editor.prosemirror .editor-content p,
+  .item-sheet .item-info .item-notes .editor.prosemirror .editor-content div,
+  .item-sheet .item-info .item-notes .editor.prosemirror .editor-content span,
+  .item-sheet .item-info .item-notes .editor.prosemirror .editor-content li,
+  .item-sheet .item-info .item-notes .editor.prosemirror .editor-content td,
+  .item-sheet .item-info .item-notes .editor.prosemirror .editor-content th {
+    font-family: var(--font-avant);
+  }
+  .item-sheet .item-info .item-notes .editor.prosemirror .editor-content h1,
+  .item-sheet .item-info .item-notes .editor.prosemirror .editor-content h2,
+  .item-sheet .item-info .item-notes .editor.prosemirror .editor-content h3,
+  .item-sheet .item-info .item-notes .editor.prosemirror .editor-content h4,
+  .item-sheet .item-info .item-notes .editor.prosemirror .editor-content h5,
+  .item-sheet .item-info .item-notes .editor.prosemirror .editor-content h6,
+  .item-sheet .item-info .item-notes .editor.prosemirror .editor-content code,
+  .item-sheet .item-info .item-notes .editor.prosemirror .editor-content pre,
+  .item-sheet .item-info .item-notes .editor.prosemirror .editor-content [style*="font-family"],
+  .item-sheet .item-info .item-notes .editor.prosemirror .editor-content [class*="font-"] {
+    font-family: unset;
+  }
+  .item-sheet .item-info .item-notes:has(.editor.prosemirror:not(.active)) button.toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+/*# sourceMappingURL=tftloop.css.map */

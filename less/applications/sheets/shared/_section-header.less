@@ -1,0 +1,33 @@
+/* Section Header */
+.section-header {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 0 5px;
+  margin: 0;
+  min-height: 30px;
+  justify-content: space-between;
+  align-items: center;
+
+  .item-control {
+    text-align: right;
+    max-width: fit-content;
+  }
+}
+
+/* Conditions sections need specific line-height for flexcol layout */
+.conditions .section-header {
+  line-height: 25px;
+}
+
+/* Section Title (h4 inside section-header) */
+.section-title {
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 1.2em;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2em;
+}

@@ -1,0 +1,44 @@
+{{!-- Character Sheet V2 - Vertical Tabs Layout --}}
+<div class="character-sheet">
+    {{!-- Decorative Sidebar --}}
+    <div class="sheet-sidebar"></div>
+
+    {{!-- Main Content Area --}}
+    <div class="sheet-main">
+        {{!-- Tab Content Area --}}
+        <div class="sheet-body">
+            {{!-- Main Tab --}}
+            <div class="tab {{tabs.main.cssClass}}" data-group="primary" data-tab="main">
+                {{> "systems/tftloop/templates/actors/partials-v2/main-tab.hbs"}}
+            </div>
+
+            {{!-- Core Info Tab --}}
+            <div class="tab {{tabs.core.cssClass}}" data-group="primary" data-tab="core">
+                {{> (concat "systems/tftloop/templates/actors/partials-v2/core-info-" actor.type "-tab.hbs")}}
+            </div>
+
+            {{!-- Relationships Tab --}}
+            <div class="tab {{tabs.relationships.cssClass}}" data-group="primary" data-tab="relationships">
+                {{> "systems/tftloop/templates/actors/partials-v2/relationships-tab.hbs"}}
+            </div>
+
+            {{!-- Items Tab --}}
+            <div class="tab {{tabs.items.cssClass}}" data-group="primary" data-tab="items">
+                {{> "systems/tftloop/templates/actors/partials-v2/items-tab.hbs"}}
+            </div>
+
+            {{!-- Scars Tab (Teen-only) --}}
+            {{#if (eq actor.type "teen")}}
+            <div class="tab {{tabs.scars.cssClass}}" data-group="primary" data-tab="scars">
+                {{> "systems/tftloop/templates/actors/partials-v2/scars-tab.hbs"}}
+            </div>
+            {{/if}}
+
+            {{!-- Notes Tab --}}
+            <div class="tab {{tabs.notes.cssClass}}" data-group="primary" data-tab="notes">
+                {{> "systems/tftloop/templates/actors/partials-v2/notes-tab.hbs"}}
+            </div>
+        </div>
+
+    </div>
+</div>

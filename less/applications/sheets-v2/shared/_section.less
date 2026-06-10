@@ -1,0 +1,48 @@
+/* Section class - applies wrapper styles to elements with .section class */
+.section {
+  border: 1px solid var(--color-black);
+  box-shadow: 2px 2px var(--color-drop-shadow);
+  margin: 2px;
+  padding: 0;
+
+  /* Remove top border when section-header is present (header provides it) */
+  &:has(.section-header) {
+    border-top: none;
+  }
+
+  /* Section Header Class - Black header with white text pattern */
+  .section-header {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding-block: 0;
+    padding-inline: @padding-inline-section;
+    min-height: @header-height;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--color-black);
+    margin-block-end: 0;
+
+    /* All text within should be white and vertically centered */
+    * {
+      color: var(--color-white);
+    }
+
+    .section-title {
+      font-weight: 700;
+      font-size: 1.2em;
+      margin: 0;
+      padding: 0;
+      line-height: 1.2em;
+    }
+
+    /* Style button when it exists in the template */
+    button {
+      padding: 0;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1em;
+    }
+  }
+}

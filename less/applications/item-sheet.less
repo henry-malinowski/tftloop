@@ -1,0 +1,315 @@
+/* ============================================
+   LAYOUT
+   ============================================ */
+
+.application.tftloop.item .window-content {
+  padding: 0;
+}
+
+.item-sheet {
+  /* ============================================
+     VARIABLES (scoped to prevent global leakage)
+     ============================================ */
+  @sidebar-width: 65px;
+  @sidebar-gradient-top: 15px;
+  @sidebar-gradient-bot: 135px;
+  @image-size: 128px;
+
+  @border-standard: 1px solid var(--color-highlight);
+  @border-radius: 4px;
+
+  @gap-small: 2px;
+  @gap-standard: 5px;
+  @gap-large: 8px;
+
+  @input-font: var(--font-avant);
+  @label-font: var(--font-avant-bold);
+
+  /* ============================================
+     MIXINS (scoped to prevent global leakage)
+     ============================================ */
+  .flex-row() {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .flex-col() {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flex-center() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .input-base() {
+    font-family: @input-font;
+    font-size: 1em;
+    background: var(--color-transparent);
+    border: @border-standard;
+    border-radius: @border-radius;
+    box-sizing: border-box;
+    color: var(--system-item-text-color);
+  }
+
+  .flex-row();
+
+  flex: 1;
+  min-height: 0;
+
+  .item-sidebar {
+    flex: 0 0 @sidebar-width;
+    .flex-col();
+
+    font-family: @label-font;
+    position: relative;
+    background: linear-gradient(
+      to bottom,
+      var(--color-sidebar-top) 0,
+      var(--color-sidebar-top) @sidebar-gradient-top,
+      var(--color-sidebar-mid) @sidebar-gradient-top,
+      var(--color-sidebar-mid) @sidebar-gradient-bot,
+      var(--color-sidebar-bot) @sidebar-gradient-bot,
+      var(--color-sidebar-bot) 100%
+    );
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("img/grunge.png");
+      z-index: 10;
+      pointer-events: none;
+    }
+  }
+
+  .item-info {
+    flex: 1;
+    .flex-col();
+
+    padding: @gap-large;
+    background: var(--tftloop-item-background);
+    min-height: 0;
+
+    /* ============================================
+       FORM ELEMENTS
+       ============================================ */
+    .row-label,
+    label {
+      font-family: @label-font;
+      color: var(--system-item-bold-text-color);
+      white-space: nowrap;
+      padding-inline-end: @gap-standard;
+      flex: 0 0 auto;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    .editor.prosemirror {
+      .input-base();
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: 2px solid var(--color-highlight);
+      box-shadow: none;
+    }
+
+    /* ============================================
+       HEADER
+       ============================================ */
+    .header-layout {
+      .flex-row();
+
+      gap: @gap-large;
+      align-items: flex-start;
+      padding-block-end: @gap-large;
+
+      .header-main {
+        flex: 1;
+        .flex-col();
+
+        h1 {
+          color: var(--color-highlight);
+          font-size: var(--font-size-20);
+          font-weight: 300;
+          border-block-end: 2px solid var(--color-highlight);
+          margin-block-end: @gap-standard;
+          .flex-row();
+
+          align-items: center;
+          gap: 0.25em;
+
+          .fa-pipe {
+            color: var(--color-highlight);
+          }
+
+          .item-name-inline {
+            flex: 1;
+            border: 1px solid transparent;
+            background: var(--color-transparent);
+            padding: @gap-small @gap-standard;
+            min-width: 0;
+
+            &:focus {
+              border: @border-standard;
+              outline: none;
+            }
+          }
+        }
+
+        .header-details {
+          .flex-col();
+
+          .item-description {
+            .flex-row();
+
+            align-items: center;
+            justify-content: start;
+            margin-block-end: @gap-standard;
+            gap: @gap-standard;
+
+            input {
+              flex: 1;
+              min-width: 0;
+              text-align: start;
+            }
+          }
+        }
+      }
+
+      .item-image {
+        flex: 0 0 @image-size;
+        height: @image-size;
+        border: @border-standard;
+        position: relative;
+        .flex-center();
+
+        .item-image-edit {
+          --button-size: 24px;
+
+          position: absolute;
+          inset-block-start: @gap-small;
+          inset-inline-end: @gap-small;
+          padding: 0;
+          z-index: 10;
+        }
+
+        img.profile {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          cursor: pointer;
+        }
+      }
+
+      [dir="rtl"] & {
+        flex-direction: row-reverse;
+      }
+    }
+
+    /* ============================================
+       INFO ITEMS
+       ============================================ */
+    .info-item {
+      .flex-row();
+
+      align-items: center;
+      justify-content: start;
+      gap: @gap-standard;
+      margin-block-end: @gap-standard;
+
+      .item-bonus {
+        flex: 0 0 40px;
+        text-align: end;
+        position: relative;
+        .flex-row();
+
+        align-items: center;
+        gap: @gap-standard;
+
+        .fa-plus {
+          font-size: 0.8em;
+        }
+
+        .item-bonus-content {
+          flex: 1;
+          min-width: 0;
+          padding-inline-end: @gap-standard;
+          text-align: end;
+        }
+      }
+    }
+
+    /* ============================================
+       NOTES
+       ============================================ */
+    .item-notes {
+      flex: 1;
+      .flex-col();
+
+      min-height: 0;
+      position: relative;
+      overflow: visible;
+
+      label {
+        .flex-row();
+
+        justify-content: space-between;
+        align-items: center;
+        margin-block-end: 0;
+        flex: 0 0 auto;
+      }
+
+      .editor.prosemirror {
+        flex: 1;
+        min-height: 200px;
+        position: relative;
+        margin-block-start: @gap-small;
+        padding: @gap-large;
+        overflow: visible;
+
+        button.toggle {
+          --button-size: 24px;
+
+          transform: translateY(calc(-100% - 3px));
+        }
+
+        .editor-content {
+          font-family: @input-font;
+          font-size: 1em;
+          color: var(--system-item-text-color);
+          padding-inline: @gap-standard;
+
+          p,
+          div,
+          span,
+          li,
+          td,
+          th {
+            font-family: @input-font;
+          }
+
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6,
+          code,
+          pre,
+          [style*="font-family"],
+          [class*="font-"] {
+            font-family: unset;
+          }
+        }
+      }
+
+      &:has(.editor.prosemirror:not(.active)) button.toggle {
+        .flex-center();
+      }
+    }
+  }
+}

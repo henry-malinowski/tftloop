@@ -1,0 +1,83 @@
+// ============================================
+// FLEX UTILITIES
+// ============================================
+.flex-row() {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col() {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// ============================================
+// EDIT BUTTONS
+// ============================================
+.edit-button() {
+  --button-size: 24px;
+
+  position: absolute;
+  inset-block-start: @gap-inline-small;
+  inset-inline-end: @gap-inline-small;
+  padding: 0;
+  z-index: 10;
+}
+
+// ============================================
+// INPUT BASE
+// ============================================
+.input-base() {
+  background: var(--color-transparent);
+  border: 1px solid var(--color-transparent); // Unified to use CSS variable for single point of modification
+  font-family: inherit;
+  padding: @gap-inline-small @gap-inline-standard;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// ============================================
+// ROW BASE
+// ============================================
+.row-base() {
+  .flex-row();
+
+  align-items: center;
+  overflow-x: auto;
+  font-family: @font-input;
+  font-size: @font-size-standard;
+  border-top: @border-top-row;
+}
+
+// ============================================
+// SECTION HEADER
+// ============================================
+.section-header() {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding-block: @padding-block-section;
+  padding-inline: @padding-inline-section;
+  min-height: @header-height;
+  .flex-between();
+
+  border: @border-thin;
+  margin-block-end: 0;
+
+  * {
+    color: var(--color-white);
+  }
+}

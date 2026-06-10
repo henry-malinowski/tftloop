@@ -1,0 +1,50 @@
+/* Form Row - For form fields in core-info (extends .sheet-row) */
+.form-row {
+  .sheet-row();
+
+  line-height: 34px;
+  place-content: space-between space-between;
+
+  &.flexrow {
+    justify-content: space-between;
+  }
+
+  .checkbox-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    margin-left: 3px;
+    flex: 0 0 auto;
+  }
+
+  .tft-checkbox {
+    appearance: none;
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    display: block;
+    flex: 0 0 18px;
+    box-sizing: border-box;
+    background: transparent url("img/box_not_checked.png") center / 100% 100% no-repeat;
+
+    &::before,
+    &::after {
+      content: none;
+      display: none;
+    }
+
+    &:checked {
+      background-image: url("img/box_checked.png");
+    }
+
+    &:focus,
+    &:focus-visible {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}

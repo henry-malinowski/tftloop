@@ -1,0 +1,53 @@
+/* Kid Core Info */
+.core-info {
+  border-top: 1px solid var(--color-black); /* Top border for core-info box */
+
+  /* Even/odd background handling - ONLY place that needs it */
+
+  /* Form-rows inside flexrow (age selector gets field background) */
+  > .flexrow {
+    border-bottom: 1px solid var(--color-black); /* Separate flexrow from form-rows below */
+
+    /* Form-rows in flexrow - borders managed by container */
+    > .form-row {
+      border-top: none;
+      border-right: none; /* Remove base border, managed by container */
+      background: var(--color-field);
+    }
+
+    /* Add border-right to all except last */
+    > .form-row:not(:last-child) {
+      border-right: 1px solid var(--color-black);
+    }
+  }
+
+  /* Form-rows as direct children (after flexrow) - even/odd pattern */
+  > .form-row {
+    border-bottom: 1px solid var(--color-black); /* Vertical separation between form rows */
+
+    &:nth-child(2n) {
+      background: var(--color-iconic-item);
+    }
+
+    &:nth-child(2n + 1) {
+      background: var(--color-field);
+    }
+  }
+}
+
+.luck-item {
+  font-family: var(--font-avant);
+  font-size: 1em;
+  background: var(--color-section-head);
+
+  /* Borders removed - managed by flexrow container */
+  justify-content: space-between;
+
+  /* No border-bottom for luck points */
+  padding-left: 3px;
+  align-items: center;
+
+  img {
+    border: none;
+  }
+}

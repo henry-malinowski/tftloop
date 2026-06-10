@@ -1,0 +1,35 @@
+/* @override less2/elements/forms.less */
+
+@import url("../variables.less");
+
+/* Textarea */
+textarea {
+  font-family: var(--font-avant);
+  height: 100%;
+
+  &:focus {
+    outline: 2px solid var(--color-highlight);
+    box-shadow: 0 0 5px var(--color-footer);
+  }
+}
+
+#chat-form textarea {
+  background: url("img/chat_background.jpg");
+}
+
+/* Select */
+select:focus {
+  box-shadow: none;
+  border: 1px solid var(--transparent);
+}
+
+/* Input Focus States */
+.item-bonus input:focus,
+.item-bonus-content input:focus {
+  outline: 2px solid var(--transparent);
+  box-shadow: 0 0 5px var(--color-footer);
+}
+
+input[type="text"]:focus {
+  box-shadow: 0 0 5px var(--color-highlight);
+}

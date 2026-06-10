@@ -1,0 +1,11 @@
+{{!-- Experience Section --}}
+<div class="experience-section">
+	<h4 class="section-title">{{localize "tftloop.experience"}}</h4>
+	<div class="exp-boxes" data-action="expChange">
+		{{#each (range 1 10)}}
+		<span class="exp-box {{#if (lte this ../model.exp)}}filled{{/if}}"
+			  data-action="expChange"></span>
+		{{/each}}
+	</div>
+</div>
+

@@ -1,0 +1,73 @@
+/* Core Info Tab - Flexible Grid Layout */
+
+.core-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+
+  /* Foundry's native .form-group structure */
+  .form-group {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: @gap-inline-large;
+    align-items: center;
+    padding: @gap-inline-standard;
+
+    /* Label styling - inline with input */
+    > label {
+      font-family: var(--font-avant-bold);
+      font-weight: 500;
+      color: var(--system-item-bold-text-color);
+      margin: 0;
+      text-transform: uppercase;
+      font-size: 0.9em;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    /* Form fields container - inline after label */
+    > .form-fields {
+      display: flex;
+      gap: @gap-inline-small;
+
+      input,
+      select,
+      textarea {
+        flex: 1;
+        .input-base();
+
+        border: 1px solid var(--color-highlight);
+
+        &:focus {
+          outline: 2px solid var(--color-highlight);
+          border-color: var(--color-highlight);
+          box-shadow: 0 0 4px var(--color-highlight);
+        }
+      }
+
+      textarea {
+        min-height: 80px;
+        resize: vertical;
+      }
+    }
+  }
+
+  /* Two-column row wrapper (Type+Age, Drive+Anchor) */
+  .first-row,
+  .two-column-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0;
+
+    /* Remove right border on last item in row */
+    > div:last-child .form-group {
+      border-inline-end: none;
+    }
+  }
+
+  /* Full-width wrapper for Problem, Pride/Shame, Friction, Description, Favorite Song */
+  .full-width-wrapper {
+    display: contents;
+  }
+}

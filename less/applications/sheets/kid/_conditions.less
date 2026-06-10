@@ -1,0 +1,99 @@
+/* Kid Conditions (horizontal layout) — V1 legacy sheet (conditions-v1 + formGroup partial) */
+
+@conditions-checkbox-size: 18px;
+
+.conditions.conditions-v1 {
+  .box-shadow();
+
+  border-top: none; /* No top border for conditions */
+  margin: 2px;
+  margin-bottom: 4px;
+  padding: 0;
+
+  .conditions-grid {
+    display: flex;
+    gap: 0;
+  }
+
+  .conditions-grid.row-layout {
+    flex-flow: row nowrap;
+    align-items: stretch;
+  }
+
+  .conditions-grid > .form-group.condition-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px 4px;
+    min-height: 34px;
+    box-sizing: border-box;
+
+    > label {
+      flex: 1;
+      margin: 0;
+      padding-right: 3px;
+    }
+
+    > .form-fields {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      line-height: 0;
+    }
+  }
+
+  .conditions-grid.row-layout > .form-group.condition-row {
+    flex: 1 1 0;
+    min-width: 0;
+    border-top: none;
+    border-right: none;
+    background: var(--color-field);
+  }
+
+  .conditions-grid.row-layout > .form-group.condition-row:not(:last-child) {
+    border-right: 1px solid var(--color-black);
+  }
+
+  .conditions-grid.row-layout > .form-group.condition-row:last-child {
+    background: var(--color-section-head);
+    border-bottom: none;
+  }
+
+  /* PNG-backed checkboxes (match prior checkboxToggle look) */
+  .conditions-grid .tft-checkbox,
+  .conditions-grid > .form-group.condition-row input[type="checkbox"] {
+    appearance: none;
+    margin: 0;
+    width: @conditions-checkbox-size;
+    height: @conditions-checkbox-size;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    display: block;
+    flex: 0 0 @conditions-checkbox-size;
+    box-sizing: border-box;
+    background-color: transparent;
+    background-image: url("img/box_not_checked.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    &::before,
+    &::after {
+      content: none;
+      display: none;
+    }
+  }
+
+  .conditions-grid .tft-checkbox:checked,
+  .conditions-grid > .form-group.condition-row input[type="checkbox"]:checked {
+    background-image: url("img/box_checked.png");
+    background-color: transparent;
+  }
+
+  .conditions-grid .tft-checkbox:disabled,
+  .conditions-grid > .form-group.condition-row input[type="checkbox"]:disabled {
+    cursor: not-allowed;
+    opacity: 0.9;
+  }
+}

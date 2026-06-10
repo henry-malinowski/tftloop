@@ -1,0 +1,13 @@
+{{!-- Vertical Sidebar Tabs - Icon-based tab navigation --}}
+<nav class="sidebar-tabs tabs" data-group="primary">
+    {{#each tabsArray}}
+    <a class="item {{#if active}}active{{/if}} {{cssClass}}" 
+       data-action="tab" 
+       data-group="primary"
+       data-tab="{{id}}" 
+       data-tooltip="{{localize label}}"
+       aria-label="{{localize label}}">
+        <i class="{{icon}}" inert></i>
+    </a>
+    {{/each}}
+</nav>

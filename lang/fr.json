@@ -72,9 +72,11 @@
     "bonusDice": "Dé Supplémentaire",
     "brokeFail": "Tu échoues Automatiquement les Test quand tu es Brisé !",
     "diceRoll": "Dice Roll Dialog",
-    "success": "Succès",
-    "successes": "Succès",
-    "failure": "Échec",
+    "rollResult": {
+      "0": "Échec",
+      "one": "{count} Succès",
+      "other": "{count} Succès"
+    },
     "tested": "Test",
     "rerolled": "Relancé",
     "reroll": "Relancer",

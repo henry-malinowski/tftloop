@@ -1,0 +1,42 @@
+{{! Special Characteristics List Section }}
+<div class="characteristics section">
+  <div class="section-header">
+    <h4 class="section-title">{{localize
+        "TYPES.Item.specialCharacteristic"
+      }}</h4>
+    <button
+      type="button"
+      class="item-create"
+      data-action="createItem"
+      data-type="specialCharacteristic"
+    >
+      <i class="fas fa-plus"></i>
+    </button>
+  </div>
+
+  {{#if specialCharacteristics}}
+    <ol class="info-list item-list">
+      {{#each specialCharacteristics}}
+        <li class="info-item item" data-item-id="{{this._id}}" draggable="true">
+          <div class="characteristic-display">{{this.name}}
+            {{this.system.number}}</div>
+          <div class="item-control">
+            <a class="item-open" data-action="openItem">
+              <i class="fas fa-edit"></i>
+            </a>
+            <a
+              class="item-delete"
+              data-action="deleteItem"
+              data-type="specialCharacteristic"
+              title="{{localize 'tftloop.delete'}}"
+            >
+              <i class="fas fa-minus"></i>
+            </a>
+          </div>
+        </li>
+      {{/each}}
+    </ol>
+  {{else}}
+    <p class="empty-list">{{localize "tftloop.noCharacteristics"}}</p>
+  {{/if}}
+</div>

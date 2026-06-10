@@ -1,0 +1,32 @@
+/* @override less2/elements/media.less */
+@import url("../variables.less");
+
+/* Images */
+img {
+  border: none;
+}
+
+.bug {
+  background: var(--bug-image-url);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: var(--bug-image-size);
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  border: none;
+}
+
+/* Chat message background - global style (light mode only) */
+.chat-message {
+  background: url("img/chat_background.jpg");
+  font-family: var(--font-trixie);
+  color: var(--color-black);
+}

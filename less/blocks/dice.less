@@ -1,0 +1,139 @@
+/* @override less2/blocks/dice.less */
+
+@import url("../variables.less");
+
+/* Dice Results */
+.dice-result {
+  .dice-formula {
+    background: var(--color-transparent);
+    border: none;
+    color: var(--color-black);
+    box-shadow: none;
+  }
+
+  .dice-total {
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: var(--color-black);
+  }
+}
+
+.dice-roll {
+  margin-top: 3px;
+}
+
+/* Reroll Info */
+.reroll-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  text-align: center;
+
+  button {
+    font-family: var(--font-avant-bold);
+    background-color: var(--roll-dialog-accent-color);
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    max-width: 100px;
+    color: var(--roll-dialog-button-text-color);
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &:focus {
+      box-shadow: none;
+      outline: 1px solid var(--dice-accent-color);
+      outline-offset: 1px;
+    }
+  }
+}
+
+/* Dice Pool Dialog */
+.window-content .dialog-content {
+  .pool-count {
+    text-align: center;
+    font-family: var(--font-trixie);
+    font-weight: 400;
+    font-size: var(--font-size-20);
+    border-bottom: 1px solid var(--color-drop-shadow);
+    color: var(--color-text-primary);
+  }
+
+  .pool-details {
+    padding-left: 20px;
+    margin-top: 3px;
+    margin-bottom: 5px;
+
+    .pool-detail {
+      font-family: var(--font-trixie);
+      font-size: var(--font-size-18);
+      font-weight: 300;
+      padding-left: 80px;
+      color: var(--color-text-primary);
+    }
+
+    .penalty {
+      color: var(--roll-dialog-penalty-color);
+    }
+
+    .divider {
+      margin-top: 2px;
+    }
+
+    .pool-item-select {
+      font-family: var(--font-trixie);
+      font-size: var(--font-size-18);
+      font-weight: 300;
+      color: var(--color-form-label);
+
+      select {
+        font-family: var(--font-trixie);
+        font-size: var(--font-size-14);
+        font-weight: 400;
+        color: var(--color-form-label);
+        border: none;
+        border-bottom: 1px solid var(--color-drop-shadow);
+        border-radius: 0;
+        background: var(--color-transparent);
+
+        &:focus {
+          outline: none;
+          border-bottom: 1px solid var(--roll-dialog-accent-color);
+        }
+      }
+    }
+
+    .bonus-dice {
+      font-family: var(--font-trixie);
+      font-size: var(--font-size-18);
+
+      label {
+        flex: 0 0 120px;
+        align-self: flex-end;
+        font-size: var(--font-size-18);
+        color: var(--color-form-label);
+      }
+
+      input {
+        margin-left: 3px;
+        border: none;
+        border-bottom: 1px solid var(--color-drop-shadow);
+        border-radius: 0;
+        background: var(--color-transparent);
+        width: 200px;
+        color: var(--color-form-label);
+
+        &:focus {
+          box-shadow: none;
+          outline: none;
+          border-bottom: 1px solid var(--roll-dialog-accent-color);
+        }
+      }
+    }
+  }
+}

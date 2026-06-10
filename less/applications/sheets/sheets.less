@@ -1,0 +1,32 @@
+/* @override less2/applications/sheets.less */
+
+@import url("../../variables.less");
+
+/* Import utility classes */
+@import url("../../elements/_box-shadow.less");
+
+div[id^="tftloopActorSheet"] {
+  /* Import shared components	*/
+  @import url("shared/_bars.less");
+  @import url("shared/_section-header.less");
+  @import url("shared/_sheet-row.less");
+  @import url("shared/_condition-row.less");
+  @import url("shared/_form-row.less");
+  @import url("shared/_main-container.less");
+  @import url("shared/_info-group.less");
+  @import url("shared/_sidebar.less");
+  @import url("shared/_notes.less");
+
+  /* Import Kid-specific components */
+  @import url("kid/_header.less");
+  @import url("kid/_core-info.less");
+  @import url("kid/_hideout.less");
+  @import url("kid/_conditions.less");
+  @import url("kid/_relationships.less");
+
+  /* Import Teen-specific components */
+  @import url("teen/_header.less");
+  @import url("teen/_scars.less");
+  @import url("teen/_conditions.less");
+  @import url("teen/_relationships.less");
+}

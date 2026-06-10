@@ -1,0 +1,16 @@
+{{!-- Shared Conditions List Partial (formGroup = label + input, localized) --}}
+{{!-- Parameters: layout (row|column), brokenKey (localization key for broken; overrides field label for kid vs teen) --}}
+{{!-- Note: We pass name to override fieldPath (needs "system." prefix), and value from model (the DataModel) --}}
+
+<div class="conditions-grid {{layout}}-layout">
+	{{formGroup fields.conditions.fields.upset value=model.conditions.upset localize=true classes="condition-row"}}
+	{{formGroup fields.conditions.fields.scared value=model.conditions.scared localize=true classes="condition-row"}}
+	{{formGroup fields.conditions.fields.exhausted value=model.conditions.exhausted localize=true classes="condition-row"}}
+	{{formGroup fields.conditions.fields.injured value=model.conditions.injured localize=true classes="condition-row"}}
+	<div class="condition-row form-group">
+		<label>{{localize brokenKey}}</label>
+		<div class="form-fields">
+			<input type="checkbox" class="tft-checkbox" disabled {{#if model.isBroken}}checked{{/if}} />
+		</div>
+	</div>
+</div>

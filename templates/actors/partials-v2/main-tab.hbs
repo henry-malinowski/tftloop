@@ -1,0 +1,14 @@
+{{!-- Main Tab - Two Column Layout: Character Info/Conditions/Experience | Attributes/Skills --}}
+<div class="main-tab-content">
+	{{!-- Left Column: Character Info + Pride/Shame + Conditions + Experience --}}
+	<div class="column-left">
+		{{> "systems/tftloop/templates/actors/partials-v2/sidebar.hbs"}}
+		{{> "systems/tftloop/templates/actors/partials-v2/luck-section.hbs"}}
+		{{> "systems/tftloop/templates/actors/partials-v2/pride-shame-section.hbs"}}
+		{{> "systems/tftloop/templates/actors/partials-v2/conditions-section.hbs"}}
+		{{> "systems/tftloop/templates/actors/partials-v2/experience.hbs"}}
+	</div>
+
+	{{!-- Right Column: Attributes/Skills --}}
+	{{> "systems/tftloop/templates/actors/partials-v2/attributes-skills.hbs"}}
+</div>

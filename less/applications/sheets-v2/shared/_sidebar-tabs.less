@@ -1,0 +1,81 @@
+/* Shared vertical sidebar tabs - single source for actor v2 and NPC sheets */
+
+@import url("_variables.less");
+
+// Tab strip layout (aligned with actor-sheet-v2)
+@tab-icon-width: 44px;
+@tab-icon-height: 40px;
+@tab-top: 36px;
+@tab-gap: 0.35rem;
+@tab-margin-inline-start: -5px;
+@tab-inset: 3px;
+@tab-box-shadow: 0 0 5px;
+
+/**
+ * Mixin: vertical sidebar tab strip and window-content containing block.
+ * Use inside .application.tftloop.actor.v2 or .application.tftloop.actor.npc.
+ */
+.sidebar-tabs-vertical() {
+  .window-content {
+    position: relative; /* containing block for nav.sidebar-tabs */
+    padding: 0;
+    overflow: visible;
+  }
+
+  /* Vertical Tab Navigation */
+  nav.sidebar-tabs {
+    position: absolute;
+    left: 100%;
+    top: @tab-top;
+    display: flex;
+    flex-direction: column;
+    gap: @tab-gap;
+    z-index: -1;
+    border: none;
+
+    > .item {
+      position: relative;
+      width: @tab-icon-width;
+      height: @tab-icon-height;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--tab-background-color);
+      color: var(--tab-color);
+      border: 1px solid transparent;
+      border-radius: 0 8px 8px 0;
+      margin-inline-start: @tab-margin-inline-start;
+      transition: all 250ms ease;
+      cursor: pointer;
+
+      i {
+        font-size: var(--font-size-14, 14px);
+        margin: 0;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: @tab-inset @tab-inset @tab-inset 0;
+        border: 1px solid transparent;
+        border-radius: 0 5px 5px 0;
+        border-inline-start: none;
+        pointer-events: none;
+        transition: border-color 250ms ease;
+      }
+
+      &.active::after,
+      &:hover::after {
+        border-color: var(--tab-color);
+      }
+
+      &.active,
+      &:hover {
+        margin-inline-start: 0;
+        border-color: var(--tab-color);
+        box-shadow: @tab-box-shadow var(--tab-color);
+        text-shadow: none;
+      }
+    }
+  }
+}

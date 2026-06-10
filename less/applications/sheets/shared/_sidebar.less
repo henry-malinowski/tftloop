@@ -1,0 +1,160 @@
+/* Sidebar */
+.sidebar {
+  max-width: 30%;
+
+  .name-box {
+    margin: 0;
+
+    .type {
+      background: var(--color-field);
+      .box-shadow();
+
+      margin: 2px;
+      padding: 4px;
+
+      select {
+        background: var(--color-transparent);
+        border: none;
+      }
+    }
+
+    .portrait {
+      background: var(--color-field);
+      .box-shadow();
+
+      margin: 2px;
+      padding: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden; /* Hide overflow if image exceeds container */
+      height: 168px; /* Fixed height: 160px image + 4px padding top + 4px padding bottom */
+
+      img {
+        border: none;
+        width: 100%; /* Fill horizontal width */
+        height: 100%; /* Fill container height */
+        object-fit: cover; /* Maintain aspect ratio, crop overflow above/below */
+        object-position: center; /* Center the image */
+      }
+    }
+
+    h1.charname {
+      background: var(--color-field);
+      font-family: var(--font-avant);
+      font-size: 1.8em;
+      font-weight: 700;
+      .box-shadow();
+
+      margin: 2px;
+      padding: 4px;
+
+      input:focus {
+        outline: 2px solid var(--color-highlight);
+        box-shadow: none;
+      }
+
+      input {
+        background: var(--color-transparent);
+        border: none;
+      }
+    }
+  }
+
+  .experience-group {
+    .box-shadow();
+
+    border: none; /* Experience group has no border, only shadow */
+    margin: 2px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .experience {
+      text-align: left;
+    }
+
+    .exp-boxes {
+      cursor: pointer;
+      background: var(--color-section-head);
+      flex: 0 0 auto;
+      justify-content: center;
+      align-items: center;
+      padding: 2px;
+      border: 1px solid var(--color-black);
+
+      img {
+        border: none;
+      }
+    }
+  }
+
+  .attributes-skills {
+    .box-shadow();
+
+    border: none; /* Attributes-skills container has no border, only shadow */
+    margin: 2px;
+
+    .attribute-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      border: 1px solid var(--color-black);
+
+      .attribute {
+        background-color: var(--color-section-head);
+        font-family: var(--font-avant);
+        padding: 3px;
+        margin: 0;
+        color: var(--color-black);
+        font-weight: 500;
+        font-size: 1.1em;
+        font-style: normal;
+        border-top: 1px solid var(--color-black);
+        justify-content: space-between;
+
+        input {
+          background: var(--color-background);
+          max-width: 35px;
+          max-height: 18px;
+          text-align: right;
+          .box-shadow();
+
+          font-family: var(--font-trixie);
+          font-size: 0.8em;
+        }
+      }
+
+      .skill-list {
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+
+        .skill {
+          background-color: var(--color-section-item);
+          font-family: var(--font-avant);
+          padding: 3px 3px 3px 15px;
+          margin: 0;
+          color: var(--color-black);
+          font-weight: 400;
+          font-size: 1.1em;
+          font-style: normal;
+          border-top: 1px solid var(--color-black);
+          justify-content: space-between;
+
+          input {
+            background: var(--color-background);
+            max-width: 25px;
+            max-height: 18px;
+            text-align: right;
+            border: 1px solid var(--color-black);
+            border-radius: 0;
+            box-shadow: 2px 2px var(--color-drop-shadow);
+            font-family: var(--font-trixie);
+            font-size: 0.8em;
+          }
+        }
+      }
+    }
+  }
+}

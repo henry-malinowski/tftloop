@@ -1,0 +1,9 @@
+{{!-- Conditions Section --}}
+<div class="conditions-section">
+	<h4 class="section-title">{{localize "tftloop.conditions"}}</h4>
+	{{#if (eq actor.type "kid")}}
+	{{> "systems/tftloop/templates/actors/partials-v2/conditions-list.hbs" layout="column" brokenKey="tftloop.broken"}}
+	{{else}}
+	{{> "systems/tftloop/templates/actors/partials-v2/conditions-list.hbs" layout="column" brokenKey="tftflood.broken"}}
+	{{/if}}
+</div>
